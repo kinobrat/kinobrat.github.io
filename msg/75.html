@@ -1,0 +1,601 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="75.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Дмитрий Светозаров: 'Человек не может быть заменен никакой самой совершенной машиной'.</b><br><br></div>
+<div align="justify"><div align=center><img src="http://www.kinobrat.ru/img_msg/75_1.jpg" alt=" 22.58 Kb" width=400 height=263 vspace=10></div><br />
+<br />
+Что такое 'виртуальная реальность', наверное, хотя бы понаслышке, знают все. В наш век тотальной технической загруженности жизни, - вещей, приносящих удобство быту и бизнесу, но при этом что-то у человека отнимающих, тема эта актуальна и, при том что над ней задумываются многие, неопознана широкими массами, как проблема, касающаяся лично каждого. И тех, кто по много часов 'ходит' в мире ином - компьютерном, и тех, кто соприкасается с этими 'странниками' в нашем обычном мире:<br />
+Поэтому так нужен сейчас тот фильм, который снимает известный режиссер Дмитрий Светозаров.<br />
+<br />
+Сейчас происходят съемки нового сериала 'Танцор'. Говорят, что кино совершенно необычное: Чем же оно отличается от знакомых уже сериалов?<br />
+<br />
+Я начну интригующе: это кино, которого не снимал не только я, хотя я снял немало телефильмов, но это такое кино, какого вообще никто не снимал на нашем телевидении. "Танцор" - это "виртуальный детектив", довольно свободная экранизация одноименного романа Андрея Тучкова. Сейчас идет работа над первым блоком из 8 серий:<br />
+<br />
+Что за жанр такой Вы изобрели - 'виртуальный детектив'?.. Не вполне понятно, что означает это словосочетание.<br />
+<br />
+Перевожу с компьютерного на русский язык: это фильм о людях, которые разменяли свою жизнь в этой, человеческой реальности на жизнь в реальности, которая существует за монитором компьютера. И, перейдя эту условную, однако существенную грань, потеряли ощущение, какая из этих двух реальностей действительно реальна. Вот о чем повествует 'виртуальный детектив'.<br />
+<br />
+А все-таки, почему же Вас заинтересовала компьютерная тема? Вы так авторитетно говорите о компьютерах, об Интернете. Это все из личного опыта?<br />
+<br />
+На самом деле, значительная часть моих сведений по этой теме - из романа. Андрей Тучков, автор книги, действительно профессионал в этой области. Если я не ошибаюсь, он долгое время был обозревателем компьютерного журнала. И авторы сценария - Денис Банников и Михаил Смоляницкий  - люди весьма посвященные в тему. У меня  же интерес возник во время работы над сценарием "Танцора".  Вначале это был  для меня  чисто профессиональный, коммерческий проект, никоим образом с личными интересами не связанный.  Моя связь с материалом складывалась 'от обратного', ведь всегда притягивается плюс к минусу, то есть разнополюсные вещи. Себя бы я обозначил здесь, как минус. Было бы примитивно утверждать,  что я не принимаю мир компьютеров, - я понимаю, что это неизбежно, что это новая реальность. Но мое отношение к теме сформулировало то, что я назвал  бы моралью, смыслом этой истории.<br />
+Компьютер - это всего лишь инструмент, какие бы ни были в этой области достижения и перспективы. И должен всегда оставаться только инструментом. И он не способен заменить реальности при всем ее ужасе, противоречиях, несчастьях, ведь все же виртуальная жизнь - это жизнь сконструированная. Все это - простые истины, но для многих людей, к сожалению, необходимая грань стерта. Мне кажется, что мои высоколобые оппоненты, которые уповают на скорое создание искусственного интеллекта и перспективу воспроизведения компьютерами  себе подобных, ошибаются. Я думаю, что  против этого  должен восстать мощный механизм самосохранения человечества, который  уже ставит преграду перед клонированием людей. Потому что это есть трагическая возможность преступить какую-то черту, за которой - страшная неизвестность.<br />
+Я владею элементарной азбукой компьютера, я им пользуюсь активно в своей сценарной работе, но проблема волнует меня исключительно с нравственной точки зрения. А раз это во многом неизведанная область, она дает для жанра удивительные возможности. Сам подзаголовок 'виртуальный детектив' - для зрителя незнакомое явление, а поэтому интригующее.<br />
+<br />
+И какую же идею Вы считаете основной в 'Танцоре'?<br />
+<br />
+Это - жанровое кино, детектив, поэтому в нем есть всё, присущее жанру: интрига, убийство, расследование. Но главный пафос "Танцора" в том, что каким бы ни был человек - слабым, безвольным, может быть, потерявшимся в этой жизни, -  если он противится попыткам запрограммировать себя, превратить себя в зомби, - будь то зомби от телевидения или от компьютера, - именно тогда он и есть "вершина  творения".  Он не может быть заменен никакой самой совершенной машиной.<br />
+<br />
+Не слишком ли возвышенно? Вы словно бы поучаете зрителя?..<br />
+<br />
+Меня иногда называют режиссером дидактическим. Но я, считая себя наследником русской культуры, просто не могу снимать кино, смысл и мораль которого мне не близки, либо для меня неприемлемы. <br />
+<br />
+А перед экраном, когда будет идти Ваш фильм, Вы кого мечтаете увидеть?<br />
+<br />
+Этот фильм рассчитан на широкого зрителя. Уже то, что мы снимаем его для показа на ОРТ, говорит о том, что посмотреть его смогут миллионы. Первый канал - канал для всех. Но, пользуясь термином социологов, главной "целевой группой" являются люди от 14 до 30 лет - люди нового компьютерного поколения, которым эта стихия, эта реальность  наиболее близка и понятна.<br />
+<br />
+Честно говоря, удивительно будет увидеть такой проект именно на ОРТ? <br />
+<br />
+У этого проекта есть очень много особенностей. Те зрители, которые следят за тем, что я делаю, знают, что я никогда не общался с ОРТ, потому что я снимаю жесткое кино. А ОРТ в лице его руководства этот стиль откровенно не приемлют. Здесь же мы сошлись на том, что мы ищем "новый язык для нового материала." Язык этого фильма отличен от того, каким рассказывалась история в фильмах  'Агент национальной безопасности' или 'По имени Барон', потому что сам материал, наличие "компьютерной составляющей" заставляет нас быть более, если хотите, изобретательными. Форма здесь не менее богата, а иногда даже и более, чем содержание. Как всегда, я работаю с моим другом и оператором Александром Устиновым, для которого это тоже этапная работа. Очень приятно сотрудничество с компьютерной студией 'Бегемот', вклад которой в работу над изображением очень существенный.<br />
+<br />
+Название Вашего фильма достаточно интригующее для детектива, да еще и на компьютерную тему. Раньше у нас с эти словом в кино какое-то легкомысленное связывалось, типа 'Танцор диско':<br />
+<br />
+Фильм называется так же, как и роман, по мотивам которого мы его создаем. Это - псевдоним персонажа, под которым он участвует в некоем компьютерном тотализаторе. Но все оказывается не просто тотализатором, а серьезной криминальной системой, использующей стихию игры в своих,  таинственных (для зрителя), целях.<br />
+<br />
+Есть ли в построении 'Танцора' сходство с компьютерной игрой?<br />
+<br />
+Есть, безусловно! Как же можно без этого обойтись, если фильм рассказывает об игре! У нас это некая бродилка-стрелялка. Но ужас положения нашего героя в том, что он не просто играет, а, попав в игру, начинает понимать, что в ней реально гибнут люди. Кто режиссер, создатель этой игры? Это и есть главная загадка сюжета нашего сериала.<br />
+<br />
+Именно Ваш главный герой-Танцор тем и отличается от остальных участников игры, что он, как вы сказали выше, 'не программируем' и 'вершина творения'?<br />
+<br />
+Нет. Вначале он предстает перед зрителем, как абсолютно обычный молодой человек, совершенно далекий от компьютерной стихии. Его биография - это история неудавшегося актера, который вынужден зарабатывать себе на жизнь в ночном клубе в качестве наемного танцора-жиголо. И именно такой человек попадает волею обстоятельств в лабиринт этой игры. Дальше с ним начнется история, которая заинтересует зрителя, искушенного в литературе и кино. Здесь есть что-то от прозы Кафки: попав в тривиальную житейскую ситуацию, человек понимает, что, при отсутствии видимых преград, он не может из этой ситуации выбраться. Став участником этой игры, поняв преступные намерения людей, ее организовавших, легче всего было бы из этой игры выйти. Но сделать это по многим причинам наш герой не может. Тогда он восстает и решается взорвать игру изнутри. <br />
+<br />
+А как же 'Матрица', '13 этаж', другие западные образцы? Неужели подобного тому, что делаете сейчас Вы, не было даже в Голливуде?<br />
+<br />
+Мы находимся с американцами на совершенно разных этажах. Мы не в состоянии конкурировать с ними на этаже финансовом, техническом. Но американский кинематограф сам давно превратился в дорогостоящую игрушку, которая для меня, - и не сочтите меня чересчур самоуверенным, - не представляет ни опасности, ни конкуренции. Мы рассказываем историю Танцора на привычном для российского зрителя уровне, который я бы назвал 'человеческим'. Для нас в истории интересен не внешний антураж, а человеческие судьбы. Что касается финансовой мощи Голливуда, то - дай им  Бог : Но мне кажется, что они скоро тоже ударятся о стенку. Это, как говорится, диалектика. Как когда-то в Америке производили огромные машины, а потом разразился всемирный нефтяной кризис, и весь мир пересел на маленькие японские "хонды" и "дацуны" . Ведь было уже и крушение Голливуда с его псевдоисторическими и "библейскими" блокбастерами.  Так случается, когда происходит накопление количества (денег)  без перехода в качество (искусство). Видите, пришлось вспомнить университетские лекции по диалектическому материализму, не к ночи будь помянут...<br />
+<br />
+Кто же реализует Ваши идеи на экране? Расскажите об актерах.<br />
+<br />
+Те, кто знают, что я делаю в кино, согласятся, что я, идя по стопам  моего отца Иосифа Хейфица, являюсь актерским режиссером. Режиссером, для которого пространство актерского лица - есть самое интересное пространство в мире,  режиссёром, старающимся решать большинство своих творческих задач "через" актёра.  В 'Бароне' я собрал, на мой взгляд, лучшие актерские силы Питера на сегодняшний день. Пусть не обижаются те, кто не работал в этом фильме, но роли, сыгранные там и Сергеем Бехтеревым, и Игорем Лифановым, и Константином Воробьевым, и <a href="../actor/1853.html">Илья Шакунов</a> , и Светланой Смирновой,  - перечислить всех невозможно - безусловное событие в современном телевизионном кинематографе.. Здесь, в 'Танцоре', я надеюсь открыть для зрителя два новых имени, которые обязательно станут "звездными".. Две главные роли в сериале сыграли Борис Хвошнянский и Юлия Шарикова.<br />
+Борис уже снимался у меня в 'Бароне', но здесь у него огромная роль. Юлия  недавно поступила во МХАТ, окончив курс Табакова, но она - петербурженка, что для меня очень важно. В "Танцоре" у неё первая большая роль, хотя она снималась в совсем юном возрасте у Сергея Снежкина, сыграла эпизод в 'Дальнобойщиках'. <br />
+Кстати, музыку к сериалу пишет  Андрей Макаревич и 'Машина времени'. А еще - впервые в моей практике, - в этом фильме прозвучат несколько песен. Вам стоит лишь только догадываться, кто их напишет:<br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/75_3.jpg" alt=" 24.38 Kb" width=283 height=424 vspace=10></div><br />
+<br />
+Почему Вы на главные роли взяли людей, менее знакомых публике, чем те, кто исполняет роли второго плана?<br />
+<br />
+Я скажу нескромно: я вновь хочу испытать это удивительно приятное чувство открытия. Это чувство пришло ко мне постепенно, потому что был период, когда я сам для себя открывал актеров, а теперь я думаю, что за моими плечами достаточный опыт, и я могу сказать, что для кино, для телевидения я кое-кого открыл. Я очень надеюсь, что жизнь Юли и Бориса потечет совершенно иначе после выхода 'Танцора'. Но, конечно, я не забываю о своей актёрской "обойме",  потому что мне посчастливилось за долгие года работы на телевидении (не в кино - там между картинами проходит длительное время) сколотить 'кинотруппу' людей, которые мне очень близки своим дарованием,  своими человеческими и профессиональными качествами.  И многих из этих актеров зритель увидит в 'Танцоре'.<br />
+В первую очередь, это - <a href="../actor/3453.html">Андрей Зибров</a> . Если говорить об иерархии ролей, то получится, что его персонаж - следующий по степени важности после двух главных героев. <br />
+<br />
+Он опять у Вас злодея играет?<br />
+<br />
+Нет, на этот раз он играет роль, как мне кажется, близкую ему по жанру, - такого эксцентричного, "не от мира сего" компьютерщика. При этом он работает в милиции, - в засекреченном управлении, которое занимается раскрытием преступлений в области высоких технологий.  Герой Андрея - это такой не очень привычный синтез милиционера и интеллектуала. Играет он в острой, парадоксальной, может быть даже гротескной форме.<br />
+<br />
+А почему Вадим Яковлев после милого полковника в 'Агенте:' играет здесь злого убийцу?<br />
+<br />
+Вадим Яковлев - замечательный артист. Пригласив его в 'Агента национальной безопасности' на роль полковника Тихомирова, я открыл его широкому зрителю как удивительного комического артиста. А ведь он всю жизнь играл на экране социальных героев!  Продолжаю этот эксперимент и в 'Танцоре'. Здесь Вадим Васильевич играет роль злодея - гротескно-фарсовую, почти масочную роль.<br />
+<br />
+А кто еще в Вашей команде?<br />
+<br />
+Еще немало звезд в картине: Юрий Гальцев, Александр Лыков, Семен Фурман, Николай Николаевич Трофимов. Женские роли тоже очень яркие. Это опять <a href="../actor/1725.html">Анна Геллер</a> , - кто-то из журналистов назвал ее 'единственным светлым началом в творчестве кровавого и жесткого режиссера Светозарова'. Здесь Аня играет возлюбленную лейтенанта Осипова (в миру - Андрея Зиброва).<br />
+Замечательная  <a href="../actor/1275.html">Анна Банщикова</a> из Театра им. Комиссаржевской, которая играла у меня и в 'Агенте:', исполнила роль Марины в 'Бароне', здесь играет тоже одну из главных героинь, партнершу Танцора по ночному клубу.<br />
+Серьезную трагикомическую роль играет <a href="../actor/2459.html">Александр Карпухов</a> из Молодежного театра. Это - первая в его жизни  большая роль, до этого он уже играл у меня, но эпизоды. Михаил Трясоруков, сейчас много снимающийся комический артист театра 'Буфф', тоже актер с большим будущим. Верю, что  нынешняя востребованность его не развратит. <br />
+Одну из главных ролей играет Анатолий Рудаков, очень популярный киноартист советской эпохи. Тогдашние роли принесли ему официальное признание, звание, а потом, когда ушла эпоха, ушел из кино и Анатолий. Я вспомнил о нем, снимая 'Агента:', где он сыграл в одной из серий, потом он играл самого страшного главного убийцу в 'Четырнадцати цветах радуги'. Он ушел из кино в бизнес, как случилось со многими, но я надеюсь, что я какой-то маленький кирпичик вложил в фундамент его новой киносудьбы. Я надеюсь, что Анатолий Рудаков вернется в кино, потому что это самобытный и талантливый актер. <br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/75_2.jpg" alt=" 25.78 Kb" width=378 height=261 vspace=10></div><br />
+<br />
+Как скоро мы увидим 'Танцора'?<br />
+<br />
+Мы должны к ноябрю закончить съемки 8-ми первых серий. Дальнейшую судьбу проекта решит зритель. Если сериал будет рейтинговым, мы его продолжим. Я уверен, что будет создан и сайт 'Танцора', - ОРТ очень профессионально относится к 'раскрутке' проектов. В случае нашей творческой удачи московские продюсеры приложат максимум усилий к тому, чтобы эта история долго привлекала зрителей к экранам.<br />
+<br />
+Ольга КРАСНОВА сентябрь 2002 года<br />
+<br />
+Фото Андрея (Вилли) Усова - мгновения, запечатленные на съемочной площадке 'Танцора'</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="75.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

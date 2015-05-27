@@ -1,0 +1,540 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="397.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>"Пляска смерти" в исполнении Иванова</b><br><br></div>
+<div align="justify"><i> 'Каждый из нас прогуливает свою мысль, словно обезьяну на привязи. Когда читаешь, имеешь дело сразу с двумя обезьянами: со своей собственной и с чьей-то еще...'<br />
+Милорад Павич </I><br />
+<br />
+Бывает так, что еще до спектакля, только в предвкушении его, прогуливаешь этих 'обезьян на привязи', и не одну, а сразу несколько, и заранее знаешь, что за сюжеты могут развиться от сочетания 'действующих лиц' и 'предлагаемых обстоятельств'...<br />
+Давно, несколько лет, было известно, что замечательный актер Малого драматического Игорь Иванов болен пьесой А. Стриндберга 'Пляска смерти'. Что шаг за шагом, приглашая для работы коллег из других театров и разных режиссеров (выпускал спектакль молодой Андрей Прикотенко), он упорно идет к цели - осуществить постановку и сыграть в ней капитана Эдгара.<br />
+Когда 25 лет назад заканчивал институт кацмановско-додинский курс 'братьев и сестер', было бы безумием предположить, что стопроцентный супермен, плейбой нашего времени, каскадер и спортсмен Иванов когда-нибудь захочет сыграть бесконечно длинный, долгий стриндберговский драматургический морок и его главного героя - полусумасшедшего капитана, именно двадцать пять лет живущего на острове со своей женой Алис, в предсмертной атмосфере психического недуга и взаимной ненависти. С тех пор минули века, И. Иванов прошел триумфальные роли в 'Доме' и 'Братьях и сестрах', был Биллом Гортоном в 'Фиесте' и Олегом Камаевым в 'Двадцати минутах с ангелом' Е. Падве, перетерпел несколько лет без серьезных ролей, болел - словом, жил жизнь в МДТ, со всеми проблемами психологического, этического и эстетического ландшафта этого театрального 'острова'. И, как писал о нем один критик, однажды 'проснулся человеком с другим лицом', в котором 'проступили следы сильнейшего душевного напряжения и преодоления, страдания и духовной работы'.<br />
+Этот 'другой' Игорь Иванов, в расщепленной актерской природе которого явно поселился драматизм, требовавший выхода, сыграл капитана Лебядкина, человека с чертами 'повреждения и безумия'; чеховского Лопахина; недавно на Малой сцене - Баруха в израильской пьесе 'Исчезновение'. Но сыграл, в общем, для своего таланта не так много... Может быть, от этой глубокой недоигранности, недо- на выбор: востребованности, воплощенности, раскрытости - и возникла идея 'Пляски<br />
+смерти' и роли человека, запертого судьбой и службой в клетке собственного дома,<br />
+фаната долга, ненавидящего окружающий мир и не требующего, впрочем, у мира взаимности, что делает ему, Эдгару, честь.<br />
+Мысль о судьбе и новой роли И. Иванова, несомненно, была той самой - первой 'обезьяной на привязи'... Прибавим к этому партнеров. На главные роли в 'Пляске смерти' Иванов позвал сокурсников Наталью Фоменко и Сергея Власова. Алису и Курта, их (вместе с Эдгаром) душевыматывающее, на грани патологии, драматическое трио предстояло исполнить когда-то самым здоровым, сильным, лишенным рефлексии 'братьям и сестрам'. Н. Фоменко, правда, играла несколько лет назад Абби в 'Любви под вязами' Юджина О'Нила - драматурга, решающее влияние на которого оказал именно Стриндберг, но и там ей тяжело давались фрейдистские мотивы - 'цельный человек', живущий внутри актрисы, явно протестовал. Так или иначе, ее светлое платье в 'Пляске смерти', с прошвой и мережкой, напоминает 'мамин наряд', в котором Абби соблазняла пасынка Эбина...<br />
+'Ищем мы соль, ищем мы боль этой земли' - пели в 'Братьях и сестрах' (хочешь - не хочешь, а помнится!). Соли они вместе съели много, боль жизни узнали. Как-то претворится она в Стриндберге?<br />
+'Третья обезьяна' надела на себя поводок, когда площадкой для спектакля 'Чрезвычайно зависимого театрального сообщества', выпустившего спектакль при спонсорской помощи 'Киришинефтеорг-синтеза', обозначился Учебный театр на Моховой. Иванов, Фоменко и Власов на той самой сцене, откуда триумфально начиналась их жизнь... Они - и это пространство, в которое они вдохнут нечто 'двадцать лет спустя'! Ностальгически настроенная обезьяна рвала привязь.<br />
+Наконец, на 'поводке' оказывался сам несчастный А. Стриндберг, не знаю, почему так популярный в нашем театре. В момент исторического развития, когда проблемы пола рассеиваются, когда по сцене, как и в жизни, бродят не мужчины и женщины - андрогины, а тендерная наука сообщает нам, несведущим, что пол вообще понятие, привнесенное гетеросексуальной культурой ('Женщиной не рождаются, ею становятся'. С. де Бовуар), на самом же деле его вроде бы и нет, - в этот исторический момент исчезновения самой дефиниции 'пол' стриндберговская маниакальная озабоченность войной мужчины и женщины кажется абсолютным анахронизмом. А еще большим - его бесконечное доказательство коварства, подлости и зловредности женщин. Оно просто представляется идеологемой, оставшейся в том времени, когда пьесы писались.<br />
+Словом, я отправлялась на спектакль не одна, а в сопровождении многих 'меньших братьев по разуму'.<br />
+Моховая была забита серебристыми иномарками. Поражало неистовое желание состоятельной публики наслаждаться стриндберговскйм адом...<br />
+А дальше заготовленные мысли стали срываться с поводков, поскольку Курта в тот день играл не Сергей Власов, а Сергей Барковский. Я просто смотрела, и только одна 'обезьяна', воспринимавшая спектакль в момент его рождения, 'прогуливалась' параллельно действию.<br />
+Эмиль Капелюш выстроил скрипящую железом декорацию. Качающаяся 'палуба' второго этажа - непрочная плоскость тонущего корабля жизни. Винтовая лестница, упирающаяся в потолок (сценическое 'небо') - подобие маяка, с которого сняли фонарь, или капитанского мостика на корабле, давно севшем на мель. 'Для героев ренессансной драмы полем битвы был весь мир, для героев Стриндберга ристалище - собственный дом, родные Пенаты, а злейший враг - женщина, жена, единственно близкий человек на бесконечно длинной дистанции жизни' (Б. Зингерман).<br />
+Да и дом Эдгара и Алис еле стоит. Проржавел. Все дребезжит; шатается, кренится, мерцает инфернальным светом, как шатается и кренится больное, тоже мерцающее сознание когда-то бравого артиллериста, а нынче изъеденного молью жизни капитана Эдгара. Игорь Иванов играет его действительно превосходно, глубоко внедрившись в психические 'подземелья'. В этих подземельях нет входов-выходов, а только блуждания ощупью в потемках. 'Пляска смерти' - 'ночная', по-своему экспрессионистская пьеса (ночь - время смерти, утро рассеивает страхи), и действие ее недаром начинается вечером, когда в дом приезжает Курт - кузен Алис, к тому же бывший ее возлюбленный, который когда-то сосватал сестру Эдгару и у которого, как выясняется только теперь, Эдгар, по сути, отнял детей. Так на территорию пьесы вступает еще один коренной стриндберговский мотив - мотив власти над детьми, тема обладания будущей жизнью в момент иссякания собственной, реальной.<br />
+Накануне серебряной свадьбы война грубой Алис ('Алис, ты дьявол!') и полубезумного Эдгара идет, как шла она все эти годы. Курт - Барковский человек 'иной' (может быть, его первое появление рифмовалось у постановщиков с появлением Мышкина: он приходит в 'сумасшедший дом' родственников - светлый, открытый, в широкополой 'нездешней' шляпе, словно откуда-то с неба спустившийся в ад). Очень скоро ад закружит пляской и его: Эдгар болен странными приступами, Алис мечтает о его смерти. 'Воля к власти' осуществляется у Стриндберга на семейном поприще, в бесперспективной борьбе двоих, вследствие чего приобретает столько же трагические, сколько и мелочные, аффектированно-театральные формы' (Б. Зингерман). В 'Пляске смерти' аффектированно-театральными становятся приступы Эдгара - самый сильный момент спектакля.<br />
+...Его вдруг настигают балетно-фехтовальные па - мучительные судороги, и под возникающую музыку ноги его становятся в третью позицию, а руки с мечом плавно складываются над головой... Это 'танец с саблей' - непроизвольный мышечный спазм внезапно настигающей красоты и гармонии, которая действительно - безумие и мука. От нее Эдгар цепенеет в балетной позе, неподвижно глядя невидящими глазами.<br />
+Первый акт, историю ежеминутных провокаций, все три артиста проводят хорошо. Но, не мной замечено, 'развитие диалога в пьесах Стриндберга состоит в том, что подтекст быстро и неотвратимо становится текстом'. Этот бесконечный текст-кружение и играют сильные актеры. На этом бессмертном (смерть наступит позже) хождении по кругам ада, когда в войне против женщины могут объединиться два ненавидящих ее мужчины, а она способна разбудить в любом из них вожделеющего зверя, и ненависть каждого может дать толчок страсти, - на этом первом, душевно не трогающем, но достойно и содержательно сыгранном акте и завершить бы спектакль.<br />
+Но неугомонный идеолог Стриндберг написал не менее длинный второй акт. В котором появляются дочь Алис и Эдгара Юдифь, как две капли воды похожая на мать (Анна Геллер из Молодежного театра), сын Курта Алан, столь же похожий на отца (Тарас Бибич) и молодой лейтенант (Александр Иванов из ТЮЗа) - все трое очевидное зеркальное повторение старших.<br />
+Спектакль распадается на две неравные, более того, не родственные друг другу половины. Чад жизни сменяется изложением семейной интриги, которую А. Прикотенко оснащает забавно придуманными подробностями чисто театрального свойства (на них он мастак). Смею утверждать: второй акт написан плохо, но так или иначе в нем: можно играть неизбывность муки, в которой оказывается теперь новый, юный 'треугольник', приговоренный повторить участь родителей. Однако если в первой части нас втягивали в темноту сцены центростремительные желания актеров погрузиться в мир страстей и фобий, то во второй части правят центробежные силы остроумных режиссерских игр, мило исполненных Т. Бибичем и А. Ивановым. Как пьеса теряет центр-капитана, так и спектакль теряет протагониста - И. Иванова, а значит, теряется смысл. Смерть Эдгара, преданного дочерью и женой, констатируется сюжетно - и не более.<br />
+Я все думаю - нет, не о белой обезьяне - о дорогих автомобилях у входа в театр. О потребностях сегодняшней сцены и ее зрителя. О том, что, увидев даже неплохой, по-своему серьезный спектакль, не находишь азарта анализировать его, потому что в нем нет театральной загадки. О том, что печатные оценки критики все чаще обозначаются еще недавно неприлично-непрофессиональными словами: 'было не скучно' или 'спектакль не противный - и хорошо', и в этом, как ни печально, дышат почва и судьба - отсутствие театральных идей. Многолетние усилия И. Иванова завершились хорошим первым актом 'Пляски смерти' и прекрасно сыгранной ролью ('Золотые софиты' и 'Маски' начищают свои металлические поверхности...) Это уже по теперешним временам много или все-таки мало? Не знаю.<br />
+<br />
+<i> Марина Дмитревская<br />
+"Час пик" N 38, 18-24 сентября 2002 </i></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="397.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

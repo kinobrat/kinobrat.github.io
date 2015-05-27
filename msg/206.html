@@ -1,0 +1,597 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="206.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Новости &#149; <a href='160.html' class=top style='color: white;'>&laquo;Андрей Краско&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="160.html" class=green><b id=gr>Андрей Краско</b></a></td></tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table>
+<div align=center>
+<table width="80" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" width="1"><img 
+  src="../i/spacer.gif" width="1" height="1"></td>
+<td class="date" align="center" width="26">15&nbsp;декабря&nbsp;2002</td>
+</tr></table></div><p>
+
+
+<div align=center><b id=yellow>Сегодня - день "Смерти Тарелкина"</b><br><br></div>
+<div align="justify"><b> <a href="../actor/7928.html">Андрей Краско</a> (Тарелкин) о спектакле. </b> Играть персонажа, который должен умереть - пусть и понарошку, дело отнюдь не приятное. Но Тарелкин, уведомлениями о смерти которого пестрят афиши, в исполнении Андрея Краско - человек незаурядный. Ну много ли кому, как этому герою, даже в экстремальной ситуации придет в голову такое: взять да и положить в гроб чучело, засыпать тухлым мясом и прикинуться собственным соседом (и в самом делу умершим)!<br />
+Андрей Краско играет своего Тарелкина с энтузиазмом. Видно, как интересен ему этот герой, - здесь есть что поиграть, и немало! Еще бы: такую историю не каждый день встречаешь (да и встретишь ли?) в реальности. Поэтому на сцене артиста подхватывает вихрь настоящей игры: его собственной, актерской, и его персонажа - со смертью и людьми, которых он пытается обмануть. А что еще нужно настоящему артисту?!<br />
+<div align=center><img src="../img_msg/206_8.jpg" alt=" 13.25 Kb" width=200 height=267 vspace=10></div><br />
+<b>Вам понравилось работать в этом спектакле? </b><br />
+<br />
+Да. Юрий Бутусов сам по себе замечательный режиссер, и художник, который работал над спектаклем, Александр Шишкин, - тоже профессионал высокого уровня. К тому же наш режиссер после премьеры спектакль доделывал, пока не уехал работать в Москву. Так что первое время после премьеры постоянно что-то менялось. И до сих пор мы сами что-то улучшаем.<br />
+<br />
+<b>В лучшую сторону, как видно. Ведь премьера была 'сырая'... </b><br />
+<br />
+Премьера была сырая, потому что, к сожалению, все артисты были очень заняты. Мы с Константином Хабенским вообще в этот период жили в поездах 'Москва-Петербург': он снимался у Филиппа Янковского в картине 'В движении', а я у Павла Лунгина в 'Олигархе'. Собирались за неделю все сделать. Но у нас даже недели не получилось, - было меньше дней репетиций перед премьерой: <br />
+<br />
+<b>Но это же не нормально для спектакля! </b><br />
+<br />
+Для антрепризы это нормально.<br />
+<br />
+<b>А если говорить не об условиях, а о качестве.</b><br />
+<br />
+Некоторые репетируют спектакли и по три года. Например, в Малом драматическом театре. Но я не могу сказать, что там в итоге получается все так замечательно.<br />
+<br />
+<b>А как долго Вы репетировали спектакль 'Москва-Петушки' в театре 'Приют комедианта'? </b><br />
+<br />
+Этот спектакль я репетировал 10 дней, - это был ввод в уже готовый спектакль. Хотя в результате он был полностью переделан, потому что все актеры были новые. Спектакль восстанавливался в память о трагически погибших актрисах Варе Шабалиной и Лёли Елисеевой. Они играли в той, первой редакции 'Москвы-Петушков'...<br />
+<br />
+<b>Получается, что такой опыт спринтерской работы для вас не нов.</b><br />
+<br />
+Опыт спринтерской работы приходит, когда ты снимаешься в сериалах. Да и время сейчас быстро идет. Если вспомнить, когда мне было 6 лет, на весь наш многоквартирный дом был всего два телефона и один телевизор. Сейчас телефон у каждого второго в кармане:<br />
+<br />
+<b>То есть надо приспосабливаться к каким-то новым условиям, продиктованным временем?</b><br />
+<br />
+Телеграфный стиль общения сейчас везде. И даже Хемингуэй начинал писать в этом стиле. <br />
+<br />
+<b>Были ли Юрий Бутусов для Вас режиссером-диктатором? </b><br />
+<br />
+Нет, он только предлагал то или иное решение сцены, а уже окончательный вариант мы придумывали вместе.<br />
+<br />
+<b>А что для 'Смерти Тарелкина' придумали лично Вы? </b><br />
+<br />
+Да много чего. Во-первых, мы же текст переделали, мы взяли две пьесы: 'Расплюевские веселые дни' и 'Смерть Тарелкина' и сделали компиляцию. А первый монолог Бутусов вообще полностью дал мне на откуп. Я сам его составил из текстов.<br />
+<br />
+<b>Как реагировали в Москве на Ваше восклицание 'В глушь, в Москву!', когда Вы были там с гастролями? </b><br />
+<br />
+Да так же, как и здесь. Смеялись. Ведь есть же анекдот, когда группа людей бежит по перрону Ленинградского вокзала, уже вагоны опустели, все вышли, - опоздали они к прибытию. И выходит из вагона последний человек. Они: 'Вы из Петербурга?' Он: 'Да'. - 'Вы не могли бы у нас в правительстве поработать?!' Вот поэтому и смеются.<br />
+<br />
+<b>Какой вариант 'Смерти Тарелкина' Вам больше нравится: прошлогодний или нынешний? </b><br />
+<br />
+Тот, спектакль, который у нас есть сейчас, намного лучше, чем то, что было на премьере. Нам всем нравится в нем играть. К сожалению, играем его редко, потому что сложно всем вместе собраться. Мы стараемся каждый раз что-то улучшать. Мы собираемся на каждый спектакль не за час до начала, а часа в четыре. Все обсуждаем, репетируем.<br />
+<br />
+<b> Жанр 'комедия', которым 'Смерть Тарелкина' обозначается на афише, в таком странном соседстве из декораций, костюмов, ваших мизансцен, наконец, как-то не уживается... </b><br />
+<br />
+Это на афишах написано, что мы играем комедию. И у автора она называлась комедией. Но мы, на самом деле, из этого материала сделали фарс. А как еще можно сказать об этих персонажах, об этом тексте?.. Так люди не разговаривали даже тогда.<br />
+<br />
+<b>Ваш персонаж - мистическая фигура. Снимая накладные бакенбарды и парик, он называется чужим именем, подстраивает свою смерть, и никого из тех, кто его видел 'при жизни' это не удивляет: Получается, что тот, кем он стал - и есть его истинное (в Вашем исполнении) лицо. Или как? </b><br />
+<br />
+Мы долго думали, как это сделать. И пошли 'от обратного', потому что в пьесе человек надевает парик, вставляет зубы: Мы долго решали с Юрой на репетициях, как нам это обыграть.  И решили пойти таким путем.<br />
+<br />
+<b>А почему? </b><br />
+<br />
+Потому что у актера  лицо - немаловажный инструмент. И играть спектакль в парике и с накладными бакенбардами было бы неудобно.<br />
+<br />
+<b>Вы смотрели 'Смерть Тарелкина', поставленную в БДТ Товстоноговым? И если да,  то что-нибудь оттуда переняли? </b><br />
+<br />
+Да, смотрел. И мы ничего оттуда не взяли, потому что там был другой жанр, мюзикл, музыка замечательная. Кстати, после спектакля БДТ до нас эту пьесу долго не ставили. А после нашего спектакля многие театры взялись: в Москве ставят, наш Александринский театр... У нас была задача доказать, что антрепризу можно сделать предметом искусства. То есть чтобы это была не халтура, где есть популярные фамилии, и зрители идут, тратят деньги, только чтобы посмотреть на этих известных людей, а чтобы это стало событием в театральном мире, предметом обсуждения. Кому-то резко не нравится спектакль, кому-то, наоборот, очень нравится... <br />
+<br />
+<I> Я не могу сказать, что к игре кого-то из ребят у меня есть претензии. Мы все выдерживаем жанр. Это бывает исключительно редко, потому что актеры в государственных театрах все играют по-разному. Жанр как таковой в театрах исчез. Мало кто понимает, что это такое и что с этим делать. А вот в кино жанр сейчас как раз появился. </i></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="206.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b><div align=center><img src="../img_msg/206_1.jpg" alt=" 16.03 Kb" width=300 height=300 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_2.jpg" alt=" 14.57 Kb" width=300 height=200 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_3.jpg" alt=" 13.35 Kb" width=298 height=300 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_4.jpg" alt=" 12.64 Kb" width=300 height=240 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_5.jpg" alt=" 12.90 Kb" width=300 height=240 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_6.jpg" alt=" 14.44 Kb" width=300 height=240 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_7.jpg" alt=" 9.05 Kb" width=300 height=240 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_9.jpg" alt=" 21.28 Kb" width=200 height=300 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_10.jpg" alt=" 16.07 Kb" width=200 height=300 vspace=10></div><br />
+<div align=center><img src="../img_msg/206_11.jpg" alt=" 15.68 Kb" width=300 height=200 vspace=10></div></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

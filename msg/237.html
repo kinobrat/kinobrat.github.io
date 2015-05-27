@@ -1,0 +1,518 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="237.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>"Убойная сила". О сериале.</b><br><br></div>
+<div align="justify">ПЕРВАЯ СКРИПКА В "УБОЙНОЙ СИЛЕ" Сергей СЕЛИН стал знаменитостью после сериала "Улицы разбитых фонарей" ("Менты"). Но там он, сыграв (и играя!) одну из главных ролей, оказался как бы в тени своих партнеров. А вот в сериале "Убойная сила" его персонаж (все тот же Дукалис) стал "первой скрипкой". Поэтому, хотя Сергей снялся еще в десяти фильмах, я не сомневался, что именно эта роль у него самая любимая. - Нет, - возразил актер. - На первое место я бы поставил свою работу в фильме "Барабаниада", где, кстати, тоже сыграл мента - старшего лейтенанта. - А как вам ваш мент в "Ментах" и в "Убойной силе"? - Это несколько не то... У Сергея Овчарова я играл драматическую, характерную роль. А сейчас мы играем фактически самих себя в предлагаемых обстоятельствах. Если бы мы стали "играть", сериал бы умер, на мой взгляд. Менты в нашем представлении - серьезные, порой жлобоватые, порой грубые, косноязычно и с матерком говорящие люди. Мы в сериале выбрали несколько странную манеру общения друг с другом. Знаете, текст мы говорим "впроброс", у нас нет главных, ударных слов, мы общаемся на съемочной площадке так, как общаемся в жизни, много импровизируем. - Вы с таким знанием дела говорите о ментах... Наверное, приходилось с ними сталкиваться. - Приходилось... Более того - даже был судим. - За что?! - Это было в далеком прошлом. Стояли мы как-то с приятелем возле магазина, там ящики валялись. Кровь играет, и мы вдруг хрясь одним из них по витрине и, смеясь, перешагиваем в образовавшийся проем в магазин. Ну идиоты, идиоты! Нам за это хотели впаять хищение в особо крупных размерах - от трех до семи лет, хотя мы ничего не взяли. Просто "под нас" списали все, что можно было списать. И если бы не родители, которые откупились - в десять тысяч рублей им обошлась наша "шутка", по тем временам это громадные деньги. Следователи все старались выяснить, кто еще участвовал в ограблении - ведь чтобы вывезти на десять тысяч товару, надо грузовик подогнать. - Вас прямо в магазине поймали? - Да нет, потом, - "друзья" заложили. У меня брат двоюродный был полковником КГБ, поэтому на этот раз в милиции хорошо отнеслись к нам. И все равно полностью отмазать не смогли - дали по три года условно. Такой вот штрих был в моей биографии. - Вы сказали: ЗНа этот разИ. Были, значит, и другие разы? - Все было, и зубы мне выбивали. - За что? - Это и я спрашивал: "За что?!" Приехал в Воронеж маму проведать, это года четыре назад было, уже шли съемки "Ментов", но еще по ТВ не показали ни одной серии. Иду с приятелем чуть-чуть выпивший. Мимо проезжает милицейская машина, и нас хватают. Прошу объяснить причину моего задержания, причем говорю подчеркнуто вежливо. Раз спросил, второй... "Пойдем, сейчас объяснюИ, - говорит мне один из этих гадов. Завели в отделение и стали вдвоем избивать по полной программе. Не говорю о синяках и ушибах - ребро сломали, зубы выбили... Говорю потом тому парню в милицейских погонах, что мне по зубам заехал: "Урод ты! Меня нельзя бить. Я же артист, мое лицо - это моя работа". Эх, Генке, двоюродному брату, подполковнику КГБ, не дозвонился. Он бы их посадил. - Минутку, вы что, простили им это преступление? Не обратились в суд? - Буквально через полтора дня после приезда в Воронеж мне позвонил режиссер и попросил срочно выезжать в Питер: начинаются съемки очередной серии "Ментов". И я плюнул на все, не стал поднимать шум и уехал... А лет девять назад в Ленинграде меня на улице задержали: похож, мол, на преступника, объявленного в розыск. Привезли в отделение, показывают фоторобот: щупленький пацан, а у меня 95 килограммов веса. ЗРебята, вы что, специально? - возмущаюсь. - Это при моей-то комплекции спутать?И Слава Богу, в тот раз по морде не схлопотал, отпустили. - Теперь вам это не грозит: я не раз видел, как вас и ваших коллег публика встречала - как национальных героев! Любой сотрудник милиции считает за счастье выпить с вами "по грамульке"... - Да, сейчас нас менты чуть ли не на руках носят. Мы заняли нишу, которая уже лет двадцать была свободной. В "Месте встречи", будем так говорить, работали наши отцы. И ЗСледствие ведут знатокиИ было давным-давно, и совсем другие там персонажи. И потому мы стали популярны. Едем как-то с Алексеем Ниловым в такси, водитель поворачивается: "О, звезд везу!" И ко мне: "Ты моему сыну больше всего нравишься. Морда, говорит, у него бандитская, но он добрый-добрый". Еще штрих. Однажды в Москве ко мне подошла пожилая женщина и сказала: ЗСпасибо вам, что вы естьИ. Вы не представляете, как было приятно это слышать. ЗЧем же это мы вас тронули?И, - поинтересовался я. - "Знаете, в это смутное время хотелось бы верить, что есть такая компания ребят, которые тебя защитят. Пусть это сказка, но в эту сказку хочется верить". - Судя по тому, что вы мне рассказали, сказка о ментах сильно расходится с реальностью. - Нет, и еще раз нет. Да, много в милиции и подонков. Но очень много честных, порядочных ребят, по-настоящему преданных своей профессии. Я просто удивляюсь, как они могут работать за копеечную зарплату - рискуя жизнью, не зная порой выходных. Причем я точно знаю, что они не издеваются над людьми, не берут взяток. Со многими из них я лично знаком - и с операми, и со следователями. Вот о таких людях наш сериал. И я счастлив, когда слышу от них, что благодаря нам слово ЗментИ перестало быть ругательным. А раньше за это слово можно было получить по морде - от них же. Не зря же в прошлом году тогдашний министр МВД Сергей Степашин вручил нам именные часы и грамоту, где, между прочим, черным по белому: "За личный вклад в борьбу с преступностью". Криминальным прошлым Сергея СЕЛИНА интересовался Геннадий БЕЛОСТОЦКИЙ НОВЫЙ ВЗГЛЯД НА СТАРЫХ "МЕНТОВ" ОРТ совершило невероятный прорыв в области генной инженерии. Пока весь мир спорит о том, гуманно ли клонирование человека, продюсеры канала Константин ЭРНСТ и Анатолий МАКСИМОВ произвели на свет довольно удачный с точки зрения генетического эксперимента клон полюбившихся всем "Улиц разбитых фонарей". Творческий эксперимент получил от своих создателей звонкое, удобное в раскрутке название "Убойная сила". Примерно месяц назад на страницах нашей газеты популярный актер Станислав САДАЛЬСКИЙ делился своими воспоминаниями о съемках в ЗментовскомИ сериале. Тогда пресс-служба ОРТ хранила партизанское молчание по поводу готовящегося "теракта" в самом сердце любимого народом теледетектива. И вот день Зубойного взрываИ известен - 13 марта, понедельник. Дата, скорее всего, выбрана несуеверным Константином Эрнстом, который перед съемкой каждого своего проекта старательно разбивает о видеокамеру суповую тарелку - на счастье. Первые секунды просмотра нового сериала станут для телезрителей настоящим психическим испытанием, ибо под названием "Убойная сила" скрываются все те же "Менты". Чтобы избавить вас, дорогие зрители, от не очень приятного состояния Здежа вюИ (где-то я это уже видел...), попробуем разъяснить замыслы создателей сериала. Замысел первый: творческий Представьте, что Анатолия Дукалиса из "Улиц разбитых фонарей" направили с шефской помощью в соседнее отделение милиции, дабы он влил в хилые ментовские ряды свою недюжинную силу и интеллект. Именно в этом отстающем отделении милиции и развиваются события сериала "Убойная сила", главные герои которого "интеллигент" Игорь Плахов (актер Константин ХАБЕНСКИЙ) и "недотепа" Вася Рогов (актер Андрей ФЕДОРЦОВ) с виду совершенно не похожи на работников милиции. Неудивительно, что за Дукалисом в сериал подтянулись и другие "раскрученные" персонажи Ларин, Соловец и Волков, которые помогают товарищу не только добрым советом и коротким тостом, но и реальными действиями. Интересно, что в ЗНовых приключениях ментовИ на НТВ подобный поворот событий не предусмотрен. Получается, что доблестные служители порядка ведут двойную жизнь, навлекая тем самым тень на плетень родной милиции. Более того, некоторые персонажи, погибшие в "Улицах...", вновь воскресают в новом сериале. Реинкарнация какая-то получается. "Менты "Убойной силы", - утверждает Константин Эрнст, - сильно отличаются от персонажей предыдущего сериала. Они не разъезжают на джипах, не ходят в кожаных куртках, не пьют дорогие напитки в престижных барах. Им приходится гонять по городу на раздолбанной машине, справляться с абсурдной ситуацией, когда допотопный совковый лифт застревает, так как не в силах поднять четырех оперов в тяжелых бронежилетах. Они наши, российские, а не забугорные супермены". Замысел второй: авторский Сериал "Убойная сила", так же, как и первые серии "Улиц разбитых фонарей", снят по книгам Андрея Кивинова. Но на этот раз использованы другие повести. Более того, господин Кивинов теперь выступает еще и как сценарист. Он придумал свежий ход: единую связующую линию, проходящую через все серии, - герои борются с коррупцией с помощью внедрения молодого оперативника в преступную группировку, возглавляемую местным депутатом. В общем, в фильме прослеживается довольно заметная политическая подоплека, которая, как заявляет автор, ни в коем случае не намекает на реальных персонажей. Зато вполне реальными стали многие события фильма, ибо жизнь лучше любого драматурга пишет самые крутые детективы. Замысел третий: продюсерский Вполне резонно выглядит вопрос: "Зачем снимать еще один вариант Ментов"?И - "Войну и мир" экранизировали много раз, но это же не было плагиатом, - откомментировал продюсер и директор дирекции кинопрограмм ОРТ Анатолий Максимов, скромно поставив подопечного автора в один ряд с великим Львом Толстым. - Если сюжет фильма пользуется такой популярностью у зрителей, почему бы не продлить жизнь полюбившимся героям? - Литературные образы принадлежат мне, я их писал не по заказу ТНТ и могу использовать по своему усмотрению, - ответил автор Андрей Кивинов. - Если меня позовут сниматься в "Ментах" еще для какого-нибудь телеканала, я пойду. А почему бы и нет? Я актер, это моя работа, - в один голос ответили Сергей Селин, Алексей Нилов, Александр Половцев и Михаил Трухин. - Не хотелось бы огорчать господина Кивинова, но авторские права на экранные образы ЗМентовИ принадлежат мне. Скорее всего мы будем за них бороться, но не потому, что нам больше нечего снимать, - в настоящий момент у меня в производстве еще несколько сериалов, - весьма рассерженно заявил нам в телефонном разговоре продюсер тээнтэшной саги о ментах Александр Капица. Замысел четвертый: коммерческий Немудрено, что автор детективов использует внезапно нагрянувший спрос на его произведения по максимуму. Да и актеры, исполнители главных ролей фильма, стараются получить все дивиденды с обрушившейся на их головы и кошельки славы. Не вызывает удивления и то, что руководство ОРТ, однажды прокрутившее в своем эфире тээнтэшный сериал, поняло, что выгоднее завести свою "курочку Рябу". В проигрыше остаются только нынешние руководители ТНТ Павел Корчагин и Сергей Скворцов, которые три года назад отыскали в пыльных шкафах РТР кассеты с первыми восемью сериями фильма "Улицы разбитых фонарей", признанного низкокачественным и бесперспективным проектом, и убедили всех, что у сериала большое будущее. Самое время сказать "спасибо" первопроходцам. То, что не входило ни в какие замыслы Конечно, ни в один замысел не входили абсурдные, забавные и необычные истории, которые происходили во время съемок. Большинство проблем ментам киношным создавали менты настоящие. Стоит артистам, вооружившись автоматами, совершить марш-бросок по улицам славного Питера или взорвать пару-тройку списанных автомашин, как доблестные стражи порядка тут как тут: "Ваше разрешение на пиротехнические работы?" А если учесть, что съемки проходили прошлой осенью, когда большинство граждан, напуганных участившимися взрывами в жилых домах, проявляли чудеса бдительности, с утра до ночи сигнализируя в милицию о странных предметах и подозрительных звуках, то можно легко представить, как сложно было оформить это самое разрешение. Но в основном сотрудники питерской милиции относились к "ментам" с большой любовью и даже просили у них автографы. Андрей Федорцов, который исполняет в сериале роль Василия Рогова, вспоминает: "Мы с Серегой Селиным (Анатолий Дукалис) стояли на набережной Невы, репетировали сцену, как я роняю в речку пистолет. Пистолет у меня был свой - газовый, его я и использовал, чтобы не терять времени, пока принесут настоящий. Случайно поворачиваю голову в сторону и вижу, что на меня наставлено дуло боевого пистолета. Я механически отмахиваюсь, мол, у меня свой есть. А в ответ слышу весьма строгий приказ предъявить документы на право ношения оружия. Оказалось, что это настоящий оперативник, а я его за своего коллегу принял. Разобрались быстро, пока он одной рукой пролистывал мои документы, другой уже тянул Селину бумажку для автографа. Вообще, это не единственный раз, когда стражи порядка принимали меня непонятно за кого, однажды со съемочной площадки чуть не прогнали. Я не был занят в сцене, стоял и наблюдал за съемкой, видок у меня был, надо сказать, не очень свежий: лицо помятое, небритое - таков мой герой, вот меня и приняли за местного алкоголикаИ. А вот еще любопытный эпизод: по сюжету видный политический персонаж подкупал своих избирателей, раздавая им на площади кур... Петербуржцы, оказавшиеся рядом, приняли съемку за благотворительность местных властей и выстроились в очередь. В заключение хотелось бы предложить двум конкурирующим телекомпаниям устроить состязание: кто больше серий снимет? Кто больше денег вложит? Даешь беспрерывный показ сериала! Ну а потом можно приступить к выпуску именной продукции: водка "Убойная", рыбные консервы "Менты в томате", колбаса "Пикник с Дукалисом", успокоительные капли "Нилов-сон", средства мужской контрацепции "Казанова". <br />
+<br />
+Мотали срок в ментуре рецидивистки Екатерина РОМАНЕНКОВА, Татьяна АЛЕКСЕЕВА <br />
+<br />
+http://usila.narod.ru/press8.html</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="237.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

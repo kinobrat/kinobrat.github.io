@@ -1,0 +1,686 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="80.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Стенограмма пресс-конференции открытия продюсерского центра "БРАТ"</b><br><br></div>
+<div align="justify">27 марта 2002 года. <br />
+Белая гостиная Дома Кино<br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_1.jpg" alt=" 12.11 Kb" width=195 height=140 vspace=10></div><br />
+<br />
+К сожалению, по техническим причинам стенограмма пресс-конференции была сделана с видеоматериалов, а не с диктофона. Поэтому она представлена в сокращении. <br />
+<br />
+ <div align=center><img src="http://www.kinobrat.ru/img_msg/80_11.jpg" alt=" 3.68 Kb" width=80 height=110 vspace=10></div><br />
+<b>Наташа Иванова, продюсер:</b> Дамы и господа, мы начинаем нашу пресс-конференцию, посвященную дню открытия продюсерского центра Михаила Пореченкова "Брат". Вообще-то центр существует уже несколько месяцев, но нам хотелось сделать официальное открытие в День Театра, так как одно из направлений работы продюсерского центра - это актер, защита его прав и т.д. Но долгих слов вперед говорить не надо. Лучше сейчас представлю всех присутствующих, которым вы сможете задать интересующие вас вопросы.<br />
+Чтобы наша информация была наиболее полной, мы пригласили председателя СТД Николая Бурова, он же актер Александринского театра, председателя Союза кинематографистов Евгения Татарского, председателя гильдии киноактеров Евгения Леонова-Гладышева, главного юриста продюсерского центра Инессу Юрченко и главного человека - Михаила Пореченкова. <br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_2.jpg" alt=" 10.03 Kb" width=195 height=140 vspace=10></div><br />
+<b>Михаил Пореченков, генеральный директор:</b> Я должен, наверное, сказать тронную речь, поздравить с Днем Театра и сказать, что мы именно к этому дню приурочили открытие нашего продюсерского центра. А теперь, что вас интересует, пожалуйста, спрашивайте. Мы уже работаем 3 месяца и кое-что успели за это время.<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_4.jpg" alt=" 2.44 Kb" width=80 height=110 vspace=10></div><br />
+<b>Николай Буров, председатель Петербургского отделения СТД:</b> Дорогие братья и сестры, поздравляю с Днем Театра всех , кто имеет отношение к театру. А кто не имеет, я не знаю, - каждый, наверное, хоть раз в жизни побывал в театре, если он не из глухой деревни. Во-вторых, я хотел бы поприветствовать саму идею, декларированную в этих симпатичных листочках и рассказанную уже на словах. Потому что, если возникает идея создания такого мощного организованного движения, значит, не хватает деятельности тех союзов, которые существуют уже много лет. Я возглавляю отделение союза театральных деятелей Петербурга и области, и я догадываюсь, чего не хватает моим коллегам в СТД. Наверное, сейчас придет Татарский и расскажет, чего не хватает его коллегам, особенно молодым, которым еще не надоело чесаться. Если будет выполнено то, что декларируется, то будет сделана колоссальная работа, которая сегодня старикам не по силам. Я имею в виду почтенный возраст Союза театральных деятелей - 125 лет, Союзу кинематографистов - больше 75-и лет. Если альтернативное движение ставит перед собой те же задачи, и решит их, то мы будем просто счастливы, а я уже готов участвовать, содействовать. Потому что задачи замечательные и они помогли бы решить целый ряд проблем, которые обозначаются кем-то как кризис репертуарного театра. Хотя, на мой взгляд, кризиса нет, а нужно найти какие-то новые рычаги и формы. Вот возникает новый рычаг, новая форма. Ура!<br />
+<br />
+<i>Вопрос: Расскажите подробнее о проектах. Что за пьеса готовится к постановке?</i><br />
+<br />
+  <br />
+<b>Пореченков:</b> Это современная пьеса. Она идет с успехом в Лондоне. Она переводится, и это будет первая постановка театральная у нас. У нас есть. естественно, передача Extreme, которая идет на РТР-Петербург . Еженедельная. Появится скоро еще одна передача - о театре. Молодая творческая группа делает. У нас есть много предложений. У нас есть работы, которые пока не могут получить финансирования. И мы стараемся его получить, чтобы завершить начатое и недоделанное. Это художественный фильм. Мы пытаемся работать по всем направлениям. Также в наш актив мы можем занести дело о незаконном использовании лица. То есть без заключения контракта, и без согласия актера используется лицо.<br />
+<br />
+<i>Вопрос: А поконкретнее?</i><br />
+<br />
+<b>Пореченков:</b> В интересах следствия мы не можем поконкретнее. Но когда дело будет завершено, мы обо всем расскажем. <br />
+<br />
+(Шум в зале). <br />
+<br />
+<i>Вопрос: Судя по вашему релизу, у вас выходит одновременно 5-6 программ. По названию понятно - дорогостоящие. Откуда деньги? И есть ли договоренность с каналами?</i><br />
+<br />
+<b>Пореченков:</b> Мы говорим о том, что запланированы эти программы. Первая, которая идет на канале РТР - Extreme, которая довольно высокий рейтинг держит. Мы сами производим эти программы. У нас есть договоры с каналами. Это Москва, НТВ... (Шум в зале).<br />
+<br />
+<b>Наташа Иванова:</b> В городе, не только в нашем, есть люди, которые готовы вкладывать деньги в актеров, в проекты...<br />
+<br />
+<i>Вопрос: Вы себя рекламируете как "независимые" и "альтернативные". Объясните, от кого независимые, и почему вы альтернативные?</i><br />
+<br />
+<b>Пореченков:</b> Мы независимые, потому что мы негосударственная структура.<br />
+<br />
+<i>Вопрос: Так вы все равно от кого-то зависите. (Смех в зале).</i><br />
+<br />
+<b>Пореченков:</b> Но я сам от себя завишу, от своего партнера, от господа Бога...<br />
+<br />
+<i>Вопрос: Скажите по-простому, зачем вам это надо?</i><br />
+<br />
+<b>Пореченков:</b> Знаете, я устал. Устал от того, что актеры народ незащищенный. Я не говорю о том, что иногда не выплачиваются деньги по контракту. Я говорю об условиях работы в кино. Я говорю о заключении контрактов в театре. Многие даже не знают, что это такое. Существует контракт на одном листочке, в котором не оговаривается никаких прав и практически ничего. Все права забирает производитель. <br />
+<br />
+<i>Вопрос: Но у вас-то все складывается благополучно.</i><br />
+<br />
+<b>Пореченков:</b> Я вам скажу, у меня были моменты, когда меня объезжали как могли. Это - по-простому. Хотелось бы, чтобы молодые актеры избежали такой участи.<br />
+<br />
+<i>Вопрос: Насколько реально соперничать с Москвой?</i><br />
+<br />
+<b>Пореченков:</b> Не соперничать, а сотрудничать. Соперничать никто не собирается.<br />
+<br />
+<i>Вопрос: Но ведь есть неравенство: брать актера из Питера - дешевле?</i><br />
+<br />
+<b>Пореченков: Точно так же можно демпинг производить. Нет проблем. Тут мы в равных условиях практически. У нас уже появилось большое количество личностей раскрученных, как питерских и московских актеров. Мы будем за это бороться.</b><br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_6.jpg" alt=" 12.69 Kb" width=300 height=188 vspace=10></div><br />
+<i>Вопрос: Что вы имеете в виду под частными художественными школами?</i><br />
+<br />
+<b>Анвар Либабов:</b> У нас "Лицедеев" уже есть опыт первой частной школы. На основе клоунады. Я это говорю не для рекламы. И теперь после первого опыта мы создаем второй, и надеюсь, что у нас будет братство с "братьями".<br />
+<br />
+<i>Вопрос: А что уже реально ощутили актеры? И как относятся к вашему названию те, кто имеет отношение к фильму?</i><br />
+<br />
+<b>Пореченков:</b> Давайте сначала на первую часть. На вторую будет коротко.<br />
+<br />
+<b>Либабов:</b> Во-первых, волнует проблема актера. Его защищенность. Ведь он такой чуткий, тонкокожий. Второе - он там не снялся, там не снимется, а годы идут. Третье - впервые меня спросили любезно и очень профессионально. Не просто "мы вас хотим пригласить, придите туда-то, получите столько-то". Впервые со мной общались как с Актером с большой буквы. И последнее - актерское братство. Мне кажется, актерская лодка, она никем не управляется, а когда братство, то все вместе - и это здорово.<br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_5.jpg" alt=" 8.67 Kb" width=300 height=193 vspace=10></div><br />
+<b>Андрей Федорцов:</b> Представьте, что вы не работаете ни в одной из газет. И вдруг вам звонят и говорят: "Приходи". Хотя у меня есть работа, но мне сразу предложили роль в театре. Я очень долго этого ждал, на самом деле. И не только ждал. Я и в Москве отдавал свои фотографии, и здесь. И впервые Миша Пореченков предложил мне роль в спектакле.<br />
+<br />
+<b>Сергей Селин:</b> Считается, что у нас очень большие гонорары. Но, поверьте, право авторское в стране не работает. И первое, чего хотелось бы, - это защиты.<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_7.jpg" alt=" 10.19 Kb" width=300 height=191 vspace=10></div><br />
+<br />
+<b>Буров:</b> Среди отцов-учредителей этого движения сидят братья, которые успели вскочить в уходящий поезд. И они хотят протянуть руку тем, кто еще не успел вскочить в этот идущий поезд. А в этот поезд прыгать трудно и опасно. И вот они, благополучные уже люди и раскрученные, хотят помочь. Мне надоело смотреть, как имели, имеют и хотят иметь всеми мыслимыми и неприличными способами моих коллег-актеров.<br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_3.jpg" alt=" 10.22 Kb" width=195 height=140 vspace=10></div>   <br />
+<b>Илья Шакунов, директор Актерского Агентства, актер ТЮЗа:</b> Сам я актер ТЮЗа и не собираюсь заканчивать своей карьеры, собираюсь продолжать играть в театре. Но вот это бесправие, с которым я сталкиваюсь на каждом шагу... Как что-нибудь сделаешь, так на этом кто-нибудь зарабатывает денег, а ты потом еще долго расхлебываешь. И когда ты видишь, что идущие за тобой делают те же ошибки, а они их не могут не совершать. Им не к кому обратиться. Где у нас в городе есть подобные организации? Все что я знаю, это все про Москву. Там уже речь идет о том, что у каждого актера должен быть личный агент. А мы находимся где-то очень далеко от такого цивилизованного агентства. Но может быть, и не очень далеко. И мне хочется, чтобы в этом был уверен не только я. Но и каждый вступающий в наше агентство.<br />
+<br />
+<i>Вопрос: А на каких финансовых условиях, скажите уже что-нибудь конкретное. На какой основе?</i><br />
+<br />
+<b>Пореченков:</b> Давайте наш юрист ответит на эти вопросы. (Шум в зале).<br />
+<br />
+<i>Журналист: Директор актерского агентства должен знать это, а вы ничего не можете сказать.</i> <br />
+<br />
+<b>Юрченко Инесса, юрист продюсерского центра:</b> Господа, пожалуйста, все вопросы, которые интересны вам по договору, непосредственно заключающемуся между актером и актерским агентством, задавайте мне.<br />
+<br />
+<i>Вопрос: Я видел таких агентств уже штук двадцать. Все они уверяют, что готовы за актера грудью...Вы можете предоставить типовой договор?</i><br />
+<br />
+<b>Юрченко:</b> Я вам сразу могу ответить, что типового договора не существует. Его не может существовать. Есть " рыба" договора. (Шум в зале). Если вы некомпетентны, что я могу сделать.<br />
+<br />
+<i>Вопрос: На какие деньги вы существуете?</i><br />
+<br />
+<b>Пореченков</b>. (Смеется): Это гульдены, были. Теперь это евро. (Шум в зале). <br />
+<br />
+<div align=center><img src="http://www.kinobrat.ru/img_msg/80_8.jpg" alt=" 10.85 Kb" width=300 height=204 vspace=10></div><br />
+<b>Андрей Зибров:</b> Все мы и вы заинтересованы иметь работу. Нам, актерам, нужно много интересной работы, пока есть желание и силы. Я верю, что пока мы с этими ребятами, в этом агентстве, у нас будет много работы. Я на это очень надеюсь. И верю в это. (Шум в зале).И потом, общаясь с этими ребятами, я понял, что эти люди не подведут в трудную минуту. Если такая минута настанет. Вот и все пока. На данный момент.<br />
+<br />
+<i>Вопрос: Сколько всего актеров в агентстве?</i><br />
+<br />
+<b>Пореченков:</b> Около 300. Недостаточно, да? Понимаю.<br />
+<br />
+<i>Вопрос: База данных будет платной?</i><br />
+<br />
+<b>Пореченков:</b> Нет, бесплатной. База данных будет существовать в Интернете. На сайте центра. Если конкретная работа, или выберут актера и конкретный договор с ним хотят подписывать, процент не более 10, как во всех агентствах. Но у нас есть гибкая система ...взаимоотношений, скажем так.<br />
+<br />
+<b>Либабов:</b> У меня ощущение, что половина журналистов работает в газетах "Версия", "Совершенно секретно" либо "Финансово-экономический вестник". Но ведь есть другие, фундаментальные вопросы. Такие, как юридическая защищенность актера, обеспечение работой. <br />
+<br />
+<i>Вопрос: Объясните, почему российская премия для русского сценариста будет носить имя итальянца, а не какого-нибудь достойного российского классика.</i><br />
+<br />
+<b>Пореченков</b>: Во-первых, мы считаем Тонино Гуэрру давно уже русским человеком, он принадлежит все-таки мировой культуре, потому что он работал с классиками мирового кино. И их уже невозможно назвать итальянцами. Например, рука не поднимается сказать, что Феллини - итальянец. Все-таки человек русский. Человек русский, он принадлежит всему миру. Тонино Гуэрра очень часто бывает в Петербурге, очень любит этот город, супруга его русская, из Петербурга. Не знаю, кому-то это кажется недостойным?<br />
+<br />
+<i>Крик из зала: А он сам-то об этом знает?</i><br />
+<br />
+<b>Пореченков:</b> По всей видимости, он знает, по всей видимости он с нами сотрудничает. Мы его считаем нашим Большим Братом. (Шум в зале).<br />
+<br />
+<b>Наташа Иванова:</b> Тонино Гуэрра знает об этом. Он дал свое согласие с удовольствием.<br />
+<br />
+<i>Вопрос: А кто будет подводить результат?</i><br />
+<br />
+<b>Пореченков:</b> Ну, естественно, подводим результаты мы, не итальянского происхождения. И представители комитета, который проводит неделю Тонино Гуэрры в Петербурге.<br />
+<br />
+<i>Вопрос: Я прошу прощения, во-первых по поводу Сельянова и Балабанова вы не ответили. Во-вторых, в пресс-релизе указано, что вы участвуете в создании некоего детского сериала. В двух словах, только не говорите "в интересах следствия", пожалуйста.</i><br />
+<br />
+<b>Пореченков:</b> Все люди, имеющие отношение к фильму, об этом знают. Снимаются там дети. А как Балабанов с Сельяновым к этому относятся, нужно спросить у них. Потому что мы написали...слово "брат" давно уже существует. (Шум в зале) Н.И.: Фильм снимала выпускница ВГИКа. Из известных вам имен - оператор Юриздицкий.<br />
+<br />
+<i>Вопрос: Были ли случаи отказа от вступления в актерское агентство?</i><br />
+<br />
+<b>Пореченков:</b> Пока случаев не было.<br />
+<br />
+<b>Шакунов:</b> На сегодняшний день мы даже непрофессионалов принимаем в агентство бесплатно. Потому что мы официально вот только сейчас открываемся. А до этого был неофициальный прием, мы принимали даже профессионалов бесплатно. Это очень большая кропотливая работа, мы даже не успеваем. Вы увидите, если залезете на сайт. Ведь кто-то любит по цвету волос выбирать, кто-то по лицам. Кому-то нужно выбрать модель для модельного агентства. Кто-то выбирает рост, вес. Так что там будет большой критерий отбора для людей в интернете. <br />
+<br />
+<b>Пореченков:</b> Первая страничка уже открыта. Адрес вы, наверное, знаете: www.kinobrat.ru<br />
+<br />
+<b>Шакунов:</b> Принимаем профессионалов и непрофессионалов. На сегодняшний день все бесплатно. Дело не в том, что мы на этом хотим заработать денег. Почему-то все думают о том, что на этом нужно зарабатывать деньги. Я сам актер. Я не хочу зарабатывать на том, что я на хороших отношениях буду актера заманивать, а потом буду снимать с него деньги. Я считаю, что это как-то не по-нашему, не по-братски.<br />
+<br />
+<b>Пореченков:</b> Единственная цель продюсерского центра - приглашать всех на работу и давать им эту работу. <br />
+<br />
+<b>Шакунов:</b> Актер приходит к нам. Я хочу, чтобы он знал даже, какие работы осуществляют другие актеры. Какие работы существуют в проекте.<br />
+<br />
+<i>Вопрос: Так вам надо было "Братство" назваться. Вы все говорите "братство, братство".</i><br />
+<br />
+<b>Пореченков:</b> "Братство"? Тоже неплохо. Мы очень долго думали.<br />
+<br />
+<b>Шакунов:</b> Да в конце концов хоть " кленовый листочек" назови. Главное - хорошая работа и хорошее отношение к этой работе.<br />
+<br />
+<i>Вопрос: А не мало одного юриста на 300 человек?</i><br />
+<br />
+<b>Пореченков:</b> А он не один.<br />
+<br />
+<b>Юрченко:</b> На самом деле, при продюсерском центре существует юридический отдел, в который входят три юриста. Один с очень большим стажем. Он специализируется только на авторских и смежных правах и имеет очень большой опыт работы в этой области. Вообще работы очень много. Я не знаю, почему у вас возникло так мало вопросов ко мне, потому что на самом деле основная сейчас задача актерского агентства - это предоставить юридическую защиту актерам. Она может быть разной. Это всегда индивидуальная работа и очень сложная работа. Как правило, у нас мало специалистов в этой области. Потом по защите репутации. Насколько вы знаете, это существует только за границей, где все предусмотрено законом.<br />
+Но и мы пытаемся делать все , что предусмотрено в рамках закона. И есть одно дело, которое мы смогли выиграть. Четыре месяца мы воевали. И так мы уже работаем два года. И с Кузнецовым, и с Мельниковой.<br />
+<br />
+<i>Вопрос: Вы можете осуществлять юридическую защиту в рамках агентства?</i><br />
+<br />
+<b>Юрченко: Да, конечно. У нас составлены документы. Все продумано. Мы свои интересы умеем отстаивать.</b><br />
+<br />
+<b>Пореченков: Мы - зверобои.</b><br />
+<br />
+<i>Замечание из зала: Вот когда вместо елок пойдут приглашения в Голливуда, вот тогда...</i><br />
+<br />
+<b>Пореченков:</b> На самом деле, это вещи абсолютно реальные. Если вы знаете, то приглашают из Голливуда наших актеров.<br />
+<br />
+<b>Юрченко:</b> Приоритет международного права.<br />
+<br />
+<b>Пореченков:</b> Машков, Балуев.<br />
+<br />
+<b>Леонов-Гладышев, председатель гильдии киноактеров:</b> Я еще не очень в материале. Только что закончился секретариат Союза кинематографистов. Я скажу самое главное и принципиальное: вообще учреждение продюсерской группы в городе в какой-то степени будет дублировать то, чем мы уже занимаемся 13 лет - это замечательное новшество. Питер - это город областной, город трех революций и пяти контрреволюций. В Москве таких агентств очень много. Это очень серьезный, прибыльный бизнес. И вы, наверное, обратили внимание, что московские проекты театральные и кинематографические практически оккупировали Петербург. И вы практически не назовете случаев, когда петербургские спектакли, петербургские премьеры, антрепризные, небольшие, недорогие, малобюджетные постановки идут на московских сценах. Поэтому Михаил Пореченков, хороший парень, которого мы все любим, уважаем и замечательно, что это начинание сегодня наблюдается. И я думаю, что вы будете сотрудничать и с Гильдией актеров, и с Союзом кинематографистов, который представляет замечательный Петербургский режиссер Евгений Маркович Татарский. Он сейчас отдышится и скажет несколько слов. У меня все.<br />
+<br />
+<b>Татарский:</b> Пока я сюда шел, мне сказали, что на наших артистов тут пресса напала. А что, у вас все замечательно. А что мешает нам сотрудничать? Еще вопросы? (Молчание). Я вовремя пришел.<br />
+<br />
+<b>Конец</b><br />
+<br />
+Приносим благодарность директору Дома Кино Виктору Агранатову и Людмиле Вавиловой за помощь в организации пресс-конференции.</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="80.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

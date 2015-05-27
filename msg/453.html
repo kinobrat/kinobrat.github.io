@@ -1,0 +1,587 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="453.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Гадание по "Дереву". Интервью Надежды  Демкиной с Антоном Адасинским. // Невское время.  - 2003. - 4 апреля.</b><br><br></div>
+<div align="justify"><b> Весь город шумит: в Питер опять приехал театр "Дерево". В рамках фестиваля "Золотая маска" можно будет увидеть последнюю работу увенчанного всевозможными европейскими наградами театра - "Острова в океане". А благодаря продюсерскому центру "Брат" мы снова увидим спектакль "Однажды". </b><br />
+<br />
+Театр-танец, театр-перформанс, мим-театр, театр-потрясение, "Дерево" выросло в Ленинграде. Антон Адасинский начинал в труппе Вячеслава Полунина, с легендарными "Лицедеями". Вместе с единомышленниками он двигался от клоунады и перформанса к модерн-танцу и новой школе движения. Но подходящей почвы для "Дерева" в России не нашлось. Антон Адасинский, Татьяна Хабарова и Елена Яровая - трое, составляющие ствол "Дерева", в начале 90-х уехали в Европу. Последние 6 лет театр живет в Германии, в Дрездене им отдали здание фабрики. Гастроли по всему миру, съемки собственного фильма, запись музыки, интернет-проект - кажется, нет такой среды, в которую бы "Дерево" не пустило корней и не принесло плодов. Наутро после новой встречи с питерской публикой Антон Адасинский ответил на вопросы "НВ". <br />
+<br />
+- Как вчера прошел спектакль? Как вы снова встретились с Питером?<br />
+<br />
+- Да, вчера мы ощутили, что было много новой для театра публики. Чувствовалось, что для многих было неожиданно видеть, что такое может происходить на сцене. Это дает нам надежду на то, что мы сможем больше работать здесь. Потому что люди, которые потеряли веру в какой-то живой театр, вдруг благодаря хорошей рекламе пришли на спектакль. <br />
+<br />
+- Каким вы видите своего зрителя?<br />
+<br />
+- У нас есть желание видеть больше молодых людей в зале, которые меньше анализируют происходящее и меньше подкованы в какой-то там теории театрального действа и просто с удовольствием сопереживают происходящему. Это происходит в России. Тинейджеры, которые называют "Дерево" культовой группой, запах рок-н-ролла в зале - это здорово. <br />
+<br />
+- А как реагирует публика за границей? <br />
+<br />
+- За границей с молодежью в театре тяжелей. Там, где мы работаем, в Дрездене, в Германии, театр еще более традиционен, поэтому молодые люди, идя в театр, точно представляют, что они могут увидеть. Люди 35-40 лет - это наша публика там. А 16-17-летние, которые клеят жвачку под кресло и скрипят банками с пивом, - это редкость.<br />
+ <br />
+- Вы бываете в Питере наездами, даже реже...<br />
+<br />
+- Реже, чем хотелось бы. <br />
+<br />
+- Каждый раз это новый город для вас? Что-то меняется?<br />
+<br />
+- Меняется, только очень медленно. Движение в сторону бизнеса, рынка - это нормально, видимо, для развития. После такого гигантского упадка нормально, просто надо это пережить. Надо пережить эти уголовно-бандитские песни, звучащие в каждой машине. Ну, переживем, уже меньше стало. В прошлый раз приезжал, было вообще засилье. Сейчас полегче. <br />
+Ну а то, что люди выживают, ищут заработки, много говорят о деньгах, это тоже нормально. Потому что цены безумные. Некоторые вещи дороже, чем в Германии, раза в два, причем зарплаты здесь и там - несравнимые. Как это происходит - загадка. Ну и приятно, что средний класс стал более выпуклым. Раньше была нищета - и сразу миллионеры, а теперь есть люди, которые нормально зарабатывают, выглядят, посещают театр. <br />
+<br />
+- Сейчас тема наличия в России среднего класса ожесточенно обсуждается - есть он или его нет?<br />
+<br />
+- Средний класс, мне кажется, можно определить по заработку. Это человек, работающий на своей небольшой работе, делающий свое дело хорошо. Не знаю, например, начальник отделения больницы Скворцова-Степанова - не начальник больницы, а начальник отделения. Научные сотрудники, преподаватели вузов. Эти люди стали поживее, посвободнее. Раньше люди просто бежали с такой работы куда угодно, были ночными сторожами и писали какие-то статьи на Запад, чтобы хоть что-то заработать. Сейчас, говорят, стало получше. <br />
+Идиотизма много вокруг. Понятно, что это обычное воровство, надо успеть ухватить деньги, отломить кусок от пирога на праздник города. <br />
+Все это даже грусти уже не вызывает, потому что однажды будет наказано каким-то образом. Ворованные деньги не принесут счастья - только болезни. Ничего просто так не бывает. И те, кто ворует, должны об этом знать. Пусть воруют. <br />
+Плохо, что эта зараза начинает распространяться на маленьких ребят, на детей...<br />
+...Ну и безумно смешная реклама. Безвкусица художников города или их попустительство в расклейке по городу всей этой туфты позорно меняет облик Питера. Все заляпано сине-красными кислотными объявлениями, за которыми уже ничего не видно. Кто-то должен беспокоиться о цвете крыш, о том, как выглядит наш город, наш родной Питер. Это по-прежнему наш прекрасный город с белыми ночами, с мостами - да, он есть, никуда не делся, но "украсили" его здорово. Надеюсь, эта мишура в один день осыплется. <br />
+<br />
+- Вы рассказывали о ваших совместных с Вячеславом Полуниным проектах к юбилею города - огненном, лунном, водном и так далее. Какова вероятность того, что хотя бы один из них будет осуществлен этим летом?<br />
+<br />
+- Обо всем можно говорить с одинаковой степенью вероятности/невероятности, потому что все зависит от денег и от частных лиц, которым это интересно. Театру и культуре сейчас помогают выживать в основном частные лица или небольшие компании. От государства сейчас ожидать чего-либо трудно. Разве что на очень высоком уровне. И даже Гергиев, делая "Щелкунчика", работал со спонсорами, с банками, не с государством. Так что, какой Слава выберет проект, с тем и будем работать. Но в России работать сложно, когда все подписанные сегодня гарантии завтра могут быть аннулированы. <br />
+Так получилось с проектом "Кунсткамера" в Петропавловской крепости. Я поднял с дивана людей, сказал: берите себя в руки, собирайте талант в кулачок, сделаем классный проект. Я собрал всех старых знакомых - от "митьков" до Бориса Гребенщикова. Все сказали: здорово, наконец будет место, где мы все снова встретимся и тряхнем бородами. Они же все гениальные люди. Но сейчас нет места встречи, и все сидят по квартирам. Эта квартирная культура, вернувшаяся в Россию, помогала выживать в 80-х годах, но сейчас вызывает только грусть. Все расселись по кухням и делаем там свое творчество. Нужно место. И это отлично понимает Путин. Поэтому в разговоре с Михаилом Шемякиным он долго обсуждал возможность открытия подобного центра в Москве. <br />
+А в Петербурге сейчас Гергиев обсуждает проект об открытии культурного центра под эгидой Мариинского театра в Новой Голландии. Но нужно приложить огромные усилия, необходимо договориться с армией, как и когда они оттуда выйдут. Когда сталкиваются армия и государство - это непростые вопросы. А Гергиев много ездит, много работает. Чтобы делать что-то здесь - надо быть здесь. И Славе Полунину, и нам. Делать проект в России, живя где-то за ее пределами, невозможно. Дела по факсу или по электронной почте не делаются. Это каждодневные встречи, ругань, споры, решения, бумаги, поездки и головная боль - тогда что-то случится. <br />
+<br />
+- В этот ваш приезд в Россию вы будете искать здесь здание для своего театра?<br />
+<br />
+- Я вижу одно реальное место для "Дерева" и для многих других. Я ведь думаю не только о "Дереве". Есть еще люди, которые ищут свое место, их всех нужно собирать вместе. Новая Голландия - отличное место для этого. Трудно представить себе что-то лучшее, да еще и с помощью Мариинского театра. Это был бы идеальный вариант. К сожалению, сейчас Гергиева здесь нет, и это несовпадение сроков, его огромная загруженность немножко тормозят процесс. <br />
+Если есть другие у кого-то варианты, все, кто прочитает эту статью, все, кто хоть как-то думает об этом, называйте любую фабрику, любое здание, от доков в Кронштадте до казематов в Петропавловке, будем думать и работать. Может, кто-то знает интересные места, где мы сможем сделать зал на 300-400 мест и помещения для художников, музыкантов и прочих, - называйте. Давайте собирать силы. Это похоже на прямое объявление в газете. <br />
+<br />
+- "Ищу дом"?<br />
+<br />
+- Да. Пушкинская мала, там просто негде работать. Но люди живы и хотят работать вместе. <br />
+<br />
+- Вы играете спектакли сериями, сессиями, когда несколько дней подряд идет один спектакль.<br />
+<br />
+- Иначе просто невозможно. Нужен баланс между физической работой техников, звукооператоров, осветителей и результатом спектакля. Вот мы собрались, построили, и можно спокойно работать. А если каждый день менять декорации, начнется обычный репертуарный театр. Мы делали серии по 25, по 40 спектаклей в Эдинбурге, в Лондоне, это было замечательно. <br />
+<br />
+- У вас очень напряженный график гастролей. Когда и как театр "Дерево" находит время для создания новых спектаклей?<br />
+<br />
+- По ходу. Накопление происходит само по себе, как у любого человека. Вдруг в один день образуется некая точка, будущий кристалл. По каким законам, из какого мусора прорастает жемчужина в раковине - невозможно определить. Среди опыта последних месяцев возникает завязь жемчужины. Пора работать, делать спектакль. И опять же, это происходит очень легко. Нет такого: сейчас я сяду в 11 утра и напишу сценарий! Сценарии мы никогда не пишем. Я просто вижу, что в наших импровизациях, разговорах возникает какая-то новая тема. А мы, как люди театра, танца, сцены, должны эту тему вытащить. <br />
+Все говорят, что "Дерево" подключено к какой-то системе, мы попали в некую волну. То, что мы делаем, потом находит отражение не только в других театрах, но даже в политике и в других сферах жизни где-то через полтора-два года. Говорят, по нашим спектаклям можно что-то предсказывать. В спектакле La divina commedia есть самая жесткая и страшная сцена с огнем, уродами, нищими, она носит название "Багдад". На днях мы перечитывали список сцен в спектакле и соотнесли это название с тем, что сейчас происходит в Багдаде. Почему полтора года назад мы дали такое название? Никто из нас в Багдаде не был. Или когда мы начали репетировать спектакль "Острова в океане", немецкая пресса написала о том, что "Дерево" делает спектакль о воде и собирается своим талантом потопить город. Через полгода было гигантское наводнение. Странные вещи. Все висит в воздухе, мы просто быстро это ловим и быстро реализуем. Мы хватаем волну и делаем, но это не становится в наших спектаклях ни политическим, ни актуальным в плохом смысле этого слова - это становится формой искусства. <br />
+<br />
+- "Острова в океане" совсем новая работа?<br />
+<br />
+- Да. Премьера "Островов" была этой зимой. Это совершенно свежий спектакль, который Питер увидит в одной форме, а может, через год-два это будет абсолютно другая работа. Это очень непохоже на то, что делает "Дерево". <br />
+<br />
+- Так можно сказать о каждом вашем спектакле.<br />
+<br />
+- Да. Но на этот раз мы взяли себя в руки и сделали очень спокойную работу. Народ ждет опять напряженных мышц и внутреннего крика, а тут будет история, рассказанная шепотом. Это непросто - шепот нужно проговаривать, чтобы тебя было отчетливо слышно. <br />
+<br />
+- Кем бы вы могли еще стать?<br />
+<br />
+- Я стал бы авантюристом, вором, потому что мне интересно играть с миром, обманывать законы и правила, давать новые ответы на привычные вопросы. Я мог бы из спортивного интереса заработать кучу денег, а потом из спортивного интереса их потратить. Возможно, был бы очень большим обманщиком - в позитивном смысле, - чтобы у людей расширялось и сдвигалось сознание.<br />
+<br />
+ <br />
+<i> Надежда ДЕМКИНА <br />
+<br />
+"Невское время"   <br />
+04.04.2003 </I></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="453.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

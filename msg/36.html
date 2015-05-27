@@ -1,0 +1,598 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="36.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Profi &#149; <a href='34.html' class=top style='color: white;'>&laquo;Борис Казаков&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="34.html" class=green><b id=gr>Борис Казаков</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Интервью</b><br><br></div>
+<div align="justify"><i><b>Бывают моменты (они редки), когда при соприкосновении с очередным произведением искусства - будь то картина, спектакль, роман - увиденное, услышанное, прочитанное производит странное, по началу трудно определяемое, но несомненное по силе своего воздействия впечатление. Оно не покидает тебя на протяжении многих дней, то затихая, то вспыхивая вновь, не давая покоя, как заданный когда-то вопрос, на который ответ до сих пор не найден. Понятно здесь не все и не сразу, но хочется, хочется об этом говорить и думать: Подобное ощущение оставляют за собой фильмы петербургского художника-аниматора Бориса Казакова. После их просмотра, спустя какое-то время, возникает желание вернуться к экрану, перемотать пленку и вновь погрузиться в иррациональный мир абсурдистских метаморфоз несуществующих героев. Несуществующих. Может быть, просто незамечаемых?</i></b><br />
+<br />
+<b>Неофициальное досье:</b><br />
+<br />
+Имя: Борис Казаков.<br />
+Год рождения: 1964<br />
+Профессия: Художник - аниматор.<br />
+Образование: Высшее техническое.<br />
+Специальность: Инженер - механик по гидромашинам, насосам и средствам автоматики.<br />
+<br />
+Первое осознание своего творческого 'я': 'Это было в детском саду. Мне мама в то время читала книжку про Робинзона Крузо, а я с восторгом рассматривал картинки. Герои этого произведения передвигались на пирогах, и это плавательное средство как-то особо, уж не знаю почему, поразило мое воображение. И вот, когда мы лепили в садике из пластилина какое-то задание, я вылепил вожделенную пирогу. Ко мне подходит воспитательница и говорит: 'А это что?' Я ей отвечаю: 'А это - пирога'. Она мне - бах! - затрещину: 'Какой такой пирог?!' Мало того, что она не соображала ничего в пирогах, так она еще  была и нелюбознательной: нет, чтобы расспросить - разве такими пироги бывают? Я, быть может, ей тогда рассказал бы про Робинзона Крузо: А так: Ну, ничего. Меня эта ситуация только закалила.'<br />
+Основные работы (не считая различных живописных произведений и многочисленных фотографий, точный перечень которых можно получить у героя этого материала): <br />
+Анимационные фильмы -<br />
+1992 г. - 'Страна встречает героев', цвет, 35мм, 6 мин<br />
+1997 г. - 'Птенцы моря', ч/б , 35мм, 6мин<br />
+1999 г. - 'Колы', ч/б, 35мм, 8 мин.<br />
+2000 г. - 'Облака', ч/б, 35мм, 4,5мин<br />
+2001 г. - 'Сирены Титана', цвет, 35мм, 4.44 мин<br />
+2001 г. - 'Собака', ч/б, 35мм, 5 мин<br />
+2002 г. - 'Око', цвет,35мм, 5.30 мин<br />
+<br />
+Основные этапы творческого развития:<br />
+<li>первая проба себя в искусстве - попытка решения запомнившегося образа в пластической форме - пластилиновая пирога (больше к пластическим формам в своем творчестве не возвращался);<br />
+<li>рисование комиксов воинственной тематики на школьных уроках;<br />
+<li>обучение в кружке фотолюбителей во Дворце пионеров и школьников;<br />
+<li>увлечение художественной фотосъемкой во времена студенчества;<br />
+<li>прохождение Школы Инженеров Искусств;<br />
+<li>осознанный выбор индивидуального творчества<br />
+<br />
+Фестивали и награды:<br />
+1998 г. - фильм 'Птенцы моря' - Фестиваль Короткого Документального Кино в Оберхаузене (Германия): 'Специальный приз кинокритиков'  <br />
+1999 г. - фильм 'Колы' - Берлинский Кинофестиваль: участие в конкурсном показе короткометражных фильмов.<br />
+1999 г. - фильм 'Колы' - Открытый Фестиваль Кино Стран СНГ и Балтии 'Киношок':<br />
+- 'Гран-при за лучший короткометражный фильм'<br />
+- 'Приз прессы за наибольший художественный эффект, достигнутый наименьшими средствами'<br />
+- 'Приз Гильдии киноведов и кинокритиков за лучший короткометражный фильм, за форму, ставшую содержанием'<br />
+2000 г. - фильмы 'Птенцы моря' и 'Колы' - участие в программе Роттердамского Интернационального Фестиваля, после чего копии фильмов были куплены Амстердамским Киномузеем.<br />
+<br />
+<i><b>Промозглым осенним днем из городской толчеи и суматохи вечно куда-то спешащих людей попадаю в туманную тишину, прорываемую редкой перебранкой зазаборных собак поселка Коломяги. Осторожно ступая по холодной, с упоением принимающей в себя мои острые каблуки, земле, подхожу к старинному деревянному дому. Во дворе стоит маленький светлый 'Запорожец', из той серии машин, которые давно уже являют собой раритетную ценность, и скупаются любителями экстравагантного транспорта за немалые деньги. 'Борина машина:' - знакомят меня с дворовым обитателем. 'Конечно, - думаю, - а на какой же еще машине может разъезжать истинный художник? Явно, что не на ординарной 'BMW' 'Только она не ездит:' 'Разумеется, - развиваю про себя начатую мысль, - не ездит. Как же на таком красавце можно ездить? Пусть лучше достойно открывает собой экспозицию эксклюзивных вещей своих хозяев:'<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Дом старый, с просторными полупустыми комнатами, не простой для обитателей современных квартир планировкой и дореволюционными лепными потолками. Здесь все - непривычно, все - необычно: кажется, что самые простые вещи - стол, стул, рояль - в общей атмосфере  помимо своего прямого назначения с гордостью  несут  более глубокий, более важный смысл своего существования.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Передо мной сидит необыкновенный человек обыкновенного вида: он невысок ростом, коротко стрижен, его движения по-мальчишески энергичны. Мы разговариваем. Мой взгляд, не в силах удержаться на чем-то одном, перебегает с его смеющихся темных глаз на задорно 'по-сальвадорски' подкрученные рыжие усы. Иногда ему надоедает сидеть на одном месте, и он начинает слегка поерзывать на деревянном табурете, подкладывая под себя то одну, то другую ногу:</i></b><br />
+<br />
+- На сегодняшний день я попробовал достаточное количество самых разных технологий. Я удивляюсь, почему никто не занимается тем же, чем и я, потому что, думаю, это - достаточно просто. Ничего не нужно, кроме пленки и каких-то элементарных материалов. Сейчас я понимаю, что с пленкой можно делать все, что угодно: главное, не нарушать ее плоскую форму, ее дырки  и ее ширину...<br />
+<br />
+-Своих 'Птенцов моря' я сделал из материала, который на полу нашел: на основе каких-то старых любительских черно-белых фильмов конца семидесятых годов. Я стал рисовать, стал процарапывать иголкой какие-то свои сюжеты по этой, уже отснятой кем-то, пленке, валявшейся как хлам в одной из мастерских. Использовал только тушь, перо и иголку. Занятие долгое, кропотливое. Метров тридцать разрисовал, смотрю - что-то вдруг стало получаться... <br />
+<br />
+-Можно рисовать по голой пленке: берется какой-то кусок, совершенно чистый, без изображения, и каждый кадрик процарапывается: Рисуешь героев - черточка за черточкой: Материалы - любые: чернила, маркеры водяные, маркеры спиртовые, краска для принтеров - я все пробую, накладываю разными слоями, как на палитру. Сейчас я собираюсь работать уже с 4-мя изобразительными слоями - сначала рисовать, потом уже раскрашивать. При хорошем качестве воспроизведения это вообще будет сносить!<br />
+<br />
+- Может быть техника по бумаге: на маленьких листочках  рисуются персонажи, потом эти листочки подкладываются друг под друга и снимаются камерой. 'Собака' создана именно таким образом. Потом делается копия, и копию можно при желании раскрасить...<br />
+<br />
+- Существуют коллажные фильмы: ты берешь, режешь кучу каких-то журналов, начинаешь картинки двигать. Подвинул чуть-чуть - снял, подвинул - снял: Но здесь есть свои минусы: например, у тебя есть человечек конкретного размера, и сделать так, чтобы он пошел на камеру, а все вокруг оставалось прежним очень сложно...<br />
+<br />
+- Также может быть съемка фотоаппаратом. Выбираешь какую-то линию движения и снимаешь. Дальше - проявка, склейка, и можно перегонять на видео. Если фотоаппарат полуформатный, то в нем не 36, а 72 кадра нормальной пленки, из которых получается 3 секунды фильма. Меня перестало это устраивать, и я немного модифицировал свой фотоаппарат: теперь он может снимать секунд на 40.  Я не знаю, кто придумал подобную съемку, но ведь это очень просто: Некоторые сюжеты лучше снимать именно таким образом - совершенно другая динамика получается у фильма...<br />
+<br />
+- Я не работаю с цифровой техникой, а занимаюсь такими аналоговыми вещами как кинопленка. Есть моменты, которые на компьютере сделать очень сложно, а на пленке это делается одним росчерком. При всем при этом сохраняется уровень качества, яркость изображения, его контрастность. Эта техника - нетрадиционная, и в ней можно делать самые разнообразные вещи, которые сразу обращают на себя внимание. Это важно в тех же рекламных роликах, например. Люди привыкли к современной трехмерной компьютерной графике, у них на нее уже глаз замылен, а здесь  - все иное: Чем отличается? Ну, скажем, тем же, чем эксклюзивная вещь, сделанная необычным образом, отличается от вещи серийной, заводской...<br />
+<br />
+<i><b>Художник от Бога. Художник милостью Божьей - человек, который, не смотря на все поперек встающие обстоятельства, занимается тем, чем НЕ заниматься НЕ может. Здесь речь не идет о многоступенчатом профессиональном образовании, об особом художественном климате, обволакивающем с рождения детей богемных родителей настолько, что выбор будущей профессии для них предопределен. Это совсем другая история - история пути, самостоятельно выбранного, индивидуально пройденного, вопреки оцарапывающим терниям - скептицизму окружающих, отсутствию средств, стихийно возникающим сомнениям: История пути единственно верного, потому что со временем оказывается, что другого и быть не могло.</i></b> <br />
+<br />
+- У меня высшее техническое образование. По крайней мере, есть диплом, где это написано. В школе я учился плохо, потому что на всех уроках мы с моим другом рисовали всевозможные комиксы - про пиратов, про индейцев: Родители очень хотели, чтобы я получил высшее образование, ну я и сделал им приятное. Кроме того, у меня стоял выбор: либо армия, либо дурдом, либо институт. Я выбрал последнее. Никакого специального художественного образования у меня нет. После школы думал в Серовское училище пойти вместе с приятелем, но там нужна была оконченная художественная школа, в которой я не учился - родители не предлагали, а сам я не рыпался. Но я считаю, что все нормально - я и так всю дорогу рисовал. В голове нет ничего лишнего, кроме того, что понял сам. Говорят, умные учатся на своих ошибках, а дураки вообще не учатся...<br />
+<br />
+- Во время учебы я сломал себе шею и лег в больницу. Потом взял 'академку', два года мне платили пенсию как инвалиду 2-ой группы, но, слава Богу, все обошлось. Зато у меня появилось море свободного времени. Я спокойненько себе сидел и рисовал картинки. Стал общаться со знакомыми ребятами из группы художников 'Старый город' - вместе выпивали, вместе выставлялись. Тогда спрос пошел на наши картины - 'перестройка, советское искусство!' - и мы удачно их продавали...<br />
+<br />
+- А потом я пришел к одному человеку - есть такой художник - Инал Иналович Савченко, увидел его картину 'Лисица на льдине' и потерял голову! Сказал ему: 'Мне очень нравится то, чем ты занимаешься, я хочу у тебя учиться', и он согласился со мной работать. Вот так я попал в Школу Инженеров Искусств, которую организовал Инал. Выглядела она как довольно большая, нестандартно оформленная мастерская, которая находилась на станции метро 'Петроградская'. Это была для меня действительно школа. Инал многое мне дал: то, что я видел у него, то, что он мне говорил, то, что делалось вокруг - оказало на меня значительное влияние. Мы рисовали большие картины 3х2, занимались фотографией, а главное, стали увлекаться анимацией. Брали 16-ти миллиметровую пленку, рисовали по ней, процарапывали, окурками прожигали - чего только не делали! Самое важное было - не нарушать ее геометрию, а все остальное допускалось...<br />
+<br />
+- Насмотревшись этих мультфильмов, к Иналу пришел Сергей Курехин и предложил снять профессиональный фильм, на 35 миллиметров, на студии 'Ленфильм'. Сказал, что найдет возможность это сделать при условии, что музыка к фильму будет его. Так появился фильм 'Стрела Амура', он был достаточно любопытным в смысле техники, но слабоватым по материалу. Это было в 91-92-ом году. После него мы сняли еще один фильм, немного покороче, 'Страна встречает героев' и видеоролик для группы 'Два самолета'.Затем я стал работать самостоятельно...<br />
+<br />
+- И были фестивали, и были награды. И тех, и других, в жизни Бориса Козакова на сегодняшний день могло быть гораздо больше...<br />
+<br />
+- Да призы - это все ерунда! Денег бы давали! Вспоминать фестивали, на которые меня приглашали, но я не ездил, - у меня голова вспухнет. Во-первых, многие из них не оплачивают дорогу. В Америке вообще наглецы страшные: ты им пришли свои фильмы, да еще заплати 50 долларов, как подтверждение, что ты к ним серьезно относишься, - вот такие пакости пишут...<br />
+Совершенно бестолковые люди! А во-вторых, на все фестивали не уездишься. Либо они становятся твоей работой, либо ты продолжаешь заниматься дальше своим творчеством...<br />
+<br />
+- После моего ухода из Школы Инженеров Искусств я сделал свой первый фильм 'Птенцы моря', с которым меня пригласили в 1998 году в Оберхаузен на Фестиваль Короткометражного Документального Кино, включив его в конкурсный показ.  Я подумал: 'А почему нет? Поеду, посмотрю:' Ну, поехал, посмотрел, получил какой-то приз от кинокритиков и вернулся домой. Меня более всего радовало, что мне копию напечатали: Через год со своим следующим фильмом 'Колы' я попал на Берлинский Кинофестиваль, где представлял Россию вместе с Сергеем Овчаровым, который привез свой фильм 'Фараон'. А после - полетели приглашения на самые разные фестивали: Но я уже ездить перестал, хотя, вот в Анапе еще на 'Киношоке' побывал, да в 2000 году на Роттердамском Интернациональном Кинофестивале, после которого Амстердамский Киномузей у меня купил копии 'Птенцов моря' и 'Колов'...<br />
+<br />
+     <i><b>Я сижу перед обычным телевизором. Вставлена кассета, включен видеомагнитофон. На экране сумасшедшим ритмом рассказывается какая-то своя, придуманная художником, история, суть которой я пока понимаю не очень ясно. Но глаз оторвать от экрана не могу. Неожиданные перевоплощения фантастических персонажей завораживают: не то сон, не то явь - и жутко, и весело, и странно:  И мысленно: 'Да, да, конечно: Ведь по другому и быть не может...'</i></b><br />
+<br />
+- Очень многие фильмы изначально идут не от задумки, а от технологии: идеи появляются спонтанно, возникая одна из другой. Бывает, что осмысление целиком приходит при завершении работы. Вот фильм 'Око' поначалу зарождался совершенно бессюжетным, а в процессе уже что-то стало приходить: Его осталось только озвучить, и в итоге получится довольно ясный мультик. Конечно, реальная жизнь имеет отношение к моим фильмам: и сюжеты, и герои могут быть связаны с какими-то людьми, но между ними нет портретного сходства, скорее, это внутренняя связь... <br />
+<br />
+<b><i>- Расскажи, пожалуйста, о своих последних проектах:</b></i><br />
+- Недавно ездил в Австрию, в город Грац, это немного южнее Вены, который на 2003 год объявлен культурной столицей Европы. В рамках этого события будет представлено и современное искусство Петербурга - кино, живопись, музыка, ди-джеи и т.д. Я по их заказу работаю сейчас над своим новым фильмом: отснял фотоаппаратом Грац, теперь отсниму Питер, смонтирую и сделаю ролик, который буду представлять вместе со своими другими работами. Также побывал в Вене, показывал свои фильмы в Музее Современного Искусства. Недавно закончилось его государственное финансирование, и они теперь каждый вечер устраивают прогрессивные молодежные вечеринки. Ди-джеи под свою музыку показывали мой материал на стенах такими своеобразными видео-обоями, и это получалось очень круто...<br />
+<b><i>- То есть, твои произведения можно использовать в самых различных жанрах и направлениях...</b></i><br />
+- Абсолютно верно. Да где угодно! В клубах, залах, на театральной сцене: Требования какие - главное, чтобы темно было, а материал - это уже моя задача. Все зависит от технических возможностей, от куража, от денег, ну, и от самих заказчиков. Подобные эксперименты начинались во Дворце Спорта Юбилейном, где люди катались на коньках под только появившиеся тогда первые рейвы. Вот там мы с друзьями свои материалы и демонстрировали: гремели ритмы, а на здоровенных стенах скакали мультфильмы... Потом мы работали с группой 'Текила - Джаз': оформляли их выступление в старом клубе 'Полигон' на Обводном канале. Были какие-то переговоры с 'Аукционом', но все это как-то заглохло: у них есть свой художник, зачем мне отбирать чужой хлеб?<br />
+<i><b>- Для телевидения были какие-нибудь заказы?</i></b><br />
+- Последнее, что я сделал, это материал для передачи 'Пути' - отснял ролик с Анваром Либабоваым. До этого была реклама МТС, я ее снимал фотоаппаратом. Там показывалось в черно-белом изображении, как плохо было человеку без мобильного телефона - это моя съемка. Был сделан клип на песню группы 'Pep-see' 'Ветер любви' - такой светлый, веселый, достаточно яркий ролик получился. Его я рисовал как по снятой, так и по чистой пленке.<br />
+<i><b>- Какие у тебя на ближайшее время планы, цели?</i></b><br />
+- Планы - фильм доделать для города Граца. Цель? Спасти душу бессмертную. Это - главное, все остальное - так... <br />
+<br />
+P. S. <br />
+- У меня есть знакомый - художник Женя Кондратьев, один из моих учителей - он занимается кино, и я его как-то спросил: 'Женя, вот ты снимаешь фильмы, что ты считаешь самым важным?' Он, не задумываясь, ответил: 'Состояние на съемочной площадке'. Безусловно, многое в работе зависит от заказчика, от его желания и требований, но самое главное - это твое личное отношение к тому, чем ты занимаешься. <br />
+&nbsp;&nbsp;&nbsp;&nbsp;Я верю в то, что я делаю, у меня это получается, мне это интересно, а кроме того - я умею радоваться своему делу...<br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Текст подготовила <b>Екатерина Григорьева.</b></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="36.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

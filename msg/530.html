@@ -1,0 +1,617 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="530.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='531.html' class=top style='color: white;'>&laquo;Алексей Федотов&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="531.html" class=green><b id=gr>Алексей Федотов</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Алексей Федотов. ²Западня⌡ и ²Черный ворон⌡ - счастливые приметы актерской популярности.</b><br><br></div>
+<div align="justify"><b> Он . популярный телеведущий и шоу-мен, . программы ²Западня⌡ и ²Награда за смелость⌡ любимы людьми, как участвующими, так и наблюдающими через экран. Неистощимый на выдумку Алексей Федотов каждый раз по-новому разыгрывает публику. Он же . многоликий исполнитель ролей сразу нескольких . и их немало . героев пародийных спектаклей. Он . известный киноартист, который играет в популярных сериалах. Например, в ²Черном вороне⌡, который сейчас идет и привлекает внимание и тех, кто уже видел первую часть фильма и тех, кто смотрит эту историю от начала и до конца впервые. Роль Алексея Федотова там . одна из главных. </b> <br />
+<br />
+<b>Алексей, как появилась на свет первая Ваша телепрограмма ²Западня⌡? </b><br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Сначала была программа ²Без названия⌡ с красноухим ведущим Григорьевым. Потом . ²Звездный розыгрыш⌡, который уже вел я вместе с Сергеем Рогожиным, а потом уже ²Западня⌡. И существует она в эфире уже 4 года. И, несмотря на сегодняшнее обилие  программ - ²Скрытых камер⌡, мы собираемся прожить еще долго. <br />
+<br />
+<b> Но сейчас с Вашим именем связаны две программы  -  и ²Западня⌡ на канале ²Петербург⌡ и ²Награда за смелость⌡ на спортивном канале 7ТВ. Что-то совершенно новое, вами не исследованное в работе над ²Западней⌡, пришлось постичь при  работе на спортивном канале? </b><br />
+<br />
+Хотя продюсеры и акционеры канала 7ТВ все время пытаются нашу программу повернуть больше в спортивную сторону, нацелить нас только на спорт, мы пытаемся от этого уходить. Придумываем спортивные определения нашим экстремальным розыгрышам. Например, когда мы предлагаем людям на глазах у всех  раздеться, это называется ²Чемпионат по раздеванию⌡. Вот этим придали спортивную окраску. А еще поставили щит с баскетбольной корзиной и смотрели, кто больше голов забьет снятой с себя одеждой. Спорт, как нам, всем создателям программы кажется, это по сути своей совсем не смешно. Конечно, есть в нем смешные моменты, но так узко профилированный юмор . это неинтересно. Может быть юмор столяров или юмор судостроителей, но вряд ли он будет всем  интересен. Так что мы стараемся выполнить какие-то формальные требования, но все-таки смотрим  на поставленную задачу шире.<br />
+<br />
+<b>Те, кто не видел (в силу того, что канал 7ТВ есть не в каждом доме) Вашей новой программы, какие принципиальные отличия ²Западни⌡ от ²Награды за смелость⌡? </b><br />
+<br />
+Они принципиально отличаются тем, что ²Западня⌡ - это программа, целиком составленная из сюжетов. Снятых скрытой камерой, а в ²Награде за смелость⌡ - есть только одна рубрика ²Скрытая камера⌡, да и то она есть не в каждом выпуске программы. А основная идея ²Награды за смелость⌡ такова: толпа людей собирается на каком-то большом открытом пространстве и ведущий, то есть я, предлагаю им совершить некий бесшабашный поступок. И не ради денег, - потому что деньги они могут не получить, ведь в конверте, который они выбирают сразу, а вскрывают после выполнения задания, могут лежать деньги, а может . бумага. Но люди на это идут, они проявляют свою смелость, отвагу, умение повеселиться и почувствовать себя немножко дураком. И мы не видим в этом ничего плохого.<br />
+<br />
+<b>А что вы обычно делаете там  с людьми? </b><br />
+ <br />
+Да разное...  Например, однажды человека красили целиком в тигра, потом этот тигр скакал на лошади. Мы предлагали участникам сесть на кнопки. Переодевали людей в собак, и эти ²собаки⌡ катали саночки, стоя на четвереньках. Красили человека в памятник, всего, с ног до головы белой масляной краской, красили в негров . жидким шоколадом, потом этот шоколад другие слизывали. Однажды было вообще экстремальное задание: нашли одного добровольца, отвезли его с площади, где все собирались, на одну из городских улиц и абсолютно голого приковали наручниками к водосточной трубе. Здесь, как раз применялась скрытая камера, но все равно . это был совершенно другой формат, нежели ²Западня⌡. Так вот этот человек должен был сидеть  и рассказывать прохожим свою легенду: у него закончилась вода, когда он мылся в душе. Он выглянул на лестницу, чтобы позвать сантехника, и тут захлопнулась дверь. Он спустился, выглянул на улицу, и тут проходил милиционер, который арестовал его за нарушение общественного порядка. Приковал его, а сам пошел за машиной, чтобы доставить в отделение. Его задача, попросить, чтобы прохожие прикрыли его чем-нибудь, пока ни приедет милиция. Мы с ним договорились, что он получит награду за смелость, если три человека согласятся его прикрыть. Он сидит, люди  проходят, . кто-то мимо, кто-то прикрывает. Мы снимаем скрытой камерой. И посылаю актера, который должен играть ²голубого⌡, должен приставать к этому человеку. Прикованный, конечно, ни о камере, ни об актере, ничего не знал. <br />
+Да, все это на грани  пошлости. Но эту грань мы не переходим. Ведь, в принципе, любой юмор находится как раз на этой грани: есть анекдоты с матом, который рассказывать без этих слов просто невозможно, они будут несмешные. Это не я, а еще Юрий Никулин говорил. А есть такие, которые, как раз, ²на грани⌡. Такой анекдот расскажешь взрослому, - он будет смеяться, потому что поймет. А вот если ребенку расскажешь, то он не поймет, о чем это, значит, анекдот непошлый. Даже здесь, в этой истории в прикованным и ²голубым⌡ все достаточно аккуратно. Ребенок совершенно спокойно воспримет слова, адресованные несчастному голому человеку: ²Давай я тебя согрею, давай я рядом посижу⌡. А мы, взрослые, понимаем, и нам смешно. И в работе ведущего надо соблюдать эту грань.<br />
+<br />
+<b>Есть много программ с розыгрышами, где ведущие довольно жестко комментируют происходящее. </b><br />
+<br />
+Есть похожие программы. Знаю одну, называть не буду, но ее надо отметить, как негативный пример. Там ведущий страдает откровенной пошлостью. Там открыто звучат неприличные слова, - на этом и построена программа. Я понимаю, что кто-то делает себе имя на грязи. Это легче, чем если ты находишься посередине. Но в этом случае, я считаю, ругаться с экрана - никакая не смелость. <br />
+<br />
+<b>А ²Западня⌡? Она ведь изменилась с годами . в лучшую сторону. Жизнь стала жестче, а программа почему-то не испортилась, не стала злее. </b><br />
+<br />
+И она, конечно, меняется. У нас сейчас уже такие наработки, что мы с гордостью можем сказать: мы можем  снять такую программу в любой стилистике. Нас в Москве признают лучшей программой, поэтому часто поступают предложения о сотрудничестве. И вот года два назад я стал ²пробивать⌡ ²Звездный розыгрыш⌡ - скрытая камера со звездами кино и эстрады, - на канале ²ТВ-6⌡. Сначала они не соглашались, - ²с нашими звездами это может получиться смешно⌡, а потом решили попробовать и подписали контракт с другой студией, а нас пригласили консультантами. Нам это не понравилось, и мы отказались, а очень скоро не стало ни ²ТВ-6⌡ ни ²ТВС⌡. Но деньги были вложены, и недавно мне позвонили из Москвы и сказали, что эфир ²Звездного розыгрыша⌡ скоро состоится на 1 канале. Они сейчас снимают программу по нашим сценариям, - мы им штук 50 еще тогда предоставили.. Получается такой наглый и жестокий обман. ²Ну давайте вы будете нам поставлять сюжеты, мы организуем штук пять таких бригад, как ваша.⌡, . говорят мне. Я спрашиваю: ²А вести программу кто будет?⌡ - ²Например, Якубович⌡.  Я, конечно же, от этого отказался. Теперь эта программа выходит на ОРТ, ее ведут В. Пельш и Т. Арно.<br />
+<br />
+<b>Вернемся к новой программе. Сейчас уже вряд ли кто верит, что в программах, типа ²Окна⌡ люди рассказывают о себе, - мы видим там непопулярных или начинающих актеров. А Вы утверждаете, что у Вас собираются получать ²Награду за смелость⌡ простые люди? Как это можно доказать?<br />
+</b><br />
+Мы начинали нашу программу с такого задания: доброволец должен был согласиться постричься налысо.  Мне все знакомые говорили, что таких ²дураков⌡ не найдется. На первый выпуск программы позвали студентов театрального института, выдали  им оранжевые жилеты, и они, такие яркие, зазывали людей на нашу съемку.  И, на всякий случай,  пригласили парочку артистов, чтобы, если не получится найти, они сыграли подставных добровольцев. И в тот же день мы поняли, что недостатка в людях у нас не будет. В очередь становились.<br />
+Мы никогда не выбираем бомжей и алкоголиков. Должны быть абсолютно нормальные, иногда очень респектабельные люди. Был такой конкурс: сделать из людей двух футболистов: бразильца и испанца. Я подхожу и спрашиваю у двух прилично одетых людей: ²Сколько стоит ваш пиджак?⌡  Один называют очень приличную сумму. Так же дорога была и вся остальная одежда и у одного и у другого. А мы предложили им эту одежду уничтожить, - из нее сделать спортивную форму: обрезать безжалостно брюки и пиджаки и покрасить в цвета формы команд Бразилии и Испании, а в ботинки забить гвозди, чтобы получились буцы. Они согласились, и были очень довольны, хотя за потерю дорогой одежды они получили только по 500 рублей.<br />
+Это . игра. Все зависит от отношения: если человеку не жалко, а тем более, интересно у всех на виду сделать что-нибудь в ущерб себе, - пусть! Они потом подходят и так благодарят! Говорят, что в жизни не испытывали ничего подобного: кровь играет, адреналин бешеный!  Бывает, с ощущениями от казино сравнивают.<br />
+<br />
+<b>Это . одна из рубрик программы. А что еще интересного Вы придумали специально для ²Награды за смелость⌡? </b><br />
+<br />
+Мне нравится рубрика ²Деньги с неба⌡. В ней актриса подходит на улице к человеку и говорит: ²Мой брат сдает экзамен. Позвонил и просит помочь ему, ответить на вопросы. Вот я их записала. Например, ²в каком году родился Пушкин?⌡ Если человек отвечает правильно, он получает деньги и узнает, что все снималось скрытой камерой.<br />
+<br />
+<b>А хватит ли идей для этой программы? </b><br />
+<br />
+Идей масса. Еще так много нереализовано! Мы с режиссером Максимом Бриусом (с которым делали и ²Западню⌡) еще так много придумали, и все ждали, когда же понадобится, вот теперь постепенно это превращается в сюжеты ²Награды за смелость⌡. <br />
+<br />
+<b>Из-за телевизионной занятости страдает ли  Ваша театральная деятельность? Или все-таки Вы успеваете придумывать, создавать новые номера эстрадной программы? </b><br />
+<br />
+Нет, моя программа не особенно страдает из-за того, что я много работаю на телевидении. Более того,  спектакль ²17 лиц графа Калиосторо⌡, который я играю в Театре Эстрады, в этом сезоне буду радикально переделывать. Появилось много новых номеров. Кроме того в ²Чаплин-клубе⌡ вместе с клоунским дуэтом ²Брутто-нетто⌡ мы играем совершенно другой спектакль, где номера все другие, нежели в ²17 лицах.⌡. У спектакля нет названия, но это . непрерывное действие с сюжетом, хотя он ближе к концерту, чем та программа, что мы играем в Театре Эстрады. <br />
+<br />
+<b>То есть театральной работы в таком варианте Вам хватает, и нет тоски по Театру Сатиры? </b><br />
+<br />
+По Театру Сатиры . абсолютно нет! Потому что решение уйти оттуда было обдуманное и назревшее. Я сделал это с легкостью, - как только случился очередной инцидент, я расстался с ним радостью. И сейчас понимаю, что это надо было сделать намного раньше. Вообще, с театром у меня связаны планы: я хочу в драматическом театре поставить ²Кармен⌡, хочу пойти в какой-нибудь театр и просто поработать актером: сразу после уходы из Театра Сатиры у меня было приглашение в БДТ, но тогда я его не принял, а теперь вновь задумался об этом и хочу попробовать. <br />
+<br />
+<b>Вы хотите пойти в традиционный театр, а ведь для человека, привыкшего работать в системе ²жесткого капитализма⌡ там сложно адаптироваться, - столько недостатков, на сегодняшний день уже странных и в организации и в художественной части. А в антрепризу Вас не звали? </b><br />
+<br />
+Сейчас все театры с недостатками и переживают кризис. Вроде бы настало то время, когда надо просто делать антрепризу . это свобода финансовая и творческая. Но почему-то антреприза получается наспех сляпанная и дешевая . только для зарабатывания денег. И отказался от нескольких предложений в таких вариантах поучаствовать, потому что не поверил в них. Тем более, когда сроки постановки назывались месяц . два. Я видел пьесу, и понимал, что в такие сроки ее не поставить никому. Так что я вижу будущее театра в антрепризе, но не в такой, какая она сейчас. И, самое главное, артист должен быть популярен. Это дает свободу в том, что ты большему количеству людей можешь донести то, что ты хотел бы, и имеешь на это право. Потому что я со своим творческим поиском никому не интересен, когда я работаю в каком-нибудь рядовом  театре рядовым артистом. Кто придет туда? Пять человек любителей театра. А для меня театр . это искусство, в хорошем смысле слова, массовое. Это искусство должно влиять на большие массы людей. <br />
+<br />
+<b>Но ведь можно собрать популярных и сделать довольно низкого качества произведение. </b><br />
+<br />
+Это уже второй вопрос. Что за этим стоит, что ты можешь им предъявить. Если есть, что . очень хорошо, а если ты просто фиговый листок, который показывают каждый день по телевизору. <br />
+<br />
+<b>Ладно, с театром все понятно А кино для Вас сейчас . это только начало большого пути или заметные роли до больших съемок этим летом можно отметить? </b><br />
+<br />
+Можно уже. Например, в ²Черном вороне⌡ у меня одна из главных ролей. Я играю Никиту Захаршевского, брата Татьяны, главной героини фильма. А так еще снимался в сериалах ²Дом надежлы⌡, ²в ²Ментах⌡ в ²Агенте.⌡. В свое время художественный руководитель проекта ²Агент национальной безопасности⌡ Дмитрий Иосифович Светозаров утвердил меня на главную роль . агента Николаева, но в Москве сказали, что я слишком худой, надо бы поздоровее. И взяли Пореченкова. Потом опять же Светозаров утвердил меня на роль в ²Танцоре⌡, Константин Эрнст, продюсер Первого канала, посмотрел пробы сказал: ²Да, я хорошо знаю этого актера, хороший артист, но слишком толстый для роли Танцора⌡. И только сейчас, в фильме с рабочим названием ²Семидесятники⌡ я у Светозарова сыграл одну из главных ролей. Работа со Светозаровым  принципиально отличается от всего, что было прежде. Для меня работа с этим режиссером . уникальная школа профессии и колоссальный опыт.<br />
+Недавно я закончил работу и в фильме режиссера Игоря Москвитина ²Повторение пройденного⌡. Интересно, что в ²Семидесятниках⌡ и в этом фильме похожи фабулы: и  там и там любовные истории с героинями, которых играет Анна Самохина, и моих героев В ²Семидесятниках⌡ - это умный, талантливый, но подлый человек, который потом становится бомжом, а его вытаскивают из грязи и делают директором банка, и уже в этом качестве он не совершает еще одной подлости в своей жизни и погибает. А в ²Повторении пройденного⌡ - режиссер провинциального театра, ловелас, у которого есть только одна любовь . это его одноклассница, ставшая телезвездой. <br />
+<br />
+<b>Прямо какая-то мистика получается у Вас и Анны Самохиной . постоянные серьезные отношения в рамках киносюжетов! </b><br />
+<br />
+Все началось еще с ²Ментов⌡, где она играла любовницу моего героя. В ²Доме Надежды⌡ она должна была играть главную героиню, но в итоге сыграла другую роль. Потом . ²Черный ворон⌡ и сейчас вот два этих фильма.<br />
+<br />
+<b>Все-таки, наверное, самое сложное, - даже, чем кино, - это работа ведущего. Сложно было научиться вести себя перед камерой непринужденно и говорить убедительно? </b><br />
+<br />
+В ²Западне⌡ в плане ведения не было ничего сложного. А вот ²Награда за смелость⌡ - это действительно сложная с этой точки зрения передача, потому что идет живой контакт с людьми. Я ведь раньше не думал, что могу вести такую программу, - это вот совсем недавно проявилось. Ведь конкурсы в программе длятся секунды, а все остальное должно быть заполнено интересным шоу, которое придумывает и реализовывает ведущий. Я, конечно, пока еще недоволен собой, но я развиваюсь, совершенствуюсь. <br />
+<br />
+<b>Получается, что это такая особая специфика актерской работы. </b><br />
+<br />
+Шоу-мен . отдельная профессия. Этому не учат нигде. Я всегда говорил, что это . не мое. Никогда не вел ничего: никаких концертов, шоу-программ, а пару раз пробовал, и у меня не получалось. Сейчас я веду все: концерты, частные мероприятия, и у меня получается. Я отношусь к этому очень серьезно: нужно заготовить много шуток, анекдотов, конкурсов, которые никто не видел, и умение импровизировать. <br />
+<br />
+<b>Наверное, в редкие минуты пребывания дома Вы отдыхаете в большей степени от количества людей, с которыми приходится по долгу службы общаться?<br />
+</b><br />
+Да меня и дома-то практически не бывает. Весь смысл жизни, получается, в этом творчестве. Хотелось, чтобы его было больше. Поэтому спрашивать про отдых у меня бессмысленно. Да, я люблю виндсерфинг, раньше занимался им, мне нравится кататься на скутере. Научили плавать с аквалангом, - мне очень понравилось. Люблю жарить шашлыки на природе. Футбол я очень люблю: и играть и болеть. Но я это не могу долго делать, а долгое время без этого обходиться могу легко. А вот без актерской работы я не могу, - в этом смысл жизни. Если, конечно, поработать плотно год-полтора, тогда можно на честно заработанные деньги куда-нибудь махнуть. Но и то . только на неделю, больше не получится, потянет к работе. Работа . это и отдых, и развлечение, и хобби. Радость и счастье приносит только взятие вершин в эфире, кино или театре: удачно сыгранная роль . это удовольствие. <br />
+<br />
+<i> Ольга Краснова </i></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="530.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td height="90" valign=bottom><img
+  src="../i/news_pro.gif" width="219" height="90" border="0"></td></tr>
+<!--tr><td height="60" valign=bottom><img
+ src="../i/sub_m.gif" width="220" height="31" border="0"></td></tr-->
+<tr><td align="center">
+
+<br>
+<table width="200" border="0" cellspacing="0"
+ cellpadding="0">
+<tr><td style="PADDING-BOTTOM: 5px; PADDING-LEFT: 9px; PADDING-TOP: 5px; "
+ background="../i/bg_gr.gif"><b><a href="529.html"
+ class=green>Портреты замечательных людей. Наши актеры. Алексей Федотов.</a></b></td></tr>
+<tr><td height=1 background="../i/dd.gif"><img height=1
+ src="../i/spacer.gif" width=1></td></tr>
+<tr><td class=top
+ style="PADDING-LEFT: 9px; PADDING-TOP: 5px; PADDING-BOTTOM: 6px;"><b
+ id=gray>27&nbsp;октября&nbsp;2003</b><br>
+<span class=bl>Он . популярный телеведущий и шоу-мен, . программы ²Западня⌡ и ²Награда за смелость⌡ любимы людьми,  ...&nbsp;<a href="529.html"><img
+ src="../i/arr_tr.gif" width="11" height="5" hspace="5" border="0"></a></td></tr>
+</table><img src="../i/sub_rr.gif" width="220" height="27">
+
+</td></tr>
+</table><br><br><br>
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

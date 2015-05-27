@@ -1,0 +1,586 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="383.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>"Мы с Полуниным делали "бяки" .  Интервью  Екатерины Ефремовой с Антоном  Адасинским // Gazeta.ru</b><br><br></div>
+<div align="justify">Известный танцовщик, мим и хореограф, основатель театра "Дерево" Антон Адасинский в последние годы живет и работает в Германии. В Санкт-Петербург его вернул Михаил Шемякин, предложивший Адасинскому роль Дроссельмейера в балете "Щелкунчик". Вчера один из самых ярких персонажей питерского андерграунда в очередной раз вышел на сцену Мариинского театра. С Антоном Адасинским встретилась корреспондент ГАЗЕТЫ Екатерина Ефремова.<br />
+<br />
+Я же всю жизнь живу на Съезжинской улице, у ленинградского зоопарка, я точно помню каждую ямку под асфальтом. Это те воспоминания, которые в свое время дали толчки моему мышлению. И не нужно мне рассказывать, что сейчас здесь положили новую брусчатку и все сразу стало хорошо. Я же знаю, как весной все это провалится, посреди дороги будет дырка и из нее вырастет травинка. Она будет веселее и красивее, чем весь этот 'попсовый глянец'. <br />
+<br />
+Я человек идеи 'дерева', и это главное, ради чего я работаю и, честно говоря, живу. Остальное - так, функция организма, функция государства по отношению ко мне и моя по отношению к государству. Это функциональные действия. Самое главное - то, что я делаю на сцене театра 'Дерево', чему аплодируют зрители, и чем меньше меня знают, как обычную личность, тем лучше для публики. <br />
+<br />
+- Жизненные реалии создают личностный объем любого персонажа. <br />
+- Довольно часто мои старые друзья хотят меня видеть таким, каким я был пятнадцать лет назад: 'Антоха, да ты помнишь, как мы с тобой, да чего ты вверх ногами-то голый висишь? Ты чего, ты помнишь, дык елы-палы...' Они хотят вернуть меня назад. Им так проще. Трудный момент. Друзья уходят, теряются, меняется окружение. Я их очень люблю, но я уже изменился; давайте, может быть, заново дружить. А им нужно как раньше. Они и спектакли мои видят сквозь призму того, каким я был прежде. Функции Delete - стереть - у человека в башке нет. Он помнит все. <br />
+<br />
+- Но существует же реальная жизнь. Вы же когда-то родились - я подозреваю, что подобный факт был в вашей биографии? <br />
+- Да, я родился когда-то, это факт. <br />
+<br />
+- Вы родились в Петербурге? <br />
+- Я могу родиться и в Петербурге, потому что я себя помню только с момента жизни в этом городе. <br />
+<br />
+- Вы хотите сказать, что мы создаем сейчас легенду о вашем рождении в Петербурге? <br />
+- Нет, никакой легенды нет. Я родился в Питере, и у меня было много рождений. Одно рождение - как музыканта, когда я пошел в музыкальную школу и стал заниматься классической гитарой. В жизни была только музыка. Другое рождение - как фотографа, когда для меня весь мир был только перемещением черно-белых пятен. И очередное рождение - когда я в 1982 году, лохматый и молодой, прихожу на фестиваль пантомимы и вижу Вячеслава Полунина. Он говорит: 'Ты чего?' А я отвечаю, что хочу работать фотографом у него на фестивале 'Мим-парад'. Он говорит: 'Иди снимай' - и стремительно исчезает. <br />
+<br />
+- Как это все происходило? <br />
+- Все было очень весело, бесконечный хохот и безумие. В те годы мы работали грузчиками, дворниками, а вечерами делали этюды. Гонка искусства каждый день. Люди впадали в какие-то безумные импровизации, события... Слава Полунин защищал нас от всех проблем. Жалко, не все выдержали натиск реальной жизни, когда вышли оттуда. Он все брал на себя, а мы были орлами-клоунами. Я помню очень хорошо и ночные посиделки у Леньки Лейкина на кухне, где мы придумывали какой-то ансамбль 'Мумие'. И как мы были на гастролях в Москве, едем к Жанне Агузаровой и у нее в квартире делаем целый концерт - я, Лейкин и Кефт... Жанна как обычно носится из комнаты на кухню, ей по фигу все, и наши пантомимы в том числе... Все сходят с ума от хохота. Приходят соседи. Мы гуляем всю ночь с Жанной, потом выходит песня 'Сероглазый мальчик', и нам хочется думать, что песни тех лет связаны со мной, с Ленькой и с Валеркой. Сильные годы. Плохо говорить об этом в прошедшем времени. <br />
+<br />
+- Начиналось все с 'Лицедеев' и с 'АВИА'... <br />
+- В 'АВИА', на концертах, я впервые встретился с толпой, массовым человеком. Это стало новым для меня ощущением. Когда ты один в лучах прожекторов у микрофона, а перед тобой тысяча глаз... Поешь чужие слова, играешь чужую музыку, тебя хватают за ноги, тащат со сцены, вокруг тебя ревут, прыгают на машину. Из каждых пар глаз идет струя энергии - двоякая, отдающая и засасывающая, и из ваших, и из моих. Могут съесть так, что ручек-ножек не останется. <br />
+<br />
+- Почему вы ушли из 'Лицедеев' и оказались шоуменом рок-группы 'АВИА'? <br />
+- В Питере была самая классная тусовка продвинутого интеллектуального хиппизма, в центре которого стояла группа 'Странные игры'. Это люди высокообразованные, молодые, начитанные, эрудированные, которые позволяли себе жить, как они хотели. Был такой годик или два в середине восьмидесятых. Руководитель группы Саша Давыдов погиб от передозировки наркотиков. Они записали только две пластинки и сборники, которые до сих пор еще не вышли. Из них выросли две существующие поныне группы - 'АВИА' и 'Игры'. С Колей Гусевым во главе группы 'АВИА', и с Соллогубом во главе 'Игр'. Вот и вся история. <br />
+<br />
+Я любил группу 'Странные игры'. Домашние концерты. Тусовка. Поездки в мае в Таллин. Автостопом по всей России. Это была жизнь тех лет. Мы предложили Саше Давыдову поработать вместе с ним. Он говорит: 'Классно. Давайте, ребята, делайте, что хотите, завтра на сцену выходите, будем вместе выступать'. И вот мы выходим на рок-концерт - три клоуна - я, Лейкин и Кефт. В зале совсем другая атмосфера. Я даже не знал, что такое бывает. Гремят какие-то инструменты, грохот там везде. Вдруг Кефт поднимает руку и говорит: 'Ребята, здрасьте, мы вам сейчас покажем парочку номеров, нам вчера в голову пришло'. И зрители на все это смотрят, визжат, хлопают, им все это нравится. Так мы подружились. <br />
+<br />
+В группе 'АВИА' я стал работать по приглашению Коли Гусева сделать шоу. <br />
+<br />
+- А как вы оказались в курехинской 'Поп-механике'? <br />
+- Я уже стал фигурой какой-то одиозной в рок-н-ролле и в студии. Так что Курехин просто сказал однажды: 'Слушай, придешь завтра лысый, возьми с собой свою студию, сделаем какую-нибудь акцию'. И мы выстраивали деревянную звезду или играли Вагнера в сорок восемь тромбонов. Не знаю, как о нем говорить. Между нами всегда была странная дистанция. Мы с ним друг к другу в гости не ходили. Все время было между нами странное подзуживание и ревность. Но большое взаимное уважение. Ему не нравилось то, что делало 'Дерево'. Я не принимал некоторые его 'Поп-механики'. Но, затевая очередную 'Поп-механику', он обязательно мне звонил и звал в свою работу. <br />
+<br />
+- А что вы в то время делали в 'Дереве' и что происходило тогда же в 'Поп-механике'? <br />
+- 'Дерево' начало работать над 'Красной зоной'; первые акции на Невском проспекте, буто-танцы. А Курехин делал самые высокие свои 'Поп-механики', самые мощные по энергетике. Те, где были все звезды, Кировский балет, все рок-музыканты... <br />
+<br />
+- Откуда же возникло противостояние с Курехиным?<br />
+<br />
+Наверное, нас сближает только то, что мы оба свободные люди и делаем то, что хотим делать. Мы искали. Так же как искал и он. Между пластическими акциями, буги-вуги, регги, концертными классическими акциями с безумными наворотами с курицами и козлами. От петухов на Невском проспекте до делания масок в саду в снегу, до лежания в трехчасовой неподвижности в Зимнем саду во Дворце молодежи, до голых людей на плотах, которые плыли по Неве. Такие же броски, поиски эстетики, формы, проблемы... <br />
+<br />
+Я не знаю, как искал Курехин - между стаканами, глядя в окошко или с утра лежа на трех подушках. Я видел результат. Он приходил на репетицию очень собранный и говорил, как и что мы должны делать. И - на сцену. Он приходил с такой силой убеждения, что все должно быть сделано точно так, будто это - все, что у него есть. Рядом с ним было поле такой силы, что невозможно было отойти. 'Поп-механику' придумать мог только он один. И не потому, что он зарабатывал таким способом деньги, нет, делать это было для него насущной необходимостью. Гениальный человек. Стихия. Огонь. <br />
+<br />
+- Но все же мне кажется, есть некоторая разница между ангажированностью Мариинским театром и Национал-большевистской партией - или нет? <br />
+- Не буду врать. В эти дни я уже уехал и не застал ни Лимонова, ни отношения Курехина к НБП. Курехин настолько круче и сильнее всех остальных вместе взятых, что мог просто пошутить. Для него прикинуться Жириновским в костюме медведя - не проблема. Он может жить анекдотом. И тут же забыть о нем через секунду. Утром издать манифест про грибоведение. И не в том дело, что это шутка, а в том, что мы все пьем такой напиток - 'гриб', действие которого на организм пока еще неизвестно. Возможно, мы действительно все грибы. <br />
+<br />
+- Как вы пришли к увлечению театром Буто? <br />
+- Однажды дома у Славы Полунина в одной книге я увидел фотографии танцоров Буто. С живым Кацуо Оно я познакомился только через десять лет. Он полностью оправдал все мои многолетние ожидания. Я понял, что можно работать так, как работает он, - на грани безумия. И только так и можно работать. Сначала у нас было всего три книги. Мы скинулись по десять рублей, нам перевели упражнения, первые стихи. <br />
+<br />
+- Как театр 'Дерево' уехал из Петербурга? <br />
+- А все как-то совпало: контракт из Праги, проблемы со зданием театра. Мы поднялись всей нашей компанией, сдвинулись с места и уехали караваном. Мы сумели остаться в сознании питерской публики андерграундным театром, а не превратились в модное место субботнего семейного отдыха. <br />
+<br />
+- С отъездом в вашей жизни что-нибудь изменилось? <br />
+- Все осталось неизменным. Ежедневные тренинги, метод работы. Имело значение только то, как нас воспринимала публика. Чтобы рука была в руке и то, что мы делаем, не пролетало мимо ее сознания. Адаптации были скорее ритмическими, чем смысловыми. У каждой страны свой ритм и пульс. <br />
+<br />
+- Каким образом вы оказались в проекте Михаила Шемякина 'Щелкунчик' в Мариинском театре? <br />
+- Наша встреча была магической. Я даже не мог представить себе, что когда-нибудь буду работать с Михаилом Шемякиным. Меня маленьким привели за руку на его закрытую выставку в Питере, я ничего не понял. Полумрак. Прокуренные голоса. Картины. Потом слухи. История про булочную: за батон за двадцать две копейки его выслали из страны. Шемякин... Приезжает однажды Полунин и предлагает сделать спектакль 'Карнавалы Санкт-Петербурга' по мотивам его картин. На вопрос: 'Где встретимся?' - отвечает: 'В Нью-Йорке'. Я: 'А поближе нельзя?' Мы мало что обсудили, но что - разговаривать? Тело - есть, картинки - есть. 'Значит так, - говорит Полунин, - делаем 'бяки'. 'Бяки' - это когда собираются в зале общие знакомые и друзья, а ты делаешь на сцене все, что душе угодно. Репетировали мы в лесу, в Канаде, в известной студии Jacob"s Pillow. В зале - два человека. Более дурацкой ситуации, чем показывать новые куски спектакля пустому залу, трудно себе представить. Приехал Шемякин, и я увидел человека в сапогах с каменным лицом, с постоянной улыбкой, с мощным надрывом внутри. Был я у него дома. Там есть бронзовый стол, полностью сервированный бронзовой утварью, - вилками, ложками, тарелками. Из черной, побитой временем бронзы. И рядом - стол бытовой, нормальный. Мы бродили по дому, разговаривали... <br />
+<br />
+Однажды он позвонил и предложил мне роль Дроссельмейера в 'Щелкунчике' в Мариинском театре. Я с уважением отношусь к тому, что творится на этой сцене. Подобное предложение - огромная честь. Я считаю, что не оплошал и потом даже выбился в лидеры. То, что стало после премьеры происходить в прессе, - это безумие. Шемякин сделал красивую вещь и подарил ее городу. И Гергиев на это пошел. Чудесное зрелище, красота, публика счастлива, есть куда пойти. Все билеты проданы. Шемякина 'били' все. Меня не трогали только потому, что я не из Мариинки. Вот - Антон Адасинский, с демонической пластикой, тра-та-та-та-та, видимо, на которого и ставился балет. Остальных гнобили - балетмейстера, кислотные декорации Шемякина, актеров... Ну, почему не похвалить? Да, хороший человек - Ноймайер, хороший человек - Ратманский. Классные все люди. Но есть еще и такая детская сказка - 'Щелкунчик'. Будьте вы счастливы, что появился такой спектакль. <br />
+<br />
+- Эта работа будет иметь продолжение? <br />
+- На февраль 2003 года в Мариинке намечена постановка сорокаминутного балета на музыку Сергей Слонимского 'Принцесса Перлипат'. Пролог к балету, предваряющий историю самого Щелкунчика. Слонимский уже написал музыку. Как он ее исполнял! Сидит за роялем, играет, прыгает, орет... Заводной человек. Балетмейстером будет Кирилл Симонов. <br />
+<br />
+- Какое впечатление на вас произвела работа с Валерием Гергиевым? <br />
+- О, Гергиев... самый ритмичный дирижер, которого я когда-либо слышал и вживую, и в записи. В нем есть драйв... Ты все время находишься рядом с ним будто под влиянием колебания разнонаправленных энергий. От него идет колоссальный энергетический поток. Он мне нравится своим умением отстраняться от жизненных проблем. Он кричит, ему что-то не нравится, у него ненависть и в глазах, и на устах. Гергиев машет руками, швыряет палочку. Но он сам - далеко. Он не погружен в крик в этот момент. От него не исходит негативная энергия. Гергиев просто создает форму, которая должна звучать как музыка, чтобы дело пошло. Но это лишь исполнение партии крика и наказания артиста. И тот принимает от партнера реплику и отпевает или оттанцовывает свой ответ Гергиеву. <br />
+<br />
+- Как вы позиционируете себя на культурной карте города? <br />
+- Да как, история известная: Михаил Шемякин с отмороженными пальцами убирал снег около Эрмитажа, а через десять лет выставил там свои картины. 'Оказывается, ты классик?' - спрашивают у него теперь уже. То же самое и со мной. Да, сейчас моя позиция изменилась: я получил все возможные театральные призы и стал вхож во все кабинеты. Благодаря работе с Михаилом Шемякиным и балету 'Щелкунчик' в Мариинке я имел честь быть представленным и двум президентам - и Владимиру Путину, и Джорджу Бушу. Теперь со мной стали разговаривать и в Питере. <br />
+<br />
+Сейчас я как раз веду переговоры с городской администрацией о возможности организации в 2003 году фестиваля 'Остров', на котором были бы собраны великие 'монстры' той андерграундной культуры, из которой все мы как ростки выросли. Все без исключения, со всей России - от 'митьков' до 'параллельщиков' и всех новых. Мы же только теперь понимаем, что то, что мы тогда делали, не только вошло в современную культуру, но уже стало ее классикой. Можно даже сказать, что бывший андерграунд стал реальной истинной ценностью российской культуры. То, что осталось, я и хочу собрать под одной крышей. На какой-то срок. Если я смогу всех пригласить и они согласятся собраться вместе. В городе же можно построить новый центр современной культуры, где все могли бы собраться под одной крышей. Но для начала нужно провести фестиваль. Если же этого не произойдет, то причин 'Дереву' возвращаться в Россию не будет. Будем приезжать со спектаклями на гастроли. Если я такой центр не подниму, то на вопрос знакомого в аэропорту: 'Вы когда назад?' - придется переспрашивать: 'Назад - куда?'. <br />
+<br />
+<br />
+Источник: http://www.gzt.ru/rubricator.gzt?rubric=reviu&id=28550000000004381</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="383.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

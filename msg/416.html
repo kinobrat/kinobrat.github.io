@@ -1,0 +1,596 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="416.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Дмитрий Светозаров: "Мудрость состоит в том, чтобы уметь приспособиться ко всякой глупости"</b><br><br></div>
+<div align="justify"><b> ЧТО должна делать милиция, народ знает хорошо. Чуть что, он сам первый кричит: "Милиция!" С госбезопасностью все наоборот. Народ сидит, никого не трогает, починяет примус, и вдруг как снег на голову падает госбезопасность со своими никому не понятными репрессиями против вашего несчастного примуса.<br />
+Ие потому ли так различаются и два сериала - веселые "Улицы разбитых фонарей" и задумчивый "Агент национальной безопасности"? И к кому же обратиться с этим вопросом, как не к режиссеру Дмитрию Светозарову, приложившему руку и к "Агенту", и к "Ментам"? </b> <br />
+<br />
+- "Менты" создавались спонтанно, без всякого расчета, как бы в ответ на носящиеся в воздухе зрительские чаяния. И их успех лежит вне эстетических категорий. А когда создавался "Агент", была возможность каким-то образом спланировать этот сериал. Продумать его стилистику, способ существования актеров, особенности драматургического материала. Вы не обратили внимания на одну деталь: агентство национальной безопасности существует только в США. В России такой организации нет. Это нарочитый компонент замысла, который позволил нам избежать опеки авторитетного и весьма требовательного ведомства и быть абсолютно свободными в конструировании сюжета.<br />
+Отсюда родились жанр этого сериала и его главный герой - специалист, не вписывающийся ни в какие рамки служебной инструкции. И это ни в коем случае не русский Джеймс Бонд, это не Пирс Броснан и не Шон О' Коннери, это скорее Жерар Депардье, сильно русифицированный: разгильдяй, выпивоха, сердцеед и при этом неординарная личность. Его замечательно играет молодой петербургский артист Михаил Пореченков. Профессиональный боксер, кстати. Когда его выбирали на роль, никто об этом не думал, и только потом выяснилось, что это был перст божий - почти все трюки он делает сам. Кроме того, "Агент" - гораздо более зрелищен, чем "Менты". Сточки зрения монтажа, движения в кадре, света, актерской игры, трюков. Это так называемое постановочное кино. Роскошные костюмы или декорации нам, конечно, не по деньгам, но что касается экшна... Могу сказать, что внутри одной серии "Агента" - это все те же сакраментальные 52 минуты - порой до 600 монтажных склеек. Такое ко каждому советскому художественному фильму по зубам, хоть и работали над ним полтора- два года. Это говорит о подробности съемки, определенной плотности зрелища.<br />
+<br />
+- Я слышала о том, что, когда рекламная вставка прервала самую драматическую сцену в фильме Полански, он стал специально заготавливать в своих фильмах места, куда можно вставлять рекламу. Вы не практикуете подобное?<br />
+<br />
+- Никогда не слышал, чтобы режиссер или продюсер могли как-то влиять на вторжение рекламы. Мне известно обратное: многие серии "Ментов" были просто купированы, потому что количество рекламы превосходило запланированное и требовалось убрать полторы-две минуты. У Игоря Москвитина однажды выбросили кусок, в котором содержался ключевой сюжетный поворот, и вся серия стала рросто непонятна. Но я вспоминаю случай из семейного опыта: в последние годы жизни отца ОРТ сделало о нем передачу, большое интервью, приехал Алексей Баталов, отец что-то вспоминал, речь шла о "Даме с собачкой". Но когда он потом стал смотреть это по телевизору, он обнаружил, что их разговор прерывается рекламой колготок. Для отца в его возрасте, с его представлениями о том, что уместно, а что неуместно, это был дикий шок. Он позвонил на ОРТ и потребовал кого-то к ответу, но ему очень мягко объяснили, что если бы не колготки, то никакой бы передачи про Чехова, про даму и про собачку - вообще бы не было... И отец смирился. Тут надо быть мудрым. А мудрость состоит в том, чтобы уметь приспособиться ко всяческой глупости.<br />
+<br />
+- Ваш отец, Иосиф Хейфиц, -классик советского кинематографа. Наверное, вы храните счастливые воспоминания о своем детстве?<br />
+<br />
+- Раскрою маленький секрет: не только своим счастливым детством, но и всей своей жизнью я обязан Иосифу Виссарионовичу Сталину и Лаврентию Павловичу Берия. Я родился в 1951 году. Для тех, кто не знает. что это было за время, напомню: в 1948 году был убит Михоэлс, 1949 год - арест еврейского антифашистского комитета, начало "дела врачей", борьба с "безродными космополитами". А в 1951 году затевалось "дело 213-ти". Это был список из 213 фамилий самых видных деятелей еврейской интеллигенции. Вроде как Сталин намеревался переселить их в Биробиджан, "спасая от справедливого гнева советских людей", но в пути должна была случиться железнодорожная катастрофа.<br />
+В этом списке рядом с Ильей Эренбургом, Самуилом Маршаком, Борисом Слуцким, Василием Гроссманом, Матвеем Блантером был и мой отец... Незадолго до смерти моя мама, Ирина Владимировна Светозарова, рассказала мне о том, что меня на самом деле никто,не ждал. Но когда отец узнал, что его судьба предрешена, он предложил матери: "Может быть, они не тронут беременную женщину?.." Таким образом я появился на свет. Ныне, к сожалению, родителей уже нет в живых, и я живу в квартире, которая хранит воспоминания о них. Кабинет отца, его вещи, его книги, его рукописи нетронутыми лежат на тех же местах, как и при его жизни.<br />
+<br />
+- Ваша жена помогает вам?<br />
+<br />
+-  Нина окончила факультет журналистики, но я выбрал для нее другую стезю, которую считаю принципиально основной для женщины. Она - хранительница очага, занимается домом и сыном. Сын Алексей - гимназист. И если говорить о семье, должен сказать и о нашей общей любимице Янге. Она доберман. При слове "доберман" большинство людей шарахаются в сторону, представляя себе агрессивное существо, раздирающее любого, пришедшего в дом, в клочки. Однако на Янге мы доказали великий, на мой взгляд, закон о том, что хорошее воспитание, доброта и сытость даже злую собаку превращают в ангелоподобное существо.<br />
+<br />
+- Ваш брат Владимир - известный кинохудожник. Вам случалось работать вместе?<br />
+<br />
+-  Да, над моим дипломным фильмом на Высших режиссерских курсах. Но хотя работать с родным по крови  человеком приятно и удобно, мне, с моим характером, это создает проблемы. Я лишаюсь возможности быть требовательным и чувствую себя крайне некомфортно. Так что Володя работает не со мной. Последняя его работа - "Хрусталев, машину!" Алексея Германа.<br />
+<br />
+- Ваша первая профессия - переводчик с английского. Разве вы не хотели быть режиссером с детства?<br />
+<br />
+- Отец был человеком старомодным, и он вкладывал в понятие "университетское образование" некий особый смысл, поэтому университет был мне уготован судьбой. И теперь я понимаю, насколько годы, проведенные в университете, были для меня полезны. Не только с точки зрения образования. Там мне был привит, некий системный подход к решению любых проблем,  и именно он помогает справляться со всей суетой, неразберихой, кутерьмой и импровизациями на съемочной площадке,<br />
+Потом - знание языков. Жизнь сложилась так, что мне пока не пришлось воспользоваться этим в полной мере, но то, что я, читая какой-нибудь русский роман XIX века, изобилующий французской речью, могу не скашивать глаз в сноски, и то, что я могу помочь сыну в занятиях латынью, добавляет мне как интеллигенту теллигенту некоторого куражу. И , наконец, я знаю, как важно для актеров, особенно старой школы, относиться к режиссеру с пиететом, как к источнику какой-то духовной поддержки, и как, они бывают разочарованы, когда  режиссер оказывается лишь ухватистым администратором, знающим где и как достать деньги...<br />
+<br />
+- А есть ли у вас хобби?<br />
+<br />
+- Конечно. Это кулинария. Я обожаю готовить, и если у меня выдается несколько свободных часов, я провожу их на кухне.<br />
+<br />
+- С чего начинаете? С похода на рынок или импровизируете из того, что есть под рукой?<br />
+<br />
+- Я бы сказал, что кулинария начинается с любви вкусно поесть. Именно вкусно, а не много. Я не гурман, я гурмэ. Кулинария для меня начинается с желания ощутить вкус - или уже привычный, или еще неведомый. И я нахожу в этом нечто общее с моей профессией. Изысканное смешение отдельных элементов, которые многим представляются несовместимыми, на самом деле очень похоже на мое увлечение игрой в жанры: сочетание мелодрамы и триллера, социального кино и детектива...<br />
+<br />
+- Кстати, о жанрах! Не правда ли, жанр "Ментов" - это клоунада?<br />
+<br />
+-  Да ну? С какой стати? Я вообще не сказал бы, что в этом сериале выдерживается один какой-то жанр. Его снимают разные режиссеры, и каждый делает делает что-то свое. Я - старался быть жестким. Но главное - я старался вытащить замечательных актеров, волею судьбы оказавшихся разлученными с аудиторией. Так состоялся как бы повторный дебют Светланы Смирновой в "Моли бледной", и он не остался незамеченным, состоялась прекрасная работа Антонины Шурановой в "Лекарстве от скуки"...<br />
+<br />
+-  Нет, я не имею в виду, что в "Ментах" актеры валяют дурака. Дурака валяют их персонажи. Актеры просто с удовольствием это играют. Вернее, играли... Сейчас идут первые серии второй порции "Ментов", и ощущение такое, будто актеров из-под палки заставляют делать что-то им не интересное...<br />
+<br />
+- У каждого успеха есть автор, и у каждого провала есть автор. О коллегах - или хорошо, или ничего. Уходя от конкретности, хочу сказать одно, очень для меня важное.<br />
+Все мое детство в нашем доме прожила одна женщина, домработница Маруся. Она часто задавала мне вопрос, который ставил меня в тупик. Она говорила: "Митенька, вот твой папа, он знаменитый режиссер Иосиф Хейфиц, народный-перенародный, а вот чего он делает?" Ну понятно: артист играет, сценарист пишет, оператор снимает, А что делает режиссер? И в этом совершенно простодушном воп росе кроется, на мой взгляд, весьма серьезная провокация, Потому что до сих пор не созда но удовлетворяющего меня оп ределения этой профессии. Но профессия эта есть. И ее сразу видишь в любом кадре: в мизан сцене, в работе актеров, в точ ности операторской работы, в монтаже. Вот и все. Дело лишь в профессионализме или его отсутствии. А все остальное - это частности, трагикомические случаи.   <br />
+                                        <br />
+- Например?<br />
+<br />
+- Например, когда мы однажды приехали снимать "ментовку" (а по бедности бюджета и   скромности технических средств нам зачастую приходилось снимать в условиях почти документальной достоверности, в реальных интерьерах) и внезапно обнаружили, что бывший начальник Управления внутренних дел Пониделко дал указание перекрасить камеры в радостный цвет. Вообразите наш ужас: мы собираемся снимать мрачный эпизод - и обнаруживаем, что камера предварительного заключения выкрашена в ярко-канареечный цвет! Может быть, с тех пор количество суицидов в этих камерах уменьшилось, но наш эпизод рухнул. И если вашим читателям это покажется курьезом, то нам эти курьезы стоят крови.<br />
+- "Агент", конечно, более зрелищен, но все-таки кажется, что его сюжеты более просты. Там всегда ясно, чем кончится. А в "Ментах"... Тот же "Инстинкт мотылька" - поразительный финал...<br />
+<br />
+-   Решительно не согласен. Сюжеты просты только внешне. В конце каждой серии герой приобретает какое-то новое знание о жизни, несмотря на положенную ему по жанру победу. Владимир Вардунас и Игорь Агеев - замечательные сценаристы с серьезным кинематографическим прошлым. Но не скрою, что ко многим сериям и я приложил свою руку - на уровне замысла, на уровне разработки сюжета, предложения новых персонажей... Мы стараемся выявить неоднозначность характеров, а следовательно, заинтересовать хороших актеров. У нас играют Андрей Толубеев, Андрей Краско, Петр Вельяминов, Николай Лавров... Иной раз из маленького эпизода вырастает сквозная роль всего сериала. Так из эпизода родилась роль Куки, которого играет Евгений Баранов из Театра комедии, со второй серии зажил своей жизнью в совершенно новом для себя качестве Вадим Яковлев из "Балтийского дома"... И я счастлив возможности продлевать экранную жизнь удавшегося персонажа. Раскрою секрет. В одной из серий "Агента" под названием "Наследник" Игорь Лифанов, игравший отморозка Луфаря, погибал от бандитского выстрела в спину. Но все-таки, повинуясь какому-то чутью, я заставил его перед смертью приоткрыть глаз. Я понял,что убивать мне его жалко, и первая серия нового двенадцатисерийного блока  начнется с того, что Луфарь оживает. У него уже другая жизнь, он во многом изменил внешность, но я оживил и дико понравившийся мне своей остротой персонаж, и Игоря Лифанова, которому продолжаю на каждом углу предсказывать грандиозное кинематографическое будущее.<br />
+<br />
+- Вы только что закончили съемки кинофильма "Четырнадцать цветов радуги"...<br />
+<br />
+-  Да, за месячный перерыв между сериалами ежедневно в две смены нам удалось снять полнометражный кинофильм. Что называется, "на внутренних резервах". Я все думаю, когда же эти "внутренние резервы" у меня закончатся. Когда же внутри что-то заскрежещет и остановится. Я уж не говорю о резервах интеллектуальных,  эмоциональных, потому что нужно все время что-то придумывать и в этом диком ритме импровизировать. Ведь уже давно нет продуманных режиссерских сценариев, когда каждый кадр расписан, а то и нарисован художником. Все рождается прямо на площадке. Это сопоставимо с хорошим джазом, когда музыканты договариваются лишь об основной теме и о ритме, а дальше - раз, два, три, четыре - поехали!.. Литературный сценарий был утвержден заказчиком за два-три дня до начала съемок, а некоторые сцены писались вдогонку. Конечно, это своего рода авантюра. Но так сложилось, что я мог осуществить свою мечту и снять пленочное кино только в этих условиях, в эти сроки и за эти деньги.<br />
+<br />
+- Вы мечтали снять именно этот фильм?<br />
+<br />
+-  Я не могу сказать, что он вызревал давно и был воплем души. Но когда появились люди, готовые дать какие-то деньги, и нужно было снять что-то, что устраивало бы заказчика по жанру и было бы интересно мне как режиссеру и что укладывалось бы в эти деньги и в эти сроки, -тогда у нас с Игорем Агеевым родился этот сюжет, который теперь уже кажется мне любимым и единственно возможным. . Этот фильм будет столь же жествить свою мечту и снять пленочное кино только в этих условиях, в эти сроки и за эти деньги.<br />
+<br />
+- Вы мечтали снять именно этот фильм?<br />
+<br />
+-  Я не могу сказать, что он вызревал давно и был воплем души. Но когда появились люди, готовые дать какие-то деньги, и нужно было снять что-то, что устраивало бы заказчика по жанру и было бы интересно мне как режиссеру и что укладывалось бы в эти деньги и в эти сроки, тогда у нас с Игорем Агеевым родился этот сюжет, который теперь уже кажется мне любимым и единственно возможным.<br />
+Этот фильм будет столь же жесток, как и наше время. Вероятно, он потребует от зрителя определенной нервной тренированности, чтобы смотреть его с отдачей.<br />
+- Сюжет расскажете?<br />
+<br />
+- Нет, скажу только пару слов о главных героях. Игорь Лифанов играет беглого зека, Сергей Бехтерев - потерявшего работу научного сотрудника, а Света Смирнова - неудавшуюся провинциальную актрису, вышедшую на панель и севшую на иглу. Их объединяет то, что я называю понятиями экзистенциальными, то есть не зависящими от сиюминутного политического или экономического состояния среды обитания. Одиночество, невозможность быть до конца понятым и так далее. Эти люди по разным обстоятельствам находятся в жизненном тупике, и их попытки сбежать друг от друга безуспешны. Это и триллер, и черная комедия, и приключения... Как говорили в елизаветинском театре - кровь и интрига для галерки, любовь и психология для джентльменов. Но под всем этим, согласно моему любимому принципу слоеного пирога, в самой глубине лежит притча, в которой выражено мое понимание жизни в нашей стране. Мы все склонны верить в чудо, в быстрое и легкое счастье. Как говорит наш герой, "без крови и риску". И вот эта вечная русская вера в счастье и удачу по щучьему велению оборачивается для нашей страны каждый раз потрясением. Разочарование приводит к нищете, нищета - к агрессии, и это замкнутый круг... Мы все это знаем, но каждое поколение снова и снова обманывается.<br />
+<br />
+- А какова судьба "Барона"? Вы еще не отказались от намерения снять этот фильм?<br />
+<br />
+- "Бароном" начну заниматься с весны... да, впрочем, уже сегодня я получил по электронной почте письмо от автора сценария этого сериала, который который срочно требует моих предложений...<br />
+<br />
+- Сериала?..<br />
+<br />
+- Ну да, вначале это был сценарий фильма. Пять лет назад он победил <br />
+&nbsp;&nbsp;&nbsp;&nbsp;на некоем конкурсе сценариев и по статусу этого конкурса должен был получить и полное финансирование. И мы с Геной Островским, автором сценария, пять лет ждали этих денег. Но наконец я развеял в себе последние иллюзии и рад этому. Будущее этой страны не в заботах государства, а в том, что называется разумным эгоизмом или личной инициативой. Пора взрослым людям самим заботиться о себе.<br />
+<br />
+- О чем этот сериал?<br />
+<br />
+- По жанру это будет телероман, биография одного человека с очень сложной судьбой, начавшейся в маленьком еврейском местечке на Украине и заканчивающейся в пустынном отеле на Кипре в мертвый сезон, где он, ставший одной из крупных мафиозных фигур современной Москвы, пытается проанализировать свою жизнь и понять причины, приведшие его на этот пустынный чужой берег. Но это пока все только рождается.<br />
+<br />
+Беседовала Ольга АБРАМОВИЧ<br />
+"Смена" 17 декабря 1999 г.</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="416.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

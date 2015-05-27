@@ -1,0 +1,586 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="495.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='494.html' class=top style='color: white;'>&laquo;Сергей Барковский&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="494.html" class=green><b id=gr>Сергей Барковский</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Сергей Барковский: ²Серьезно работаешь, - всерьез и получится.⌡</b><br><br></div>
+<div align="justify">Театральная слава всегда меркнет перед славой киногероя. Если человек играет долгие годы в театре, играет много, разные роли и не снимается в кино, - его знает только малая часть населения и только того города, где он живет. А стоит только переступить порог съемочной площадки, а потом  взглянуть на страну с телеэкрана, - и всё, ты любим и нужен всем. Хорошо, когда при этом человек не покидает подмостки... Случай артиста Сергея Барковского уникален: он, как только стал популярным, нагрузил себя еще большим грузом театральных работ.<br />
+Он стал известным широким массам после фильмов "Хрусталев, машину!" и сериала "Бандитский Петербург". Снялся еще в нескольких картинах. Среди них, к сожалению, пока не вышедший на экраны ²Спецотдел⌡ Виктора Татарского, где Сергей сыграл главную роль. А в театре у него главных ролей очень много. Помимо Молодежного театра, Александринского, Русской антрепризы имени А. Миронова и других, он еще играет в антрепризных (премьера это сезона, <a href="334.html">&laquo;Спектакль "Пляска смерти"&raquo;</a> по Стриндбергу, например) проектах и создает моноспектакли...<br />
+<br />
+<b> Сергей, роль Курта в спектакле ²Пляска смерти⌡ на премьере играли в разные дни Вы и Сергей Власов. А когда она создавалась, на кого изначально была ²написана⌡? И почему Власов сейчас ее не играет? </b> <br />
+<br />
+Мы создавали эту роль вместе, и играли в очередь, просто сейчас Сергей Власов больше занят на других проектах, и эту роль чаще играю я.<br />
+<br />
+<b> В вопросе не было подвоха: просто вы такие разные, а роль . одна. И хорошо ли это, когда у артиста есть дублер на ту роль, которую он играет? </b><br />
+<br />
+А мой ответ и не предполагал подвоха. И здорово, что мы разные. Даже близнецы не бывают одинаковыми. Хорошо, что и спектакли получаются разные. По-другому партнеры реагируют, акценты и нюансы иные, со зрителями контакт каждый раз новый. В этом и ²смак⌡. В этом уникальность театра. Не раз и навсегда, а каждый раз как впервые. У меня много дублеров (²дублер⌡ - плохое слово, предполагает некую вторичность, скажем . ²партнеров по роли⌡) на разных ролях в разных театрах: Молодежный театр (Михаил Разумовский - ²Ночь ошибок⌡, <a href="../actor/2213.html">Роман Нечаев</a>  - ²Крики из Одессы⌡), Александринский театр (Сергей Паршин . ²Дон Жуан⌡, <a href="../actor/3279.html">Алексей Девотченко</a> . ²Сказание о царе Петре и царевиче Алексее⌡),  Театр Комедии (Евгений Баранов - ²Влюбленные⌡, Сергей Кузнецов . ²Виндзорские проказницы⌡, театр ²Приют комедианта⌡ (Александр Орлов . ²Дорогая, я не слышу, что ты говоришь, когда в ванной течет вода⌡), в антрепризе . Андрей Шимко (спектакль ²На дне жизни⌡). Не вижу в этом ничего ²нехорошего⌡. Наоборот, есть возможность замены, если один из исполнителей не может играть (всякое бывает), и спектакль не сорвется. Во-вторых, зрителю интересно познакомиться с двумя версиями роли. В-третьих, есть возможность поучиться или по-иному посмотреть на свою роль. Полезно. Я люблю иногда взглянуть на спектакль, где другой актер говорит ²мои⌡ слова. Это будоражит воображение. Сразу фантазируешь, куда дальше можно продвинуться в роли.<br />
+<br />
+<b> А уроки работы с режиссером? Есть ли профессиональная польза от работы с режиссерами, гораздо моложе Вас? И были ли такие случаи, кроме работы с <a href="273.html">Андреем Прикотенко</a> на спектакле ²Пляска смерти⌡? </b><br />
+<br />
+Помимо работы с Андреем, я играю в спектакле театра ²Русская антреприза имени Андрея Миронова⌡ ²Входит свободный человек⌡ в постановке Георгия Товстоногова-младшего, тоже молодого человека. Это . умный, интеллигентный и своеобразный режиссер. Работать с ним большая радость. Что же касается уроков, то с любым хорошим режиссером, вне зависимости от возраста, интересно и полезно поработать, потому что всегда это . неординарная личность, художник со своей позицией, оригинальным видением материала, особым взглядом  на мир, людей. Тем более, если это не твой ровесник. Возникает ²конфликт поколений⌡ в хорошем смысле этого слова. И эта разность взглядов, эта ²разность потенциалов⌡ может высечь искру. А из искры что-нибудь да возгорится. ²Пляска смерти⌡ - особый случай. Я пришел в эту работу позже других. Пришлось догонять, пытаться синтезировать разные взгляды на пьесу и мою роль: точку зрения режиссера, автора идеи Игоря Иванова, партнерши Натальи Фоменко, другого исполнителя Сергея Власова. Все это, естественно, соединить надо было с моим видением. Благо, серьезных противоречий не было. Мы попытались тяжелую и мрачную пьесу Стриндберга  сделать легкой и светлой, не потеряв при этом драматизма и конфликтности.<br />
+<br />
+<b> Получилось ли, на Ваш взгляд? </b> <br />
+<br />
+Об этом судить публике. Одно могу сказать, что после перехода из Учебного театра на сцену ТЮЗа спектакль в новом пространстве вдруг задышал, зазвучал по-новому. Появился зазор меду нами и материалом, некое отстранение.  Это дало легкость, прозрачность, особую динамику, юмор, что очень важно для антрепризы, что непросто найти у Стриндберга и что, надеюсь, делает нашу работу нужной и понятной сегодняшнему широкому зрителю. Что произошло, загадка.<br />
+<br />
+<br />
+<B> ²Пляска смерти⌡ - премьера этого сезона. Сколько у вас их всего в этом году? </b><br />
+<br />
+В этом сезоне у меня три премьеры. Осенью . Стриндберг, зимой . второй моноспектакль по Булгарину ²Авдей Флюгарин⌡, поставленный в Театральном Пушкинском центре под управлением Владимира Рецептера. Мы его и показываем в Доме Кочневой на Фонтанке, 41. Это наша вторая работа с замечательным режиссером Андреем Андреевым. Первая - ²История села Горюхина⌡ по одноименной повести А. С. Пушкина. Спектакль получил первую премию на фестивале моноспектаклей ²Монокль⌡ в этом году. Если ²Горюхино⌡ поставлено по цельному произведению, то для ²Флюгарина⌡ режиссеру пришлось писать инсценировку по статьям, доносам, письмам Булгарина, его полемике с Вяземским, Пушкиным, из чего хотелось сплести человеческую историю. Это была мощная, крайне противоречивая фигура. Иноземец, занимающийся русской словесностью, ярый государственный служака, доносчик, писатель считающий себя соперником Пушкина и сочинивший первый русский роман невероятно популярный в свое время, журналист и издатель всероссийского масштаба. Он при жизни считался одиозной личностью и сразу после смерти был предан забвению тут же. И потом поминали его и поминают, как правило, бранными словами. Не боясь пародийности и сатиричности, которые напрашивались сами собой, мы хотели однако рассказать прежде всего о человеческой судьбе, полной обид, обольщений и разочарований.<br />
+Третья премьера в этом сезоне . ²Входит свободный человек⌡ Стоппарда. Автор интересный, неожиданный, сочетающий в себе и ²традицию⌡ и влияние ²авангарда⌡. Мы взяли одну из ранних его пьес. При кажущейся простоте в ней много подводных рифов. Пришлось помучаться. До премьеры мы беспокоились, какой будет резонанс. Не скучно ли, не слишком ли ²запсихологизировали⌡ пьесу. Но режиссер Товстоногов успокаивал нас и настаивал на своем. И произошло чудо. На премьере зрители смеялись после каждой третьей реплики. К драматизму вдруг пришла легкость. И сразу появился объем, ассоциативность. Мы играли и удивлялись. Театр вообще чреват такими неожиданными разворотами. Публика всегда вносит свои коррективы, зачастую непредсказуемые.<br />
+<br />
+<b> Есть ли в городе такой драматический театр, где бы не ступала ваша нога? </b><br />
+<br />
+Есть, разумеется. Однако ²наследил⌡ много. Пожалуй, в половине питерских театров я поработал с труппой, в проектах самих театров.  На многих площадках побывал с антрепризными выездами, в виде аренды. Не ступала нога, пожалуй, в театре ²Буфф⌡, театре Музыкальной комедии, театре Сатиры и некоторых камерных театрах.<br />
+<br />
+<b> Ваш  случай действительно уникальный . немного таких артистов, как Вы. Наверное, вот <a href="../actor/5899.html">Валерий Кухарешин</a> еще. </b><br />
+<br />
+Да, Валера . великий трудяга, замечательный артист и прекрасный человек, мой сосед по гримерке в Молодежном театре. Я восхищаюсь им и многому учусь у него. В Петербурге большое количестве талантливых актеров-²многостаночников⌡: Сергей Бызгу, Александр Баргман, <a href="../actor/1873.html">Екатерина Унтилова</a>  ,  <a href="../actor/7595.html">Евгений Дятлов</a>    и много других.<br />
+ <br />
+<b> Но я имею в виду уникальность в смысле количества одновременно идущих на разных площадках спектаклей с Вашим участием. Вы такой рекордсмен в этом смысле. </b><br />
+<br />
+Цифры нужны в спорте, да и то не во всех видах. В театре же рекорды важно ставить в качестве. Количество чревато пресыщением, усталостью, эксплуатацией уже найденного. Есть опасность ²заштамповаться⌡. Если нет сил и времени  найти или открыть в себе что-то новое в очередной роли, нужно сказать себе: ²Стоп. Я отдыхаю и набираюсь впечатлений⌡. Я играю много, потому что каждый новый материал или коллектив дает и тебе что-то новое. Важно это обнаружить и освоить. Я боюсь повторений, поэтому стараюсь играть разные роли: и характерные (Шмага - ²Картины из жизни девицы Отрадиной⌡, Пиньон - ²Я должен убрать президента⌡, Сганарель . ²Дон Жуан⌡) и героические (Турбин - ²Дни Турбиных⌡, Болингброк - ²Стакан воды⌡, Царевич Алексей - ²Сказание о царе Петре и царевиче Алексее⌡) и возрастные (Желтухин  в ²Касатке⌡ старше мня, Карл  в ²Жаворонке⌡ . младше).<br />
+<br />
+<b> Может быть, просто из-за количества и качества театральной работы Вам не подходят современные сериалы? </b> <br />
+<br />
+Почему не подходят? Не вижу в сериалах ничего плохого. Они возродили жизнь на Ленфильме. Они дали работу многим режиссерам и актерам. Может, сериалы не всегда должного качества. Это уже дело времени, ведь этот жанр в кино относительно молодой. И потом все зависит от того, кто снимает и кто снимается. Серьезно работаешь, - всерьез и получится. Если же вы имеете в виду мою занятость, то скажу так: пока у меня работы перед камерой меньше, чем на сцене и чем хотелось бы. Но это . тоже дело времени. Уже сделано несколько работ, для меня важных и интересных: у Алексея Германа, Александра Сокурова, Владимира Бортко, Евгения Татарского. Есть новые картины, которые должны выйти на экрана. Недавно поступили новые предложения. Грех жаловаться. Все идет своим чередом. А театр никак не может помешать кино. И там и там твоя актерская работа, правда, со своей спецификой. Графики работы всегда можно согласовать. <br />
+<br />
+<b> Немало фильмов, которые сейчас снимаются, к сожалению, надолго где-то застревают и не выходят на экраны. Тот же ²Спецотдел⌡, где вы сыграли главную роль. Можете ли вы, актеры, как-то посодействовать его выходу на экраны, или режиссер может ли? И вообще . что причиной тому, что хотя бы вот этот фильм сняли ²в стол⌡? </b><br />
+<br />
+Актеры на это повлиять не могут. Даже режиссер не всегда распоряжается своей картиной, если, конечно, он не продюсер. Для меня остается загадкой, почему ²Спецотдел⌡ до сих пор не вышел на экраны, хотя его уже видели в США, в Германии. С Виктором Татарским было очень интересно работать, и, думаю, получилось что-то серьезное и достойное внимания телезрителей.<br />
+<br />
+<b> Я знаю, что речь в фильме идет не о традиционных для нашего современного кино ²ментах⌡, а об ²интеллектуальных милиционерах⌡, - спецотделе, расследующем преступления с антиквариатом. </b><br />
+ <br />
+В нем минимум погонь, стрельбы и крови. Сотрудники ФСБ борются с махинациями и контрабандой культурных ценностей. Здесь важнее движение мысли, борьба смыслов, а не кулаков. Тут внутренний динамизм, а  не ²экшн⌡. Да, наверное, можно назвать его интеллектуальным детективом. Скоро должны запуститься еще 10 серий. Может быть, все вместе они и выйдут на экраны.<br />
+<br />
+<b> Но все-таки кино . это всенародная популярность. Снялись Вы в ²Бандитском Петербурге⌡ - и Вас узнало людей больше, чем после всех ваших театральных работ. И другие сериалы тоже делают лицо артиста более популярным. А Вы создаете моноспектакли и играете их на маленьких площадках.  И кто вообще знает, когда вы их играете?! Нет рекламы, нет информации. Жаль, что в основном все будут ассоциировать вас с Пиньоном из ²Я должен убрать президента⌡, а вот эти работы не узнают. Неужели, Ваши моноспектакли . это такое элитарное искусство? </b> <br />
+<br />
+Дело не в этом. Они не элитарны. В них тоже говорится об общечеловеческих ценностях, они понятны всем. Вы говорите о разных спектаклях, и в них все разное: режиссеры, решение, площадки, цели и предполагаемое количество зрителей. ²Я должен убрать президента⌡ - спектакль антрепризный, рассчитанный на широкую публику, и это требует определенной рекламной политики. Моноспектакль . жанр специфический. Он предполагает камерность, доверительность, если хотите, интимность общения. Кроме того, узкий круг зрителей обусловлен режиссерским замыслом и помещением. Если же зал заполняется, зачем реклама. А афиши висят, пожалуйста.<br />
+<br />
+<b> Сергей, скажите Ваше режиссерское (у Вас ведь есть такое образование и опыт) мнение: в чем магия спектаклей Молодежного театра. Ведь туда ходят не для того, чтобы увидеть любимых героев сериалов. </b><br />
+<br />
+Я не знаю, насколько мое мнение будет ²режиссерским⌡. Я себя больше мыслю актером. За многое я люблю наш ²Молодежный⌡. Если же посмотреть на него под углом зрения, предложенным вами, то скажу так: художественный руководитель театра Семен Яковлевич Спивак вырастил какую-то особую атмосферу на сцене и за кулисами. Его театра не антрепризный, не бенефисный. Здесь нет ²звезд⌡, все равны. Это театр команды, актерского ансамбля, ²оркестра⌡, хотя, конечно, одно другого не исключает. Театр Товстоногова-старшего был звездным, но это не мешало ему быть командой. Известность актера работает на театр, а известность театра . на актера. Это . взаимозависимый процесс. Семен Спивак . не просто режиссер-постановщик, он хорошо работает с артистом, он педагог, актерский режиссер, чувствует нашу профессию, и сам замечательно играет. Его показы всегда точны и заразительны. Чувствуя актера, он делает камертон роли. Формирует ансамбль актеров в сцене, как аккорд. И когда аккорды звучат гармонично, получается спектакль.<br />
+<br />
+<b> А еще Молодежный театр демократичен: например, зрители попадают в зал тем же путем, каким и актеры выходят на сцену. </b><br />
+<br />
+С одной стороны это хорошо, так как сближает зрительный зал с тем, что происходит на сцене. Возникает эффект присутствия и соучастия. Минус же в том, что публика видит выходящих во время действия из зала в фойе зрителей, и актеры видят. Более того, зрители видят, что актеры. Приходится обыгрывать. Но это не всегда получается, да и не всегда можно. В ²Двенадцатой ночи⌡ любой накладке рады и 10 минут обыгрываем. Но иногда надо соблюдать правило ²четвертой стены⌡.<br />
+<br />
+<<b> Раз мы заговорили о реакции на непредвиденные ситуации, расскажите, как Вы обыгрываете звонки мобильных телефонов во время спектакля? </b><br />
+<br />
+По-разному. В ²Касатке⌡, например, часто звучит фонограмма птичьего свиста. Вот я и обыгрываю звонки, как звуки птиц или сверчков. Если в спектакле идет лирическая тема в той же ²Касатке⌡, звонок мы обыгрываем как мелодию любви, словно какие-то ангелы запели. В спектакле ²Входит свободный человек⌡ у меня есть сквозной на протяжении всего спектакля прием: я во всем ищу знак того, что я что-то сделал правильно. Я бросаю письмо со второго этажа, и оно случайно попадает на стол . это знак, вдруг зазвучали часы по фонограмме . это тоже знак, пошел дождь . знак. Зазвенел мобильный в зале . знак. В комедии ²Стакан воды⌡, где царит атмосфера дворцовых интриг,  я реагирую на звонок, как на сигнал того, что кто-то подслушивает наш разговор с герцогиней или Абигайль. Так что обыгрываем звонки в зависимости от ситуации, которая сама иногда подсказывает выход. Но только если это позволяет закон спектакля. Иногда нельзя отвлекать внимание зрителя от происходящего, в ²Днях Турбинных⌡, например. Любую накладку в спектакле надо брать на вооружение. Если  тебе удается вплести ее в ткань спектакля, то и зритель будет только   и подумает, что так и надо.<br />
+<br />
+<b> А что все-таки может помешать спектаклю? Ведь от жизненных проблем не уйти. </b><br />
+<br />
+Помешать могут только форс-мажорные обстоятельства. У нас были приступы в зрительном зале. Вызывали ²скорую⌡ и играли дальше. Однажды кто-то распылил газовый баллончик, весь зал кашлял. Проветрили и продолжали. Если же говорить о личных проблемах, то персонаж . тоже живой человек. У него может быть плохое настроение или зуб болеть. Если с этим бороться во время действия, это только навредит спектаклю. Надо, на мой взгляд, брать это в обстоятельства.  Если, конечно, это не ломает рисунок роли, не уничтожает ее сути. Лишнее напряжение передается в зал. А надо сделать, чтоб любая драма или трагедия воспринимались легко. Не бывает плохого зрителя, бывает скучный спектакль. Или не удалось взять внимание публики. Клиент всегда прав, он деньги заплатил. Если в зале школьники не шелестят шоколадками и не ²травят⌡ анекдоты, а внимательно смотрят, то значит, на сцене происходит что-то настоящее, для них важное. Эти истину известны, но их проверяешь каждый день на каждом спектакле. <br />
+<br />
+<i> Ольга КРАСНОВА </I></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="495.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b><div align=center><a href="../gallery_slide/697.html"><img src="../gallery_file2/697" alt="Спектакль Молодежного Театра на Фонтанке "Двенадцатая ночь"" width="200" height="131"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/698.html"><img src="../gallery_file2/698" alt="Спектакль Молодежного Театра на Фонтанке "Стакан воды"" width="200" height="128"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/699.html"><img src="../gallery_file2/699" alt="Спектакль Молодежного Театра на Фонтанке "Стакан воды"" width="200" height="131"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/700.html"><img src="../gallery_file2/700" alt="Спектакль Молодежного Театра на Фонтанке "Касатка"" width="200" height="133"  border=0 vspace=10></a></div></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

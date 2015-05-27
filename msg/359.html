@@ -1,0 +1,681 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="359.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>"Где растет Дерево? " Отрывки из статей о о ДЕРЕВЕ, напечатанных в европейских изданиях</b><br><br></div>
+<div align="justify">О театре ДЕРЕВО мы не писали давно, с 1993 года (см.: "Петербургский театральный журнал". N 4). "Корни" ДЕРЕВА здесь, в России, в Петербурге, но "растет" оно в Германии. А еще раньше - в Чехии, в Италии, в Голландии - везде, где для Театра нет границ. <br />
+<br />
+К сожалению, ДЕРЕВО давно не видели в Петербурге. Театр почему-то не приглашают ни на "Солнцеворот", ни на "Кук-арт", но он выступает и получает главные призы на ведущих фестивалях Европы. Мы решили поместить на своих страницах отрывки из статей о ДЕРЕВЕ, напечатанных в европейских изданиях за последние несколько лет, тем самым продолжив разговор о "корнях и кроне" определенного театрального направления. <br />
+<br />
+<br />
+Глядя на красное<br />
+<br />
+<br />
+Спектакль русского театра ДЕРЕВО стал хитом Эдинбургского фестиваля "Задворки" в 1997 году и Лондонского Международного Мим-Фестиваля в этом году. Эми Слейтер ("Perpetual Motion") беседует с руководителем театра Антоном Адасинским.<br />
+<br />
+<br />
+- Всегда ли Вы испытывали страсть к театру?<br />
+<br />
+<br />
+- У меня очень плохая память. Это не значит, что я не помню, что со мной случилось много лет тому назад. Я не помню вещей, которые произошли несколько дней тому назад. Поэтому я не могу сказать, всегда ли я интересовался театром. Скорее, больше фотографией; ходил везде с фотоаппаратом и длинными волосами. Однажды я сделал для газеты фоторепортаж о группе актеров, и один человек из этой группы попросил у меня мой телефон. Этот человек был русский клоун Слава Полунин. Он сказал: "У меня есть театральная студия, ты можешь прийти и присоединиться к нам, если хочешь". <br />
+<br />
+<br />
+- Это действительно было так просто?<br />
+<br />
+<br />
+<br />
+ <br />
+- Ну, после некоторой подготовки я пошел пробоваться в клоунскую школу Полунина. Ему понравился мой "показ", и он принял меня в "Лицедеи", в свой театр. Труппа была довольно большая - семь человек. Я провел там четыре года. Все клоуны были веселые, и только я один был грустный. Мы сделали представление, которое называлось "Сны", половина идей Славы, половина - моя. Мы со Славой совсем по-разному смотрели на творчество. Мне показалось, что идеи "Лицедеев" слишком конкретны, и я ушел. Полгода я отдыхал и ничего не делал. Потом три месяца играл на своей трубе в одном кафе. Затем я понял, что должен снова вернуться в театр. Объявил прослушивание, чтобы открыть свой театр. И я открыл студию - набрал новую группу и начал делать новый спектакль с новыми идеями. Люди приходили каждый день и очень много работали. Вход был свободный. Никаких денег.<br />
+<br />
+<br />
+- Как вы смогли выжить в плане финансов?<br />
+<br />
+<br />
+- Я работал во Дворце Молодежи, в Санкт-Петербурге, в кафе и делал пантомиму для детей. Мы усердно работали по много часов в день. Люди начали уходить, потому что так работать было слишком тяжело. Через год нас осталось шесть человек. Эти люди и составили ДЕРЕВО. <br />
+<br />
+<br />
+Потом рок-группа "АВИА" пригласила меня сделать совместное шоу. Это был невероятный успех, потому что в то время никто в России не делал таких шоу: блондинки в коротких юбках, танцы, акробатика, живые пирамиды. Это было похоже на агитпроп 1920 30-х годов. Но затем я решил, что должен сконцентрироваться на работе моего собственного театра. <br />
+<br />
+<br />
+- У вас есть театральное образование?<br />
+<br />
+<br />
+- Нет. Я делал все не так, как написано в книгах. Вокруг меня было много талантливых людей, я прислушивался к их мнениям. Но главным вдохновителем была документальная книга со старыми фотографиями людей, больных шизофренией. Я открыл книгу, и энергия этих фотографий просто выплеснулась на меня: глаза этих людей словно смотрели сквозь камеру. Это шокировало. И я сказал своим артистам: "Мне нужны эти глаза. Можете ли вы сыграть эти глаза?" Я очень сильно чувствовал энергию тех взглядов с фотографий. Но, конечно, никто не смог их сыграть. Это было нечто вроде ауры, особый вид энергии. Найти такое в реальной жизни очень трудно. Затем, через два или три месяца, я нашел книгу о танцоре буто Татцуми Тигитата, который работал по технике Кацу Оно. Когда я открыл эту книгу, я обнаружил подобную силу, энергию, те же глаза. Такая же странная аура существует в буто. Я знаю, что Тигитата - не шизофреник, но у него есть такая энергия. Он - невероятный танцор. Я увидел, что возможно сделать спектакль с таким видом энергии, которая была обнаружена мной в книге о шизофрениках. <br />
+<br />
+<br />
+<br />
+ <br />
+Мы начали делать упражнения, которые, главным образом, основывались на идее "прийти к состоянию нуля". Это нейтральное состояние, но не маска безразличия. Это состояние, в котором сильна идея нейтральности. Мы пригласили друзей и устроили для них акцию: хэпппенинги и танцы прямо на улице. О таких вещах в России тогда никто не слышал. Люди реагировали очень странно, когда видели обнаженных исполнителей. Если ты работал действительно с отдачей, это выглядело отлично, но если нет - тебя могли просто убить. <br />
+<br />
+<br />
+Мы очень много работали. В 90-х, при "перестройке", люди начали приезжать в Россию, и это открыло двери и для нас. В Россию приезжали продюсеры в поисках новых идей. И они приходили смотреть на ДЕРЕВО. <br />
+<br />
+<br />
+- Как вам удалось создать собственное пространство?<br />
+<br />
+<br />
+- Ты можешь сделать что-то, если действительно хочешь этого. Мы получили помещение во Дворце Молодежи со сценой 10 на 10 метров, аппаратуру. В это было невозможно поверить, это было невероятно. Мы не потратили ни копейки. Доход с билетов был поделен между Дворцом и ДЕРЕВОМ. И это было началом: на свои деньги мы могли содержать свой театр.<br />
+<br />
+<br />
+- Какие пьесы вы ставили?<br />
+<br />
+<br />
+<br />
+ <br />
+- "Серая зона", "Красная зона", "Коричневая зона", "Синяя зона" или перформанс N 1, N 9 или N 4. Каждый вечер что-то новое. На одном представлении мы собрали целую кучу фотографий из нашего прошлого и просто бросили в огонь: настоящий русский андеграунд жжет свое прошлое! Было жарко, и от горящих старых фотографий стояла страшная вонь. В какой-то момент один из артистов, Дима, начал танцевать со столом... Иногда мы работали на воде, на реке. Мы использовали плоты, и это выглядело так, будто мы ходим по воде! Пять эмбрионов, плывущих вниз по реке. Была годовщина бомбардировки Хиросимы, и японское телевидение предложило провести эту акцию. Была работа с масками. Мы поставили стулья посреди Невского проспекта и делали формы человеческих лиц. Длилось это 15 или 20 минут под барабаны и аккордеоны. Выражения лиц после снятия гипсовых масок были невероятными, потому что под маской слух и зрение менялись так, что когда приходило время снять ее, - открывались глаза. Ни с чем не сравнимые ощущения. Зрители кричали и плакали. Они буквально орали о том, что испытывают какое-то странное ощущение. <br />
+<br />
+<br />
+- Когда вы покинули Россию?<br />
+<br />
+<br />
+- В конце концов в России началась нормальная жизнь. Люди стали думать о ренте, о бизнесе, о деньгах, и мы просто поняли, что отдали там слишком много, что пришло время уезжать. У нас были хорошие связи с Прагой, куда нас приглашали работать в настоящем театре. И мы поехали. Потом мы жили в Амстердаме, во Флоренции. Сейчас мы в Дрездене, в Германии. Это очень интересно, потому что немцы действительно хотят понять, что мы за театр. Для них это совсем не игра. Очень интересно работать там, где люди так серьезно к тебе относятся. <br />
+<br />
+<br />
+Slater E. Seeing Red // Total Theatre. 1998. January.<br />
+<br />
+<br />
+Всадник<br />
+<br />
+<br />
+ДЕРЕВО представило спектакль "Всадник", действие которого соткано из отзвуков симфонической музыки, джаза, бастринга, фольклора. Это мир, состоящий из множества картин, поставленных рядом, как страницы книги, как следующие один за другим кадры фильма. Простые по форме декорации напоминают о поэтичной атмосфере студий немого кино. Необычная эстетика театра, включающая в себя элементы комедии dell arte и пантомимы, открывает глаза на то, что мы, привыкшие к обыденности современного Запада, не замечаем.<br />
+<br />
+<br />
+Терпкая лирика, жестокий и волнующий бурлеск - отражен весь трагизм человеческого существования. Актеры умело жонглируют нашими эмоциями, из всех иллюзий выбирая лишь иллюзию театрального искусства. Искатели смысла жизни, они плетут нить, соединяющую настоящее с будущим, реальное с воображаемым. <br />
+<br />
+<br />
+Servin Micheline B. Le cavalier // Gestes. 1997. N 8. Avril.<br />
+<br />
+<br />
+Однажды... давным-давно<br />
+<br />
+<br />
+ДЕРЕВО не нуждается ни в чем, кроме места для работы - помещения для тренингов, места для ночлега и машины, чтобы ездить на фестивали. Честер Мюллер, менеджер театра, заботится о гастрольных поездках и визах. <br />
+<br />
+<br />
+Еще в 1993 году на первых Дрезденских Танцевальных неделях ДЕРЕВО завоевало признательность публики своими проектами "Grauzone" и "Inner Gardens". Сейчас, после того, как театр поселился в Дрездене, Адасинский открыл свою лабораторию "Школа на колесах". На последний workshop поступило около восьмисот заявок на участие. Отбор видео и письменных материалов, присланных желающими учиться, сократил круг участников в тренинге до двух-трех десятков человек. После определенного количества занятий в группе остались те, кого теперь называют "побегами" ДЕРЕВА. Концептуальным звеном театра по-прежнему являются Елена Яровая, Татьяна Хабарова и Антон Адасинский. <br />
+<br />
+<br />
+Сотрудничество Дрездена с Лабораторией Антона Адасинского считается целесообразным для обеих сторон. "Труппа театра, - как выразился Честер Мюллер, - обогащает местное сценическое искусство".<br />
+<br />
+<br />
+Simang P. Once... es war einmal // Dresdner kulturmagazin. 1998. Juni.<br />
+<br />
+<br />
+<br />
+ <br />
+Любовь и смерть на взморье<br />
+<br />
+<br />
+В это мрачное время Лондонский Международный фестиваль Пантомимы поднимает настроение своими неожиданностями и свежими идеями. Клоуны, акробаты, танцоры и фокусники собираются здесь, чтобы показать свой совершенно индивидуальный подход к пластическому театру. За период моего знакомства с Фестивалем я редко была разочарована мастерством актеров и часто покорена тем, как они превращают телесные ухищрения в гениальный театр. <br />
+<br />
+<br />
+Подкупает обаяние, особенно у клоунов. Вот почему ДЕРЕВО, экстремальная русская труппа, вызвала огромное удивление в последний год премьерой холодящей душу "Красной зоны". Пять участников воспринимают свое клоунство всерьез: они бреют головы, лишают себя физических удобств и обращаются к тем непростым, омертвевшим временам, когда только Шуты и Нищие осмеливались сказать правду. <br />
+<br />
+<br />
+"Однажды" (спектакль, показанный в прошлом году на Эдинбургском Фестивале) оказался таким же удивительным. Это сентиментальная, смешная и горькая история о безнадежной страсти старого клошара (А.Адасинский) к официантке приморского кафе (Е.Яровая), которая предпочла хитрого мрачного посетителя - нового Петрушку (Т.Хабарова). И это не танец, а выверенный пластический рисунок, вплоть до последнего движения бровей. Очаровательные декорации и костюмы (Максим Исаев) способствуют точности технических решений спектакля: картина на стене становится самостоятельным театром; кусочки стекла раскачиваются на веревочках под шатающейся дождевой тучей. Шум моря и избитые любовные песни, касающиеся нашего слуха.<br />
+<br />
+<br />
+Brown I. Love and death on the beach <br />
+// The Daily Telegraph.<br />
+1999. January.<br />
+<br />
+<br />
+Создатель марионетки<br />
+<br />
+<br />
+Антон Адасинский - больше чем "маленький злодей". О том, на что способны его клоуны, рассказывает Лин Гарднер.<br />
+<br />
+<br />
+<br />
+ <br />
+Есть люди, которые верят, что Антон Адасинский - новый театральный Мессия. Есть другие, которые считают его сумасшедшим. На самом деле, я думаю, что в нем, возможно, есть и то, и другое, но мне все равно, потому что Адасинский и его русская клоунская труппа делают прекрасный театр. Прекрасный, а иногда и пугающий. <br />
+<br />
+<br />
+Это не клоунада в привычном понимании. Красные носы и мешковатые брюки ничего не объяснят. В их репертуаре такие спектакли тоже имеются - ДЕРЕВО, вероятно, может сделать такое, что вы надорвете горло от смеха.<br />
+<br />
+<br />
+Многие из тех, кто видел "Красную зону" на прошлогоднем Международном Мим-Фестивале в Лондоне, до сих пор отходят от этого 70-минутного визита в Апокалипсис, в котором бритоголовые маньяки с набеленными лицами, в обвислых трико или бандажах вращали нелепые тяжелые колеса и неумело жонглировали смертоносными предметами под взрывы смеха и аплодисментов, записанных на пленке. <br />
+<br />
+<br />
+<br />
+ <br />
+Задолго до возникновения известного нынешнего стиля цирка-ради-удовольствия Архаоза и его подражателей "Красная зона" стала брутальным, вдохновенным буто, размышлением о мире, в котором крошечные клоунские фигурки обречены на бесконечную борьбу с монолитными силами, грозящими уничтожить их.<br />
+<br />
+<br />
+Но, как и все по-настоящему великие театральные компании, ДЕРЕВО знает, как ошеломить вас неожиданным приемом. Едва вы решили, что нашли им точную характеристику, к вам приходит "Однажды" - милая, хитрая сказка о бурях, бушующих в людских сердцах. Если "Красная зона" относится к спектаклям, после которых вас мучают ночные кошмары, этот спектакль наверняка разобьет ваше сердце и заставит прийти еще раз.<br />
+<br />
+<br />
+У Антона Адасинского нет своей теории, есть только уверенность в том, что интеллект - это враг сцены и хороший театр завоевывает сердца и души, а не умы. "Мы открыты для любого воздействия", - говорит он о своей отчаянной компании, которая последние 10 лет странствовала из Петербурга в Прагу, из Амстердама во Флоренцию, пока, наконец, не осела в Дрездене, где теперь снимает огромный старый склад, превратившийся в "фабрику культуры".<br />
+<br />
+<br />
+Все же бродячий образ жизни оставляет свои следы: если "Красная зона", одна из ранних постановок театра, родилась из выступлений авангардной рок-группы АВИА, с которой сотрудничал Адасинский, то "Однажды", как результат измененного "перестройкой" сознания, несет приметы комедии dell arte. Фантастически простая и, тем не менее, точная и технически изощренная, пьеса "Однажды" с безграничным воображением рассказывает 300-летнюю историю оборванного старика, который влюбился в прекрасную официантку; но у него есть более удачливый соперник в этой любви. Порой кажется, что это немой фильм Ч.Чаплина, порой это выглядит как ожившая картина С.Дали, есть там и глупый Купидон в духе Караваджо, растративший впустую все свои стрелы, и падающие звезды, летящие, как Харлей Девидсон, и ангелы, которые разобьют ваше сердце, и маленький надувной пароход, плавающий по этим бурнокипящим морям. Увидеть это - значит увидеть жаркое солнце, выглянувшее в зимний день: гарантия того, что растают даже ледяные сердца. <br />
+<br />
+<br />
+<br />
+ <br />
+"Однажды", по мнению Адасинского, - не просто обычная история о любви, но и история театра, отношений внутри него. Квинтет, который играет в ДЕРЕВЕ, - это те, кого Адасинский выбрал из пятидесяти претендентов, откликнувшихся на объявление о наборе в театр. Антон отобрал актеров после года тяжелых тренировок по его собственной системе, целью которой было "привести их к нулю". "Это, - говорит он, - путь к созданию марионетки, с которой ты можешь делать все, что угодно... Мы фанатики. Мы верим... до конца, у нас нет сомнений. Мы живем в стороне от нормальной жизни, мы приносим огромную жертву". <br />
+<br />
+<br />
+Все это может звучать несколько устрашающе, но актеры живут вместе почти десять лет, и кажется невероятным, что группа людей, которые мало похожи на здоровых и счастливых, могла создать такую солнечную и трогательную историю "Однажды".<br />
+<br />
+<br />
+Gardner L. The puppet master // The Guardian.<br />
+1999. January.<br />
+<br />
+<br />
+Перевод: <br />
+Елена Борисова, Наталья Марина (англ.);<br />
+Наталья Усаченко (франц.);<br />
+Анна Хадалаева (нем.)<br />
+<br />
+Источник: "Петербургский театральный журнал"<br />
+N 22 декабрь 2000 г.<br />
+http://www.theatre.ru/ptzh/2000/22/059.html</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="359.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

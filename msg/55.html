@@ -1,0 +1,3724 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="55.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты</b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+
+
+<div align=center><b id=yellow>статьи</b><br><br></div>
+<div align="justify"></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="483.html" class=yw><b>Курукуласурия А.  В поисках новой музы. - О балете "Щелкунчик" // Новое время. - 2002. - ≤ 18. - 28 апреля.</b></a><br>
+<div id=bl>Петербург на московских подмостках <br />
+<br />
+На нынешней ²Золотой маске⌡ богатым на новации оказался город Санкт-Петербург <br />
+(ведь не всегда же подобное заявление выглядит подхалимством?). Именно театрам <br />
+северной столицы удалось в последних сезонах обновить . порой радикально . <br />
+самые, казалось бы, консервативные жанры. <br />
+<br />
+Взять хотя бы оперу. Театр ²Зазеркалье⌡ приехал в Москву с ²Богемой⌡ Пуччини. ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="454.html" class=yw><b>Алла Шарандина. Надувной купол и миф об аргонавтах - в планах Антона Адасинского // Санкт-Петербургские ведомости. - 2003. - 8 апреля.</b></a><br>
+<div id=bl>Сегодня театр 'Дерево' представит зрителям 'Острова в океане' - постановку, номинированную на премию 'Золотая маска'. За несколько дней до премьеры создатель 'Дерева' Антон Адасинский встретился с журналистами в уютной маленькой библиотеке Интернет-клуба Quo Vadis?<br />
+<br />
+- Авария во льдах, - сразу кивнул головой Антон на организаторов гастролей, что-то нервно шепчущих по мобильному телефону в углу   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="470.html" class=yw><b>Субботнее интервью "Радио Свобода".   Антон Адасинский. 17 мая 2003 года.</b></a><br>
+<div id=bl><b> Виктор Нехезин: </b> Сегодня гость Субботнего интервью . Антон Адасинский. Он около четырех лет проработал в труппе Вячеслава Полунина "Лицедеи", после чего основал свой театр "Дерево". Это было в 88-м году. Западная пресса тогда называла "Дерево" "арт-острием, прорывающим железный занавес". После российского периода с выступлениями в ленинградском Дворце молодежи и на улицах города театр   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="471.html" class=yw><b>"Хочу свой дом в Питере" . Интервью Елены Петровой с Антоном  Адасинским// Аргументы и факты. - 2003. - ≤ 15.</b></a><br>
+<div id=bl>В начале апреля в нашем городе выступал театр ²Дерево⌡ Антона Адасинского. Главная цель приезда  . участие в ²Золотой маске⌡ с премьерой ²Острова в океане⌡, но артисты показали также уже известный спектакль ²Однажды⌡. Прием публики, как всегда у ²Дерева⌡, восторженный. Но самое приятное, что Антон намерен вернуться в Петербург из Германии, где его театр работает уже 12 лет. <br />
+<br />
+<b> Собирание сил   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="475.html" class=yw><b>Человек эпохи андеграунда//Колеса. - 2003. - ≤4.</b></a><br>
+<div id=bl>Для средней руки конформиста русский театральный авангард не значит ничего хорошего . без системы Станиславского, дорогих декораций и приличной вешалки, такой театр кажется горькой пилюлей, пощечиной "достоянию". Думающих так . большинство. Меньшинство в это время стоит в очередях за билетами на спектакли Антона Адасинского и его театра "Дерево", а когда билеты кончаются прорывается в зрительный   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="474.html" class=yw><b>Шервуд О. ДЕРЕВО: "Юг. Граница"// сайт "Фестиваля Фестивалей".</b></a><br>
+<div id=bl>Премьера фильма  Антона   Адасинского  "Юг. Граница" прошла в петербургском Доме кино 6 марта. <br />
+Это дебют в кинорежиссуре известного актера и театрального деятеля: ленинградец Адасинский начинал в 80-е годы в клоун-мим-театре "Лицедеи" Вячеслава Полунина, затем основал собственный театр Derevo, которому не нашлось места в России и потому последние десять лет он постоянно "прописан" в Дрездене.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="476.html" class=yw><b>²Дерево⌡ десять лет спустя</b></a><br>
+<div id=bl>Прага, после десятилетнего перерыва, дождалась выступления легендарного театра ²Дерево⌡. Состоялось оно 24-ого и 26-ого мая в Браницком театре. Пражским зрителям пришлось довольствоваться двумя спектаклями, т. к. третий, запланированный на 25 мая, был отменен. О причине, по которой руководитель и актер ²Дерева⌡ Антон Адасинский должен был прервать гастроли в Праге, вы узнаете чуть позже. <br />
+<br />
+   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="478.html" class=yw><b>"Дерево" и "Патриотизм" . Размышления после пресс-конференции с театром DEREVO. 2000 год.</b></a><br>
+<div id=bl>клуб "Декаданс", 9 октября<br />
+  <br />
+Интересно, можно ли обвинять театр в непатриотичности только на основании того, что его смотрят и ПОНИМАЮТ в других странах ничуть не хуже, чем в родной? Можно ли, задыхаясь от переполняющего душу патриотического (с большой буквы) шовинизма (или наоборот), внушать даже не себе, внушать творческому человеку, что единственным местом его "подпитки" (слово то какое   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="479.html" class=yw><b>Цыткин Л. Изогнутые палки Адасинского//Петербургские молодежные еврейские страницы.- 2001. - март.</b></a><br>
+<div id=bl>Те, кто жил в Ленинграде в 80-е годы, очевидно, помнят вспышку интереса к тому, что на Западе принято называть театром фринджа: пантомима, клоунада, хэппенинги, нетрадиционные . чаще абсурдистские . спектакли для одного, двух, много . трех исполнителей. Во Дворце молодежи проходили фестивали мимов, Вячеслав Полунин организовал грандиозный фестиваль уличных театров .Караван мира., где было   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="480.html" class=yw><b>Буква "Д" сегодня особенно трудно удается... //На дне. -  1998. - No 6(39) .</b></a><br>
+<div id=bl>Иметь театр, получивший гран-при знаменитого Эдинбургского фестиваля, престижно для любого города. Нынче "Дерево" украшает собой Дрезден. <br />
+<br />
+И пусть "Дерево" давно растет и плодоносит в Европе, оно все равно остается питерским. Здесь его корни. Здесь его любят и помнят. <br />
+<br />
+И "Дерево" помнит. Накануне десятилетия театра редакция получила их послание. <br />
+<br />
+"Дереву" - десять лет. Ненавижу дни   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="481.html" class=yw><b>Давыдова М. Ловись спектакль -- большой и маленький // Время новостей. - ≤186.-   2000. - 14 декабря.</b></a><br>
+<div id=bl>Объявлены номинанты премии "Золотая маска"<br />
+<br />
+В этом году в конкурсе спектаклей драматического театра были установлены две основные номинации: "Лучшие спектакли большой формы" и "Лучшие спектакли малой формы". С "маленькими" спектаклями проблем почти не было. "Черный монах" (московский ТЮЗ) и "Одна абсолютно счастливая деревня" (Мастерская Петра Фоменко) -- неизменные лидеры всех московских   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="482.html" class=yw><b>Гучмазова Л., Ачильдиев С .  Сказка на мольберте. - О балете "Щелкунчик" Мариинского театра и  роли Антона Адасинского// Алфавит. -  2001. -7 марта. - ≤10 (120).</b></a><br>
+<div id=bl>До самого недавнего времени Михаил Шемякин был известен как художник, скульптор, меценат, общественный деятель, спасший не один десяток советских солдат и офицеров из афганского плена, основатель Нью-Йоркского института философии, психологии и творчества... Теперь он выступил еще в одной, принципиально новой для себя роли . постановщика и художника балета "Щелкунчик" на сцене Мариинского   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="484.html" class=yw><b>Ольга Егошина. .Золотая маска.-2001: неожиданностью стало только решение жюри... - Фрагмент статьи // 1 сентября. - 2001. - ≤ 27.</b></a><br>
+<div id=bl>.Золотая маска.-2001: неожиданностью стало только решение жюри...<br />
+Решение жюри редко принимается с безоговорочным согласием, но и общее недовольство бывает нечасто. Одинокий выкрик .позор!. во время оглашения лауреатов не очень подходил духу театральной церемонии, но настроение зрительного зала отразил довольно точно. Обычно цитируя расхожее выражение . жюри, как жена Цезаря, должно быть выше   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="356.html" class=yw><b>Елена Петрова. Адасинского в Петербурге "то колбасит, то плющит". Интервью . // АиФ Петербург. Интернет-версия, #11 (396) 14/03/2001</b></a><br>
+<div id=bl><b> Для многих питерцев Антон Адасинский - культовая фигура. Спектакли театра 'DEREVO' потрясали воображение: веселили так, что смеяться было уже невмоготу, если печалили, то до слез. А вот молодежи не повезло, потому что Адасинский из России уехал, и ничего подобного в городе больше не появилось. 'DEREVO' теперь живет в Дрездене. Первые - после долгого перерыва - питерские гастроли состоялись в   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="353.html" class=yw><b>Интервью Антона Адасинского Cергею Бугаеву // Активист. -  2001.</b></a><br>
+<div id=bl>В последний день гастролей 'Дерева' те, кому не досталось билетов, выломали дверь театра и прорвались в зал. В Эдинбурге на их представления в прошлом году попасть было невозможно, спектакли провожали аплодисментами стоя. Там 'Дерево' стало знаменито со своим 'Однажды' - и впервые главный приз авторитетного фестиваля достался клоунам.<br />
+В Европе этот жанр называют physical theatre - театр тела. Но  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="355.html" class=yw><b>Лондонские гастроли "Дерева" // Сайт Би-би-си. Арт-Квартрал. -  2002. - 6 сентября</b></a><br>
+<div id=bl><b> На фестивале в Эдинбурге театр "Дерево" был удостоен премии Total Theatre Award </b><br />
+<br />
+После триумфального месячного пребывания на Эдинбургском фестивале театр "Дерево" - по традиции считающийся петербургским, хотя и базируется он уже несколько лет в германском Дрездене - прибыл в Лондон. В течение почти всего сентября театр показывает свой удостоенный двух престижных наград спектакль La   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="357.html" class=yw><b>Андрей Батов. Антон Адасинский мечтает вернуться в Петербург // "Комсомольская правда" в Петербурге. - 2002. - 26 октября.</b></a><br>
+<div id=bl><i> А пока он в Париже станцевал Дроссельмейера в премьерных для Франции показах балета 'Щелкунчик' в постановке Михаила Шемякина </i><br />
+<br />
+Стало известно, что режиссер театра 'Дерево' планирует в феврале 2003 года побаловать питерских театралов новым спектаклем 'Острова в океане'. Параллельно с этим в планы входит открытие некоего фестиваля в дни празднования юбилея города. Под огромным куполом   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="358.html" class=yw><b>Александра Лаврова. Театр - это не только драма, но и Suicide in Progress // Новая Сибирь. Сайт газеты.</b></a><br>
+<div id=bl>Сегодня, 23 марта, начал свою работу финальный фестиваль национальной театральной премии "Золотая маска". Сразу три спектакля на разных сценах увидят сегодня участники феста - признанных фаворитов в номинациях драматического театра "Одну абсолютно счастливую деревню" Петра Фоменко, "Черного монаха" Камы Гинкаса и "Суицид", новый спектакль театра "Дерево", проходящий по разделу "Новация", который   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="359.html" class=yw><b>"Где растет Дерево? " Отрывки из статей о о ДЕРЕВЕ, напечатанных в европейских изданиях</b></a><br>
+<div id=bl>О театре ДЕРЕВО мы не писали давно, с 1993 года (см.: "Петербургский театральный журнал". N 4). "Корни" ДЕРЕВА здесь, в России, в Петербурге, но "растет" оно в Германии. А еще раньше - в Чехии, в Италии, в Голландии - везде, где для Театра нет границ. <br />
+<br />
+К сожалению, ДЕРЕВО давно не видели в Петербурге. Театр почему-то не приглашают ни на "Солнцеворот", ни на "Кук-арт", но он выступает и   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="360.html" class=yw><b>Интервью Светланы Железновой с  Антоном Адасинскиим // Собака. ru. - 2001. - ≤ 5.</b></a><br>
+<div id=bl>Помню черное помещение под крышей Дворца молодежи. Помню "зародышевую" пластику обнаженных актеров на сцене, Отчетливо помню: кто-то в ватнике, по сценарию падая сверху, огрел меня по спине коленом.<br />
+<br />
+А в начале 90-х мы уже слышали о театре "Дерево" в Праге, в Амстердаме, под Флоренцией... О том, как снобы в Эдинбурге, во французском Перигье, на немецких фестивалях Агеnа и Wandertheater - у их   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="361.html" class=yw><b>Елена Тихомирова. Почему "DEREVO" не растет в Петербурге // Санкт-Петербургские ведомости. - 2001. - 21 марта.</b></a><br>
+<div id=bl>Театр "DEREVO" Антона Адасинского, когда-то питерский, а теперь дрезденский, больше двух недель гостил в родном городе. Это уже вторые после долгого перерыва гастроли в сезоне, а вообще-то Адасинский уехал на Запад в начале 90-х. Успело вырасти новое поколение, которое театра не знает, но на первый же спектакль попасть было невозможно _ в нашем городе сейчас мало подобных неформальных трупп.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="362.html" class=yw><b>Майя Одина. Темные силы нас злобно гнетут // 7 дней. - 2001.- 29 марта.</b></a><br>
+<div id=bl>На фестивале "Золотая маска" сыграны спектакли, номинированные на "Новацию"<br />
+<br />
+"ЗОЛОТАЯ маска" этого года сохраняет милые черты лет предыдущих. Как ни усердствует администрация фестиваля, количество безбилетников, проникающих на спектакли, значительно превышает емкости арендуемых площадок, а размещение зрителей в зале по неустановленной, но красивой традиции регулярно завершается личным   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="363.html" class=yw><b>Алан Зарин. "Дерево" возвращается. //Площадь Свободы, Тольятти.</b></a><br>
+<div id=bl>Сервер газеты "ПЛОЩАДЬ СВОБОДЫ"  предлагает читателям эксклюзивное интервью с художественным руководителем театра "Дерево" Антоном Адасинским, присматривавшим в Москве площадки для показа новых работ своего коллектива. <br />
+<br />
+- И все-таки кто вы - актер или больше режиссер? <br />
+<br />
+- Наверное, все-таки актер. В нашем театре весь материал мы делаем вместе. Моя роль - роль энергетического "толкателя".   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="367.html" class=yw><b>Ольга Краснова. DEREVO: театр души человеческой. Март 2001 г.</b></a><br>
+<div id=bl>Уникальным событием не только городского масштаба, но и вообще нашего российского театрального мира, являются гастроли театра DEREVO, показывающего свое искусство в Петербурге. Стилистика DEREVO, такая странная, на первый взгляд непосвященного, и такая пронзительно правдивая, жизненная, натуральная, внутренне, глубоко проникновенная, когда становится частью личности благодарного зрителя, - то,   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="382.html" class=yw><b>Дина Годер. Толстых любят все. Фрагмент статьи о премии "Новация" "Золотой маски-2001"</b></a><br>
+<div id=bl>На фестивале "Золотая маска" показали спектакли, претендующие на премию в номинации "Новация"  <br />
+<br />
+Впервые премию за "Новацию" на "Золотой маске" дали два года назад - забавно, что новизна была почти вековой давности: награду получила "Победа над солнцем" Крученых, где Александр Пономарев пытался реконструировать спектакль футуристов. На следующий год в программе уже утвердили специальную   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="388.html" class=yw><b>"ПЛЯСКА СМЕРТИ"</b></a><br>
+<div id=bl>2, 3, 4 ноября 2002 <br />
+Учебный Театр<br />
+<br />
+Лауреат 'Золотой маски - 2002', гендиректор Кинефа, меценат Вадим Сомов позволил актерам МДТ-Театра Европы Наталье Фоменко и Игорю Иванову воплотить на сцене Учебного Театра на Моховой трагедию Августа Стриндберга 'Пляска смерти'.<br />
+<br />
+ПЬЕСА Августа Стриндберга. Режиссер Андрей Прикотенко. Художник Эмиль Капелюш. В ролях: Игорь Иванов, Наталья Фоменко, Сергей   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="379.html" class=yw><b>Инна Тер-Неткян. Наши в Эдинбурге // Театральный Петербург. - 2002.-  сентябрь.</b></a><br>
+<div id=bl><i> Фрагмент  статьи, посященный театру Derevo. </i><br />
+<br />
+<b> <br />
+<br />
+В этом году на Эдинбургском театральном фестивале в программе Фриндж русская школа клоунады, мимики и пантомимы была представлена особенно щедро. Почти все российские труппы прибыли на этот раз из Санкт-Петербурга и были так или иначе связаны в прошлом со знаменитыми "Лицедеями". <br />
+<br />
+Выходцы из этого творческого гнезда разлетелись   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="380.html" class=yw><b>Екатерина Васенина. Скрипка, череп и пальто с осенними листьями // Новая газета. - 2001. - 15 апреля.</b></a><br>
+<div id=bl><i> О карнавале, планах на жизнь и ощущениях от нее корреспондент 'Новой газеты' беседует с Михаилом ШЕМЯКИНЫМ и Антоном АДАСИНСКИМ </i><br />
+       <br />
+&nbsp;&nbsp;&nbsp;&nbsp;Михаил ШЕМЯКИН теперь все больше работает в России. Придуманный им балет 'Щелкунчик' номинирован на премию 'Золотая маска'. Ему дан карт-бланш на новую развернутую версию 'Щелкунчика' в той же Мариинке, поручено обустроить по собственному   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="381.html" class=yw><b>Андрей Бурлака. АВИА. История группы с участием Антона Адасинского // www.rock-n-roll.ru</b></a><br>
+<div id=bl>Питерская группа АВИА появилась на свет в сентябре 1985 и объединила силы трёх блестящих инструменталистов и самобытных авторов песен, пути которых впервые пересеклись тремя годами раньше в составе СТРАННЫХ ИГР - одного из наиболее любопытных феноменов отечественного рока первой половины 80-х, чья музыка, вне всяких сомнений, привила ему интонации новой волны. <br />
+<br />
+Алексей Рахов (p.28.05.60 в   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="383.html" class=yw><b>"Мы с Полуниным делали "бяки" .  Интервью  Екатерины Ефремовой с Антоном  Адасинским // Gazeta.ru</b></a><br>
+<div id=bl>Известный танцовщик, мим и хореограф, основатель театра "Дерево" Антон Адасинский в последние годы живет и работает в Германии. В Санкт-Петербург его вернул Михаил Шемякин, предложивший Адасинскому роль Дроссельмейера в балете "Щелкунчик". Вчера один из самых ярких персонажей питерского андерграунда в очередной раз вышел на сцену Мариинского театра. С Антоном Адасинским встретилась корреспондент   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="386.html" class=yw><b>Марина Дмитриева . "Дерево": корни, ветви и плоды. Интервью с Максимом Исаевым, АХЕ // На дне. -  1996. - No 31.</b></a><br>
+<div id=bl>После трехлетнего отсутствия в городе на фестивале в Балтийском Доме появился питерский театр "Дерево", уже семь лет работающий в Европе. Как оказалось, не вполне знакомый нам теперь театр. Со спектаклем "Юг. Граница". <br />
+<br />
+О "Дереве" конца 80-х и сегодняшнем согласился рассказать художник группы АХЕ Максим Исаев. Как зритель. Но зритель весьма искушенный и просвещенный. <br />
+<br />
+- Когда ты впервые   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="400.html" class=yw><b>Юлия Яковелва. Derevo обрубает свои корни //Коммерсант. - 2000.- ≤ 192.-  13 октября.</b></a><br>
+<div id=bl>В Петербурге начались гастроли мим-театра Dегеvо - одного на немногих русских театров; успешно встроившихся в европейское театральное пространство. <br />
+Театр был основан Антоном Адасинским в Ленинграде в 1988 году, отпочковавшись от 'Лицедеев' Вячеслава Полунина. Был признан. 'артострием, прорывающим 'железный занавес', а затем выскользнул в: проделанную, им самим дыру.  Сменил несколько   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="401.html" class=yw><b>Майя Крылова. Бетховен на гитаре// Новая газета. - 2000.- 28 марта.</b></a><br>
+<div id=bl>ВНЕ КОНКУРСНОЙ программы фестиваля 'Золотая маска' прошло выступление пантомимного театра 'Дерево' (СПБ-Дрезден). Спектакль 'Однажды', показанный на сцене МТЮЗа, имеет награду четырех международных театральных фестивалей. Автор идеи, режиссер и исполнитель главной роли - Антон Адасинский.<br />
+'Однажды' многим похож на 'Суицид в прогрессии', показанный театром Адасинского несколько дней назад в   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="402.html" class=yw><b>Павел Руднев. Здравствуй, "Дерево"! Интервью с  Антоном Адасинским // Независимая газета.-  2000. - 25 октября.</b></a><br>
+<div id=bl>Антону Адасинскому некуда возвращаться<br />
+<br />
+ИЗ ДОСЬЕ НГ:<br />
+Хореограф Антон Адасинский - одна из ключевых фигур в экспериментальной культуре перестроечной эпохи. В конце 80-х он прославился феерическим шоу с рок-группой "АВИА", соединив на сцене эксперименты питерских музыкантов и визуальный образ большевистских парадов, митингов с их кричащими транспарантами и конструктивистскими пирамидами. По сути, ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="403.html" class=yw><b>Дмитрий Савельев. Здравствуй, дерево. (Статья из журнала  VOGUE)</b></a><br>
+<div id=bl>Театр DEREVO, завоевавший западные сцены, вновь приезжает в родной Петербург - на гастроли.<br />
+<br />
+- Знаете, о чем я первым делом прошу студентов в любой стране, где провожу занятия? - спрашивает Антон Адасинский, основатель и лидер пластической студии DEREVO. Худой, бритый, с питерской бледностью, оттененной алыми кожаными штанами. - Я их прошу: поднимите руку, кто делает в жизни то, что ему хочется. ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="404.html" class=yw><b>Ирина Корнеева. "Новация" в регрессе // Время МН.-  2001. - 30 марта.</b></a><br>
+<div id=bl>Показаны четыре самых странных спектакля 'Золотой маски'<br />
+<br />
+Дальше всех в агрессивности формы пошел Антон Адасинский. Начало спектакля 'Suicide in progress' его театра 'Дерево' (Санкт-Петербург - Дрезден) можно рассматривать не как новацию, а как случай вопиющего хамства по отношению к зрителю. Совершенно голым, если не считать каких-то железных брякалок на причинном месте, у нас еще никто не   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="405.html" class=yw><b>Олег Зинцов. Антимиры.   "Новация" в программе "Золотой маски": адская пантомима и небесное зеркало // Ведомости. - 2001.-  апрель.</b></a><br>
+<div id=bl><b> "Новация" - самая резиновая номинация "Золотой маски". Обычно сюда попадает то, что никак не втискивается в традиционные жанровые рамки: куда еще, например, можно было определить лауреата прошлого года Евгения Гришковца с его монологами в жанре one man show? На этот раз "новаторы", напротив, представляют невербальный театр. Все номинанты "Новации" включены в параллельную программу Russian   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="419.html" class=yw><b>Трэшевая сказка. О фильме "14 цветов радуги"</b></a><br>
+<div id=bl>Неправда, что у нас не умеют снимать настоящее "трэшевое" кино! Снимают! Его просто не умеют увидеть. Тому пример -потрясающая работа Дмитрия Светозарова "Четырнадцать цветов радуги", не наделавшая никакого шума и незаметно проскользнувшая в прокате.<br />
+Когда появился "Змеиный источник", все радостно   закричали: вот, вот, хороший<br />
+российский ужастик! Ловите, а то убежит. Но, "на деле", ничего   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="439.html" class=yw><b>Виктор Ильичев. Набор из общих мест и из одного места //Независимая газета. - 2001. -  N 27.</b></a><br>
+<div id=bl>Театр "Дерево" выступил в Москве в рамках программы "Русский казус"<br />
+<br />
+О ТЕАТРЕ "Дерево", не игравшем в Москве лет десять, когда-то петербургском, а ныне - дрезденском, там, на Западе - популярном, а здесь, в России, бытующем в памяти когда-то восторженных своих зрителей, - как не написать?! Нельзя. <br />
+<br />
+Спектакль Антона Адасинского был показан в рамках специальной программы, озаглавленной   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="440.html" class=yw><b>"Марионетка - это нейтральное состояние, но не маска безразличия". Интервью Ильмиры Степановой с  Антоном  Адасинским //Русская мысль, Париж. - 2000. -  N 4345. - 14 декабря.</b></a><br>
+<div id=bl>В Санкт-Петербурге завершились гастроли театра "Дерево" (Дрезден), который был основан в Ленинграде 12 лет назад. В питерской театральной жизни конца 80-х - начала 90-х "Дерево" называли "арт-острием", прорывающим "железный занавес". Основатель и руководитель театра Антон Адасинский шесть лет проработал в труппе Вячеслава Полунина "Лицедеи", совместно с рок-групой "АВИА" сделал нашумевшее шоу, а   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="453.html" class=yw><b>Гадание по "Дереву". Интервью Надежды  Демкиной с Антоном Адасинским. // Невское время.  - 2003. - 4 апреля.</b></a><br>
+<div id=bl><b> Весь город шумит: в Питер опять приехал театр "Дерево". В рамках фестиваля "Золотая маска" можно будет увидеть последнюю работу увенчанного всевозможными европейскими наградами театра - "Острова в океане". А благодаря продюсерскому центру "Брат" мы снова увидим спектакль "Однажды". </b><br />
+<br />
+Театр-танец, театр-перформанс, мим-театр, театр-потрясение, "Дерево" выросло в Ленинграде. Антон   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="456.html" class=yw><b>Антон Адасинский - гость в студии "Радио Свобода" .  Беседовала Ольга Писпанен. 2 апреля 2003 г.</b></a><br>
+<div id=bl>Ведущая петербургского часа программы "Liberty Live" Ольга Писпанен: Сегодняшний гость петербургской студии Радио Свобода - гость заграничный и не часто радующий своим посещением театральную публику Петербурга - актер, танцор, режиссер и основатель театра "Дерево" Антон Адасинский. Русское чудо, русский театр физического действия, также живой театр, последний театр, могут перечисляться эти   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="465.html" class=yw><b>"Мы все политики". Интервью Екатерины Ефремовой с Антоном Адасинским//Совершенно Секретно - Версия в Питере. - 2003. - ≤6. - 17 февраля.</b></a><br>
+<div id=bl><b> Антон Адасинский. Бывший мим полунинских ²Лицедеев⌡, шоумен и хореограф рок-группы ²АВИА⌡, создатель и руководитель неофольклорной группы ²Дерево⌡, в прошлом сезоне оказался на государственной сцене Мариинского театра. Петербургский персонаж андеграундной культуры выступил в роли Дроссельмейера в проекте Михаила Шемякина ²Щелкунчик⌡ Чайковского (хореография Кирилла Симонова). В конце февраля,  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="413.html" class=yw><b>По имени Светозаров...</b></a><br>
+<div id=bl><b> Восьмая церемония награждения 'ТЭФИ' вызвала чувство недоумения и оставила больше вопросов, чем ответов. Тем не менее, одним из немногих 'исключений' стало решение жюри академиков в режиссерской номинации - 'ТЭФИ' получил петербургский кинорежиссер Дмитрий Светозаров. Его замечательная работа, многосерийная сага 'По имени Барон', - своеобразный российский аналог 'Однажды в Америке',   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="414.html" class=yw><b>"Я никогда не боялся аналогий с кулинарией"</b></a><br>
+<div id=bl><b> У фильмографии кинорежиссера Дмитрия Светозарова есть одна особенность - ее составляют фильмы разных жанров, но с общим для всех "трагическим" акцентом, будь то социальная драма "Без мундира", романтическая драма "Гаджо", спортивная драма "Скорость", притча "Псы" или психологический детектив "Арифметика убийства".<br />
+Большинство фильмов Светозарова повергает зрителя в состояние эмоционального   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="416.html" class=yw><b>Дмитрий Светозаров: "Мудрость состоит в том, чтобы уметь приспособиться ко всякой глупости"</b></a><br>
+<div id=bl><b> ЧТО должна делать милиция, народ знает хорошо. Чуть что, он сам первый кричит: "Милиция!" С госбезопасностью все наоборот. Народ сидит, никого не трогает, починяет примус, и вдруг как снег на голову падает госбезопасность со своими никому не понятными репрессиями против вашего несчастного примуса.<br />
+Ие потому ли так различаются и два сериала - веселые "Улицы разбитых фонарей" и задумчивый   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="417.html" class=yw><b>О тех, кто мостил "Улицы разбитых фонарей"</b></a><br>
+<div id=bl>27 мая (1999 г. - прим. kinobrat.ru) состоялось вручение премий телеакадемии 'ТЭФИ'. Фильм-сериал 'Улица разбитых фонарей' ('Менты') одержал победу в двух номинациях: 'Телевизионный игровой (художественный) фильм или сериал', 'Телевизионный проект года'.<br />
+ <br />
+Знакомьтесь:<br />
+режиссер Дмитрий Светозаров <br />
+<br />
+Фильмография<br />
+<br />
+1979 - 'Очки от солнца' <br />
+1983 - 'Скорость' <br />
+1986 - 'Прорыв' <br />
+1988 - 'Без   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="418.html" class=yw><b>На Светозарова можно делать ставку</b></a><br>
+<div id=bl><b> - Кому из сегодняшних Ленинградских кинорежиссеров вы отдаете предпочтение и почему! <br />
+<br />
+Сергей ДОБРОТВОРСКИЙ, киновед:</b> <br />
+<br />
+Сначала объясню, что определяет мой выбор. Я считаю, что главная беда нашего кинематографа в том, что он не становится элементом массового сознания. Практика всего мирового кинематографа доказывает, что основное - владение жанром. У нас пока попытки сделать удачное   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="425.html" class=yw><b>Статьи о театре DEREVO,  опубликованные в зарубежных изданиях</b></a><br>
+<div id=bl>Необычная эстетика театра, включающая в себя элементы комедии dell'arte и пантомимы, открывают глаза на то, что мы, привыкшие к обыденности современного Запада, не замечаем.<br />
+Терпкая лирика, жестокий и волнующий бурлеск, - отражён весь трагизм человеческого существования. Актёры умело жонглируют нашими эмоциями, из всех иллюзий выбирая лишь иллюзию театрального искусства. Искатели смысла жизни,   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="389.html" class=yw><b>ТЕАТР С ЛИЛИЕЙ ШИТЕНБУРГ.  'Пляска смерти'</b></a><br>
+<div id=bl>Новый театральный сезон начался с больших ожиданий. Молодой режиссер Андрей Прикотенко, блеснувший в прошлом сезоне на удивление жизнерадостной трагедией 'Эдип-царь', в Учебном театре на Моховой выпустил спектакль по не менее 'жизнерадостной' пьесе Августа Стриндберга 'Пляска смерти'. Все помнят Стриндберга по темному делу о некоей фрекен Жюли, о той самой графине, что однажды отдалась лакею, а   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/390.html" class=yw><b>Дмитрий Светозаров: "Я не смотрю чужое кино"</b></a><br>
+<div id=bl><b> В дни, когда проходит очередной фестиваль 'Виват кино России!', уместно поговорить с представителем кинематографической династии режиссером Дмитрием Светозаровым. Его брат Владимир Светозаров - замечательный ленфильмовский художник, а их отец - классик отечественного кинематографа Иосиф Ефимович ХЕЙФИЦ. </b><br />
+<br />
+<b> -  Известно, что вы сначала изучали информатику и занимались литературным   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="391.html" class=yw><b>Из питерских только он знает, как делать фильмы-катарстрофы и настоящие триллеры. Сегодня режиссеру Дмитрию Светозарову - 50 лет.</b></a><br>
+<div id=bl><b> Светозаров - режиссер удивительной судьбы: наперекор. Сын корифея отечественного кино Иосифа Хейфица сначала получил классическое филологическое образование (эта любовь к словам потом аукнется ему), но уже в дипломный год пришел работать ассистентом Авербаха на 'Чужих письмах'. Первая же большая работа, 'Скорость', обнаружила стремление отличиться от 'папиного кино': зрелищность заявлялась   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="392.html" class=yw><b>Сказка - ложь, да в ней 14 цветов радуги</b></a><br>
+<div id=bl>В то время как в Москве кипели страсти вокруг Госкино, в петербургском Доме кино состоялась премьера фильма Дмитрия Светозарова "Четырнадцать цветов радуги", который никакого отношения к Госкино не имеет. Это первый проект кинокомпании "РаnТеrrа", образованной осенью прошлого года.<br />
+<br />
+Сценарий Игоря Агеева и Дмитрия Светозарова писался специально для звездного трио: Светланы Смирновой, Сергея   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="393.html" class=yw><b>Йося Барон напомнит о короле Лире. Режиссер Дмитрий Светозаров снял 12-серийный телефильм</b></a><br>
+<div id=bl>Этот фильм режиссер считает этапным, и картина, явно выпадая из общего ряда отечественных мыльных опер, наверняка вызовет резонанс в мире кинематографа.<br />
+<br />
+- У вашего сериала весьма непростая судьба, и сама по себе она могла бы стать основой для сценария фильма о кинематографе   последнего десятилетия... <br />
+<br />
+-  Историю Йоси Барона каждый    зритель    сможет увидеть по-своему: внешне гангстерская, ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="394.html" class=yw><b>Режиссер Светозаров перешел к алгебре убийства В Доме кино состоялась премьера фильма Дмитрия Светозарова 'Четырнадцать цветов радуги'</b></a><br>
+<div id=bl>Это седьмой полнометражный фильм Светозарова - после 'Скорости', 'Прорыва', 'Без мундира', 'Псов', 'Арифметики убийства' и 'Гаджо'. Однако знаменит Светозаров - сверстник Рогожкина и Лопушанс-кого, Овчарова и Сокурова - стал только в прошлом году, когда сериал 'Улицы разбитых фонарей', для которого он снял 26 эпизодов, получил сразу две ТЭФИ (при этом один его 'личный' фильм, 'Моль бледная', был   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="396.html" class=yw><b>Уроки войны и танца</b></a><br>
+<div id=bl>На днях у открывшегося после десятилетней реконструкции Учебного театра на Моховой образовалась толпа. Студенты, актеры, критики надеялись попасть на открытую репетицию спектакля 'Пляска смерти' по Стриндбергу.<br />
+<br />
+<b> А студентам - до свидания </b><br />
+<br />
+Через полчаса после официально назначенного времени начала генеральной репетиции к народу вышел заслуженный артист России Игорь Иванов, чтобы лично  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="397.html" class=yw><b>"Пляска смерти" в исполнении Иванова</b></a><br>
+<div id=bl><i> 'Каждый из нас прогуливает свою мысль, словно обезьяну на привязи. Когда читаешь, имеешь дело сразу с двумя обезьянами: со своей собственной и с чьей-то еще...'<br />
+Милорад Павич </I><br />
+<br />
+Бывает так, что еще до спектакля, только в предвкушении его, прогуливаешь этих 'обезьян на привязи', и не одну, а сразу несколько, и заранее знаешь, что за сюжеты могут развиться от сочетания 'действующих лиц' и  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="398.html" class=yw><b>Братья и сестры возвращаются в alma mater</b></a><br>
+<div id=bl><I> Для каждого из нас когда-то наступает момент, когда понимаешь: молодость прошла. Для кого-то этот 'час икс' означает-  прошла жизнь. Самые мудрые не торопятся хоронить себя, но на всякий случай подводят предварительные итоги, заново размышляя над такими понятиями, как любовь и ненависть, юность и зрелость, счастье и горе. </I> <br />
+<br />
+Видно, процесс познания бесконечен. Он идет по спирали,   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="399.html" class=yw><b>Артисты Льва Додина пошли в антрепризу и сыграли Августа Стриндберга</b></a><br>
+<div id=bl>В Петербурге состоялась премьера спектакля "Пляска смерти" по пьесе Августа Стриндберга. Артисты Малого драматического театра -- Театра Европы, возглавляемого Львом Додиным, отважились на самостоятельный антрепризный проект. <br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Даже при колоссальном художественном авторитете, каким обладает в труппе МДТ Лев Додин, любой актер в глубине души все равно рвется на волю, считая режиссера в   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/378.html" class=yw><b>Петербургская критика: после премьеры "Гололёда"</b></a><br>
+<div id=bl>1. <b> www.aktivist.ru </b><br />
+  <br />
+Кино   <br />
+<br />
+Гололёд<br />
+<br />
+Россия, 2002. Режиссёр: Михаил Брашинский. В ролях: Виктория Толстоганова, Илья Шакунов.<br />
+Отличительной чертой нового времени стало то, что кино начали снимать на видео. Дёшево и сердито. Даже такой монстр как Иван Дыховичный недавно отметился на видеоплёнке с 'Копейкой'. Обычно такие фильмы до широкого зрителя не доходят. Их создатели   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/373.html" class=yw><b>"Я стал кинокритиком из страха, что меня не примут как режиссера". Интервью с кинокритиком Михаилом Брашинским</b></a><br>
+<div id=bl>Михаил Брашинский: "Я стал кинокритиком из страха, что меня не примут как режиссера"<br />
+В какой-то момент страхи преодолеваются<br />
+<br />
+Михаил Брашинский, кинокритик и кинорежиссер (его первый фильм 'Гололед' в этом году появится в прокате), куратор проекта 'К.И.Н.О. В О.Г.И.' разговаривает с Николаем Охотиным ('Проект О.Г.И.') <br />
+<br />
+Миша, как можно в двух словах объяснить идею этого проекта? <br />
+<br />
+Москва   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="371.html" class=yw><b>Две беседы об одном спектакле</b></a><br>
+<div id=bl><b> Заслуженный артист России Игорь Иванов, ставший лауреатом премии "Золотой софит" в номинации "Лучшая мужская роль " (спектакль МДТ Театра Европы "Исчезновение") в конце прошлого года представил на суд зрителей новый спектакль "Пляска смерти" по пьесе Августа Стриндберга. После премьеры с ним встретился наш корреспондент. <br />
+<br />
+- Игорь, считается, что на творчество Августа Стриндберга повлияли   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/374.html" class=yw><b>Российская премьера 'Гололеда' - 220 вольт политического напряжения сегодняшней Москвы</b></a><br>
+<div id=bl>6 февраля состоится российская премьера фильма 'Гололед' Михаила Брашинского с Викторией Толстогановой и <a href="../actor/1853.html">Ильей Шакуновым</a> в главных ролях.<br />
+<br />
+" - Я надеюсь, вы хорошо представляете себе, в какую игру вы вступаете?<br />
+- Не очень. Вот и хочу увидеть противника в лицо. Заглянуть в глаза.<br />
+- А вы уверены, что у него есть глаза?"<br />
+<br />
+<br />
+Елена Яцура, продюсер фильма, считает, что "Гололед" - не   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/293.html" class=yw><b>НЕ ТОЛЬКО О ЛЮБВИ</b></a><br>
+<div id=bl>Апология спектакля Александра Галибина 'С любимыми не расставайтесь'<br />
+Вы ждали другого от этого спектакля. Ждали совсем другого - и ждали в первую очередь Александра Володина, хотели его простых и щемящих житейских наблюдений, мечтали о любви и ясности.  Что же получили? Белую стену, которая отсекает всю глубину сцены и выталкивает актеров к самой рампе. Цепочку разномастных стульев, выкрашенных   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/295.html" class=yw><b>С любимыми не расставайтес ь</b></a><br>
+<div id=bl><i> Нынешняя молодежь умнее ли нас, когда мы были молодыми? Да.<br />
+Будет ли она счастливее нас? Не думаю.<br />
+А. Володин. Записки нетрезвого человека </i><br />
+<br />
+'С любимыми не расставайтесь'. Мы уже давно знаем, что это Володин. А он знал - что, 'трясясь в прокуренном вагоне, он полуплакал, полуспал' не его стихи, что 'с любимыми не расставайтесь' - строка А. Ко-четкова, поэта его поколения - того,   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="301.html" class=yw><b>ЭДИП-ЦАРЬ</b></a><br>
+<div id=bl>Некоторую конкуренцию фаворитам минувшего сезона, спектаклям МДТ- театра Европы 'Московский хор' и 'Чайка' составит в споре за 'Золотой Софит-2002' новая работа театра на Литейном 'Эдип-царь'.<br />
+Режиссер Андрей Прикотенко. Сценограф Эмиль Капелюш. Автор костюмов Стефания Граурогкайте. В ролях: Джулиано ди Капуа, Ксения Раппопорт, Тарас Бибич.<br />
+<br />
+МАСТЕРСКАЯ Театра на Литейном прильнула к истокам.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="267.html" class=yw><b>По следу твоей крови на снегу</b></a><br>
+<div id=bl>15 апреля на сцене Академической Капеллы Санкт-Петербурга необычная премьера. Моноспектакли актеров театра "Фарсы" - Игоря Копылова и Михаила Вассербаума, объединенные названием "По следу твоей крови на снегу". Две истории о любви, два монолога, в которых соединены достаточно разнородные вещи от Ивана Андреевича Бунина до Габриэля Гарсиа Маркеса. <br />
+<br />
+Маркес - это совместная работа актера Игоря   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="237.html" class=yw><b>"Убойная сила". О сериале.</b></a><br>
+<div id=bl>ПЕРВАЯ СКРИПКА В "УБОЙНОЙ СИЛЕ" Сергей СЕЛИН стал знаменитостью после сериала "Улицы разбитых фонарей" ("Менты"). Но там он, сыграв (и играя!) одну из главных ролей, оказался как бы в тени своих партнеров. А вот в сериале "Убойная сила" его персонаж (все тот же Дукалис) стал "первой скрипкой". Поэтому, хотя Сергей снялся еще в десяти фильмах, я не сомневался, что именно эта роль у него самая   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/68.html" class=yw><b>Масленников снял сказку о жене бизнесмена...</b></a><br>
+<div id=bl>И собирается восстановить единство киносообщества <br />
+<br />
+<b> Режиссер знаменитых "Приключений Шерлока Холмса" и "Зимней вишни" Игорь Масленников показал журналистам новый фильм "Письма к Эльзе". Строгие зрители, как и полагалось по статусу, восприняли картину критически: слишком медленный, "телевизионный" темп, довольно фальшивые постоянные причитания главной героини: "душенька моя, Машенька"   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/141.html" class=yw><b>ОНИ ВЫБИРАЮТ:</b></a><br>
+<div id=bl>В хрустальном затишье наступившей темноты отчетливо прозвучало негромкое, но проникновенное 'Браво!', и через секунду зал взорвался аплодисментами. От таких оваций не отказался бы и искушенный артист, но на этот раз на сцене смущенно откланивались раскрасневшиеся, подуставшие, но довольные молодые студенты.<br />
+<br />
+За полчаса до начала спектакля окошко администратора упрямо штурмовали многочисленные   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/142.html" class=yw><b>Нахалята" взяли зрительный зал приступом: человечности</b></a><br>
+<div id=bl>Последние пятнадцать лет Учебный театр нашей Театральной академии ремонтируют. Так что за творчеством студентов обычно наблюдают только профессиональные зрители - театроведы и педагоги. Исключения - в тех редких случаях, когда мастер курса имеет свой театр. Именно так повезло ученикам Владислава Пази. В их распоряжении - Малая сцена Театра им. Ленсовета и неискушенные зрители.<br />
+...Здесь не   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/143.html" class=yw><b>Монорельс</b></a><br>
+<div id=bl>Что тут: чем проверялось - старая пьеса или новый театр? 'Старший сын' Александра Вампилова, написанный тридцать пять лет назад, или третий курс Санкт-Петербургской театральной академии?<br />
+А проверялось несомненно - иначе зачем огород городить? Зачем играть Вампилова, когда есть Шипенко или, в худшем случае, Коляда? Пьеса устояла, но, думаю, потому, что молодые люди (на сцене и в зале) не заметили  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/144.html" class=yw><b>Вампилов без сантимента</b></a><br>
+<div id=bl>В 80 - 90-е годы Александр Вампилов стал таким хрестоматийно-школьным, что его почти перестали ставить. Особенно 'правильными' выглядели спектакли по 'Старшему сыну'. Его могли играть лучше или хуже, но неизменно трогательно. Нам предлагали посочувствовать заблудшему чудаку-интеллигенту Сарафанову, 'сиротство' персонажей в финале радостно преодолевалось.<br />
+<br />
+<br />
+На самом же деле Вампилов гораздо   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="145.html" class=yw><b>Фрагмент стенограммы пресс-конференции Тонино Гуэрры</b></a><br>
+<div id=bl><b>Тонино Гуэрра: </b> Возникла замечательная идея сделать Премию для неопубликованных сценариев. И в Италии делается похожая вещь - она очень полезная. Но ее надо очень долго обсуждать, чтобы она помогла. Здесь самое интересное не опубликовать неопубликованный сценарий, но чтобы мы смогли снять фильм по нему...И мы можем помочь сделать фильм.<br />
+<br />
+В чем трудности российского и итальянского кино?   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="106.html" class=yw><b>Винсент Ван Гог и его сеятель</b></a><br>
+<div id=bl>Голландец Ван Гог увлечен Милле и пишет на те же темы. <br />
+Он хотел написать образ Сеятеля (1888 год) - образ, который издавна преследовал его и в котором он видел символ вечности. Он написал его "в цвете и большого формата". Работая под палящим солнцем в состоянии напряженной сосредоточенности. Сеятель и жнец. Восход и закат. Желтый и синий. Начало и конец. Жизнь и смерть. В этом вечном   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+<a href="http://www.kinobrat.ru/msg/113.html"><img src="http://www.kinobrat.ru/img_msg/113_4.jpg" width="80" height="52"
+ border="0"></a>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/113.html" class=yw><b>ВЕРТЕПЪ: Блеск и нищета провинциальной жизни. Хроника одного происшествия</b></a><br>
+<div id=bl>Свой 14 сезон Театр Сатиры начал с 'Вертепа' - спектакля по роману Ф.Сологуба, выдвинутого на соискание высшей театральной премии Санкт-Петербурга  'Золотой Софит' в номинации 'Лучшая работа режиссера'. Этот же спектакль рекомендован питерскими  экспертами 'Золотой Маски' к участию в этом почетном российском театральном конкурсе.<br />
+Роман Сологуба оказался блестящим материалом для творческой   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/107.html" class=yw><b>Не хватает людей, говорящих со мной на одном языке</b></a><br>
+<div id=bl><b>Илья Шакунов, директор Актерского Агентства продюсерского центра "БРАТ", актер ТЮЗа. Человек, который знает цену деньгам, но предпочитает бескорыстную помощь.</b><br />
+  <br />
+- За последние два года ты снялся в пяти фильмах. Когда мы их увидим?<br />
+<br />
+- Фильм Олега Ковалова "Темная ночь" был снят еще в 2000 году, но до сих пор его можно было увидеть лишь на премьерных показах и на кинофестивалях. Фильм   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="108.html" class=yw><b>Материнство - самое лучшее творчество</b></a><br>
+<div id=bl><b> <a href="../actor/9363.html">Юлия Каманина</a>  полюбилась кинозрителям после выхода одной из серий "Улиц разбитых фонарей" - "Женское счастье". Потом был "Щелкунчик" Заманова и "14 цветов радуги" Дмитрия Светозарова. Театральные зрители знают Каманину по спектаклю "Закликухи" в Театре Сатиры. Кроме того, Юля играла очаровательную Настеньку в программе Юрия Гальцева и Алики Усубиани. А 10 апреля у Юли родился сын Глеб. <b><br />
+<br />
+    ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/82.html" class=yw><b>Впечатления Михаила Пореченкова от премьеры, которую нам скоро доведется увидеть своими глазами!</b></a><br>
+<div id=bl>Ну, как работалось? Работалось хорошо. Ребята подобрались смышленые, толковые. Для нас ведь не в первый раз вхождение в новый коллектив - первый раз мы входили в театр Ленсовета. Все очень просто - просто надо не замечать, что происходит вокруг. А что-то обязательно должно произойти - новые люди, отторжение нового организма, тем более из другого города. Мы не пытаемся вносить свои законы. Мы   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+<a href="80.html"><img src="http://www.kinobrat.ru/img_msg/80_2.jpg" width="80" height="57"
+ border="0"></a>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="80.html" class=yw><b>Стенограмма пресс-конференции открытия продюсерского центра "БРАТ"</b></a><br>
+<div id=bl>27 марта 2002 года. <br />
+Белая гостиная Дома Кино<br />
+<br />
+<br />
+<br />
+К сожалению, по техническим причинам стенограмма пресс-конференции была сделана с видеоматериалов, а не с диктофона. Поэтому она представлена в сокращении. <br />
+<br />
+ <br />
+<b>Наташа Иванова, продюсер:</b> Дамы и господа, мы начинаем нашу пресс-конференцию, посвященную дню открытия продюсерского центра Михаила Пореченкова "Брат". Вообще-то центр   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="104.html" class=yw><b>Пресс-релиз Продюсерского Центра "Брат"</b></a><br>
+<div id=bl>В феврале 2002 года известный петербургский артист Михаил Пореченков открыл в нашем городе продюсерский центр 'БРАТ'. <br />
+Открытию проекта предшествовал огромный организационный и аналитический труд. По завершении, которого проект был вынесен на обсуждение прессы. Зал, где проходила первая пресс-конференция - был заполнен до отказа. Представители прессы, не   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="105.html" class=yw><b>Притча о Сеятеле</b></a><br>
+<div id=bl>Иисус Христос, находясь в Капернауме, пришел на берег Галилейского озера. К Нему собралось множество народа. Он вошел в лодку и сел, а народ стоял на берегу, и с лодки начал поучать народ притчами. <br />
+<br />
+Иисус Христос сказал: "Вот вышел сеятель сеять. Когда он сеял, то иное семя упало при дороге и было потоптано, и птицы поклевали его. <br />
+<br />
+Иное же семя упало на каменистое место, где было мало земли; ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/56.html" class=yw><b>Утка и свисток</b></a><br>
+<div id=bl>Во МХАТе поставили "Утиную охоту" <br />
+<br />
+Последнее время, приходя в театр, я все чаще начинаю чувствовать себя не критиком, а несостоявшимся режиссером. Это неправильное чувство. Критик должен воспринимать произведение искусства как данность - анализировать, вставлять в контекст, угадывать мотивы и разгадывать символы. Он не обязан рассказывать художнику, как надо рисовать пятку. Он обязан объяснить  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="69.html" class=yw><b>Надо играть так, чтобы игра не была заметна</b></a><br>
+<div id=bl><a href="../actor/8858.html">Ирина Мазуркевич</a> - актриса многоплановая. Если вы видели ее киноработы, то уже согласитесь с этим утверждением. А если пойдете сейчас в Театр Комедии: <br />
+Свой творческий путь она начинала в Горьком, куда приехала из белорусского города Мозыря, и где училась в Театральном училище. С первого же курса попала в кино, это был фильм 'Чудо с косичками' Виктора Титова. А потом - еще множество любимых фильмов:   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="71.html" class=yw><b>Самое желанное состояние, когда понимаешь, что обязательно сделаешь еще что-нибудь  хорошее</b></a><br>
+<div id=bl>Петербургская актриса <a href="../actor/3947.html">-</a> заметная звезда на театральном и кинематографическом небосклоне, потому что каждая ее роль - это яркая вспышка, это свет, излучаемый обаятельным человеком и профессионалом своего дела. Так в Дарье сложились эти дары, позволяющие жить на сцене. Ее талант - это одновременно простота и глубина, мягкость и сила, поэтому ей доступны самые разноплановые роли на   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/292.html" class=yw><b>Горечь нерасставания</b></a><br>
+<div id=bl><b> 'С ЛЮБИМЫМИ НЕ РАССТАВАЙТЕСЬ' на Литейном</b> <br />
+<br />
+Театр не хочет расстаться с Александром Моисеевичем Володиным. Лютым морозным днём на комаров-ском кладбище прощание было обжигающе горьким. У поминального глотка водки оказалось долгое послевкусие.<br />
+Горьковатое, как тот глоток.<br />
+Начиная с 'Фабричной девчонки', Володин выступает болельщиком в вечной тяжбе социума и личности. В первом и остром   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/294.html" class=yw><b>Один день из жизни мирового судьи</b></a><br>
+<div id=bl><b> Александр Володин. 'С любимыми не расставайтесь'. Театр на Литейном. Постановка Александра Галибина.<br />
+<br />
+Наследие Володина<br />
+</b><br />
+'Его героев в наше искусство дальше передней тридцать лет не пускали. Это был фон, глухая периферия советской драмы, ее безликий хор', - сказал о персонажах импрессионистских пьес ленинградского драматурга Александра Володина критик Анатолий Смелянский. Каждый из   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/296.html" class=yw><b>Шербурские зонтики спасают от петербургской непогоды</b></a><br>
+<div id=bl>На премьеру приходят разные люди. Один помнят пьесу Александра Володина 'С любимыми не расставайтесь' как одно из самых сильных театральных впечатлений, храня в памяти спектакль, поставленный Геннадием Опорковым в бывшем Ленкоме 30 лет назад. Другим все эти 'антикварные' фамилии и названия ничего не говорят. В лучшем случае им знакомы имя и лицо режиссера Александра Галибина, возродившего к жизни  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/297.html" class=yw><b>Каприччио</b></a><br>
+<div id=bl>Режиссер Роман Смирнов, <br />
+Театр на Литейном. СПб<br />
+<br />
+ДЕСЯТЬ ЛЕТ НАЗАД, КОГДА РОМАН СМИРНОВ СОЧИНЯЛ ЭТОТ спектакль еще с актерами Малого драматического театра - лишенное драматургии почти бессловесное действо, соединение пантомимы и буффонады, танцевальных и вокальных номеров, ктому же на музыку Сергея Курехина, написанную специально для этого проекта, - его новаторство было очевидным. Если бы   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="298.html" class=yw><b>Две премьеры</b></a><br>
+<div id=bl>ТЕАТР С МАРИНОЙ ДМИТРЕВСКОЙ   <br />
+<br />
+Две премьеры конца марта сулили встречу с экзистенциальными проблемами мира и человека в нем: 'Эдип-царь' Софокла в Театре на Литейном (молодой режиссер А. Прикотенко) и 'Парчовый барабан' Ю. Мисимы в Малом драматическом (режиссер В. Туманов). Трагический мир Ю. Мисимы никак не обнаружил себя в двух пьесках, сыгранных МДТ. Несколько многозначительных истин на   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="300.html" class=yw><b>'ЭДИП-ЦАРЬ'. Театр на Литейном</b></a><br>
+<div id=bl><b> 15,16 и 21 марта в Театре на Литейном состоится премьера - спектакль 'Эдип-царь' по пьесе Софокла 'Царь Эдип' в постановке Андрея Прикотенко - режиссера, четыре года назад окончившего курс В.М.Фильштинского и уже ставшего автором спектаклей в Новосибирске, Орле и Вильнюсе. Художник спектакля - Эмиль Капелюш. Этот спектакль Театр на Литейном представляет в рамках нового проекта под названием   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="302.html" class=yw><b>'ВРЕЖЬ ПО-СВОЙСКИ, ТРАГЕДИЯ'</b></a><br>
+<div id=bl>Софокл. 'Эдип-царь'. Театр 'На Литейном'. Режиссер Андрей Прикотенко, художник Эмиль Капелюш<br />
+<br />
+<right> Добрый вечер, трагедия с героями и богами,<br />
+с плохо прикрытыми занавесом ногами,<br />
+с собственным именем, тонущим в общем гаме.<br />
+Ну если хочешь, трагедия, - удиви нас!<br />
+Изобрази предательство тела, вынос<br />
+Тела, евонный минус, оскорбленную невинность.<br />
+Иосиф БРОДСКИЙ </right><br />
+<br />
+Поиграть в   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="303.html" class=yw><b>Софокл. 'Эдип-царь'. Театр 'На Литейном'. Режиссер Андрей Прикотенко, художник Эмиль Капелюш</b></a><br>
+<div id=bl>Обращение к трагедии - несомненный поступок для молодого режиссера.<br />
+Обращение к трагедии двух молодых режиссеров - это два поступка...<br />
+С небольшой разницей во времени и с большой - в пространстве (много тысяч километров) я увидела двух 'Царей Эдипов', каждый из которых был практически дебютом. Артур Офенгейм поставил Софокла, дебютировав этим спектаклем в Иркутской драме. Андрей Прикотенко   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="304.html" class=yw><b>Переводим мы любовь с древнегреческого</b></a><br>
+<div id=bl>От самого названия - 'Эдип-царь' - веет архаикой. Воображение сразу рисует чашу амфитеатра под знойным небом Эллады и толпы зрителей, стекающихся на представление трагедии Софокла. Немножко похоже на Петровский стадион, когда там играет 'Зенит'. Тот же накал страстей, то же многолю-дие. А на сцене... Нет, сцена должна быть не меньше Мариинской - заполненная до отказа хором и мимансом. Да и   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="305.html" class=yw><b>Театр начинается с начала</b></a><br>
+<div id=bl><i><br />
+Древний миф молодые актеры рассказали языком современного театра. И стало понятно, что не только история Эдипа, но и искусство, родившееся под жарким солнцем Эллады, вечно. Не оттого ли спектакль назван одним из лучших в прошлом сезоне и претендует на 'Золотой софит' сразу по нескольким номинациям? </i><br />
+<br />
+Все теоретически согласны, что театры должны свободно рождаться и умирать. На практике  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="306.html" class=yw><b>Бедный  Эдип</b></a><br>
+<div id=bl><b> Осенью-зимой на драматических сценах Петербурга царил полный штиль. Весна внесла в ситуацию кое-какие коррективы. "Парчовый барабан" и "Московский хор" в Малом драматическом, "Доктор философии" в Театре Комедии - может быть, и не "останутся в веках", но, по крайней мере, заслуживают и зрительского внимания, и подробного критического анализа. В марте в театре "На Литейном" состоялась премьера   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="307.html" class=yw><b>Андрей Прикотенко:  усилия к счастью</b></a><br>
+<div id=bl><b> Спектакли режиссера Андрея Прикотенко стали заметным событием театральной жизни Петербурга. "Эдип-царь " был включен в программу XII Международного фестиваля "Балтийский дом" и получил премию "Золотой софит" в номинации "лучший спектакль". Вторая петербургская постановка этого режиссера - спектакль по пьесе Августа Стриндберга "Пляска смерти" - вызвала оживленную дискуссию в прессе.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/308.html" class=yw><b>Кто шинель сшил, тот ее и украл</b></a><br>
+<div id=bl><i> Петербург оказывает на свежего человека такое впечатление, от которого непросто отделаться. Странный город, что и говорить. И не только в ту пору, когда 'одна заря сменить другуюспешит'. Здесь круглый год творятся вещи умопо-мрачительные. Дома для умалишенных недаром во множестве построены и, надо заметить, не пустуют. Особенно легко угодить туда с непривычки. Однажды, в начале 1830-х годов, ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/309.html" class=yw><b>Маленькое счастье Акакия Акакиевича</b></a><br>
+<div id=bl>Хрестоматийная гоголевская 'Шинель' не часто вдохновляет молодых режиссеров на создание новых сценических версий. Так что премьеру спектакля в 'Театре на Литейном' можно смело считать событием неординарным.<br />
+'Шинель' (пьеса А. Образцова по повести Гоголя) - первая работа в Петербурге Олега Куликова, который прежде работал в Англии и поставил там 'Настоящую жизнь' Стоппарда в Plауеrs Theatre и   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/310.html" class=yw><b>Г.Пинтер СТОРОЖ. Отзывы прессы.</b></a><br>
+<div id=bl>"Сторож" Г.Пинтера в Театре на Литейном поставил молодой режиссер Юрий Бутусов. Пьеса английского драматурга, классика театра абсурда, написанная в 196-0 году, прозвучала сейчас неожиданно остро и современно. Тему тотального одиночества людей., отторгнутых чуждым и враждебным для них обществом, режиссер решает как сделанную с натуры варисовку нашей сегодняшней действительности. Вместе с актерами   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/311.html" class=yw><b>РАЗВЕ Я СТОРОЖ БРАТУ МОЕМУ?</b></a><br>
+<div id=bl>'Сторож' Гарольда Пинтера в Театре на Литейном<br />
+<br />
+НЕ СПЕШИТЕ делать добро.<br />
+Русская театральная традиция так долго и талантливо внушала необходимость взаимного облагодетельствования, что теперь нужна долгая и не менее талантливая терапия драматургией не столь традиционной (скорее иноязычной), чтобы отучить от желания вмешиваться в чужие жизни с тем, чтобы сделать 'как лучше'. Во-первых, 'как   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/312.html" class=yw><b>Г.Пинтер. 'Сторож'. Театр 'На Литейном'.</b></a><br>
+<div id=bl>Режиссер Юрий Бутусов, художник Александр Шишкин<br />
+<br />
+Жанр этого хорошо сделанного театрального зрелища может быть достаточно легко идентифицирован, элементы комедии и мелодрамы смешены создателями спектакля умело и остроумно. Странным анахронизмом кажется предлагаемое уже в афише определение жанра спектакля - 'комедия', подобная лаконичность достаточно редка для современного театра,   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/313.html" class=yw><b>Лихорадка жизни</b></a><br>
+<div id=bl>"Нось игуаны" Т. УИЛЬЯМСА <br />
+В ТЕАТРЕ НА ЛИТЕЙНОМ<br />
+<br />
+'Игуаны, - сообщают всеведущие Брокгауз и Эфрон, - семейство ящериц из подотряда . толстоязычных. Пойманные - сначала ведут себя очень бешено, но потом хорошо приручаются'. Ларри Шеннон в премьерном спектакле Театра на Литейном ведет себя так же, хотя стадия приручения в основном остается за рамками действия. Зато бешенства в игре Александра   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/314.html" class=yw><b>Дело режиссера Козлова. Кризис жанра</b></a><br>
+<div id=bl>Коммерческий лейбл 'премьера Григория Козлова' обеспечил 'Концерту замученных опечаток' зрительское столпотворение. Подобный успех у народа впервые снискал Козлову его театральный шлягер 'P.S.' в Александринке, где идейно-облегченный Гофман (биография писателя вперемежку^ литературным творчеством) подавался: а) порционно (этюдно), б) в эффектном обрамлении Росси и Орлова, в) с первоклассным   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/315.html" class=yw><b>КОНЦЕРТ ЗАМУЧЕННЫХ ОПЕЧАТОК</b></a><br>
+<div id=bl>Театр на Литейном<br />
+<br />
+<B> Театр на Литейном не перестает удивлять своими приобретениями в репертуарной афише. Только-только отзвучали фанфары, связанные с вручением спектаклю Григория Дитятковского 'Потерянные в звездах. Lost in the stars' Высшей российской национальной театральной премии 'Золотая Маска', а на подходе - новая премьера, о которой уже сейчас наверняка можно сказать - зрительский   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/318.html" class=yw><b>Потерянные в звездах</b></a><br>
+<div id=bl>Режиссер Григорий Дитятковский Театр на Литейном<br />
+Санкт-Петербург<br />
+<br />
+<br />
+ГРИГОРИЙ ДИТЯТКОВСКИЙ, РЕЖИССЕР, ИЗВЕСТНЫЙ строгим вкусом (достаточно вспомнить его 'Отца', получившего в этом году две 'Золотые маски', и знаменитый 'Мрамор' Иосифа Бродского), шокировал своих поклонников и озадачил остальную часть публики, поставив спектакль по пьесе израильского драматурга Ханоха Левина 'Торговцы резиной'.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/319.html" class=yw><b>Поминальная молитва</b></a><br>
+<div id=bl>Часто после спектакля, видя унылые лица критиков, слышишь утешительные слова, перекладывающие вину за неудачный спектакль на плечи автора: пьеса плохая. На самом деле это не аргумент в защиту. Если режиссер выбирает пьесу, значит, это кому-нибудь (пусть даже только ему) нужно.<br />
+На новом спектакле Театра на Литейном нервные интеллигентные дамы от гигиенических подробностей секса, простите, текста   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/320.html" class=yw><b>Странное слово 'Каприччио'</b></a><br>
+<div id=bl>Режиссер-авангардист Роман Смирнов показал в театре 'На Литейном' премьеру 'Capriccio/Каприччио'<br />
+<br />
+История началась пятнадцать лет назад: Роман Смирнов репетировал в Малом драматическом театре спектакль под тем же названием; музыку специально к тому проекту написал Сергей Курехин. Спустя 15 лет все сошлось в театре 'На Литейном' - сложилась команда, которая дала новую жизнь старому проекту. От   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/59.html" class=yw><b>"Звездный десант "Русского спецназа"</b></a><br>
+<div id=bl>Всегда интересно увидеть своими глазами, как делается кино, как рождаются эти яркие картины, составляющие ткань нашего досуга, - то, о чем мы говорим на следующий день с друзьями и коллегами, то, что волнует нас и не дает соскучиться. А если еще фильм не только насыщен эмоциями, но и запоминается своей красотой, необычностью, то процесс создания такого кино еще больше интересует зрителя: как же  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/60.html" class=yw><b>День стрельбы, взрывов и... дружбы. "Звездный "Русский спецназ"</b></a><br>
+<div id=bl>Один из фортов Кронштадта, остров в Финском заливе, соединенный с дамбой песчаной косой, усеянной крупными камнями, являл собою зрелище безотрадное. Какие-то темные каменные строения, скрытые под холмами, поросшими высокой травой и кустарником, забор из колючей проволоки, тянущийся по берегу вдоль дороги и этих строений, много желтых цветов и одинокая береза на горке... А кругом вода, даль, ветер  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/61.html" class=yw><b>Альбом семейных фотографий</b></a><br>
+<div id=bl>Альбом семейных фотографий<br />
+Премьера "Утиной охоты" во МХАТе им. А. П. Чехова <br />
+<br />
+В августе этого года Александру Вампилову исполнилось бы 65 лет. Но режиссера Александра Марина, взявшегося за одну из лучших пьес драматурга, наверняка вдохновляла не только юбилейная дата. Возможно, хотелось высказаться о наболевшем. Например, о кризисе среднего возраста. Или о таланте, живущем невпопад со   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/62.html" class=yw><b>Во МХАТе подавили убойную силу</b></a><br>
+<div id=bl>Хабенский дебютировал во МХАТе <br />
+<br />
+На главную роль, которую много лет назад играл Олег Даль, приглашен петербуржец Константин Хабенский - в массовом представлении носитель "убойной силы" и секс-символ. Однако неожиданное назначение на роль дало свои результаты. На "Утиной охоте" пластика Хабенского потеряла мощь и стать, мышца не играла и вовсе провисла. Таким растерянным, с согнутой спиной,   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/63.html" class=yw><b>"Менты" вышли на "Утиную охоту"</b></a><br>
+<div id=bl>Популярные телеактеры в новом мхатовском спектакле <br />
+<br />
+Наполовину обновленный в этом сезоне репертуар чеховского МХАТа пополнился еще одним спектаклем. Александр Марин поставил на Малой сцене "Утиную охоту" Александра Вампилова с Константином Хабенским, Мариной Зудиной, Михаилом Пореченковым и Александром Семчевым. Имена популярных телеактеров сумеют привлечь зрителя даже на сложную и не слишком   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/64.html" class=yw><b>И башню тоже мы разрушили...</b></a><br>
+<div id=bl>Из воспоминаний свидетеля боевой операции.<br />
+<br />
+Удивительное всегда рядом. Думали ли сограждане, использующие одну из основных транспортных коммуникаций Ленинградской области, что так близко от них разворачивается настоящая война с представителями пресловутого мирового терроризма, понимали ли они, почему вдалеке полыхают огни взрывов и гремит эхо автоматных очередей. И поистине мрачные - во всей   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="75.html" class=yw><b>Дмитрий Светозаров: 'Человек не может быть заменен никакой самой совершенной машиной'.</b></a><br>
+<div id=bl>Что такое 'виртуальная реальность', наверное, хотя бы понаслышке, знают все. В наш век тотальной технической загруженности жизни, - вещей, приносящих удобство быту и бизнесу, но при этом что-то у человека отнимающих, тема эта актуальна и, при том что над ней задумываются многие, неопознана широкими массами, как проблема, касающаяся лично каждого. И тех, кто по много часов 'ходит' в мире   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/252.html" class=yw><b>Любовь втроем: театр, актер, зритель:</b></a><br>
+<div id=bl>Уходящий год оставил след в жизни каждого из нас: были радости и огорчения, надежды и разочарования: Бурное время не дает передышек, и только искусство позволяет 'остановиться, оглянуться', определить себя во Времени и Пространстве. Театр, во всяком случае, этому способствует. В каждом театре есть спектакли, заставляющие душу работать, - и спектакли, на которых душа отдыхает. Театр Сатиры на   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="265.html" class=yw><b>Меж тьмой и светом старой киноленты</b></a><br>
+<div id=bl>У.Шекспир. "Гамлет". Театр "Фарсы".<br />
+Режиссер Виктор Крамер <br />
+<br />
+<br />
+Мрачный Эльсинор спектакля Виктора Крамера наполнен визгом и смехом. Взмывают вверх белые скатерти, Офелия осыпает белыми цветами Гертруду, примеривающую фату у зеркала. Праздничная кутерьма управляет движением круга, и Гамлет связан с этим ярким миром, который, кажется, должен изменить финал трагедии. <br />
+Театр "Фарсы" начал историю  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="271.html" class=yw><b>Анонс сериала "Черный ворон"</b></a><br>
+<div id=bl>'Чёрный ворон' 22 декабря канал ТВ-6 представляет премьеру телесериала "Чёрный ворон", в котором есть место и мелодраме, и детективу, и мистике. "Черный ворон" - это эпическая история со сквозным сюжетом, охватывающая более полувека - от 1940-х годов до наших дней. Речь в ней идет о судьбе двух женщин, носящих одно имя - Татьяна, и рожденных от одного отца. Женщины незнакомы друг с другом и не   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="275.html" class=yw><b>Комплекс Иокасты</b></a><br>
+<div id=bl>фото:<br />
+ИД "Коммерсантъ"  <br />
+<br />
+&nbsp;&nbsp;&nbsp;&nbsp;В театре на Литейном состоялась премьера трагедии Софокла "Эдип-царь" в постановке Андрея Прикотенко. Этим спектаклем недавнего выпускника курса Вениамина Фильштинского открылась творческая лаборатория "Мастерская театра 'На Литейном'". <br />
+<br />
+Начинать карьеру греческой трагедией -- бесстрашный, едва ли не самоубийственный жест, достойный античных героев.  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/230.html" class=yw><b>Перестрелка на Приморском</b></a><br>
+<div id=bl>На прошлой неделе жители многоэтажек на Приморском проспекте от удивления чуть не повыпадали из собственных окон. А как бы вы реагировали, если бы вдруг поутру увидели, как по родному двору идет Казанова из сериала "Менты", причем весь в крови, а из-за угла с пистолетом в руках выскакивает "агент национальной безопасности"; Леха Николаев? В таких случаях домохозяйка Фрекен Бок в ужасе восклицала:  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/220.html" class=yw><b>Миф об Олигархе прикованном и коварном Кремле</b></a><br>
+<div id=bl>Cегодня премьера 'Олигарха' <br />
+  <br />
+Смотреть 'Олигарха' интересно. Во-первых, потому что Павел Лунгин снял динамичный фильм с редким для сегодняшнего российского кино уровнем профессионализма. Режиссерский почерк его уверен, лих и не слишком бросается в глаза в отличие от затейливых завитушек, которые выводят нынче молодые-одаренные.<br />
+<br />
+Во-вторых, особую привлекательность картине придает игра с   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="217.html" class=yw><b>Записки с кавказской войны</b></a><br>
+<div id=bl>"Блокпост"<br />
+Автор сценария и режиссер А.Рогожкин<br />
+Оператор А.Жегалов<br />
+Художник В.Карташов<br />
+Музыка Мендельсона, Моцарта, Вагнера, Стравинского, В.Панченко<br />
+В ролях: А.Краско, Р.Романцов, К.Ульянов, А.Ражук, Д.Моисеев, Е.Томошевский, А.Булдаков, З.Буряк<br />
+ОРТ, "СТВ"<br />
+Россия<br />
+1998<br />
+<br />
+Я решил пренебречь самыми дикими, чудовищными и кровавыми эпизодами... Мне кажется, они выглядели бы спекулятивно.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="213.html" class=yw><b>"Копейка" Трагикомедия</b></a><br>
+<div id=bl>Режиссер - Иван Дыховичный. В ролях - Сергей Мазаев, Андрей Краско, Юрий Цурило, Ольга Дыховичная, Сергей Шнуров, Олег Ковалев, Роман Модянов. Россия. 2001. 115 мин.<br />
+<br />
+"Умом Россию - это... как его..."<br />
+Типа, Тютчев<br />
+<br />
+Талантливый художник Дыховичный мощными кинематографическими мазками рисует нам картину заскорузлой революции тревоги нашей - России доперестроечных, перестроечных и   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/219.html" class=yw><b>История болезни</b></a><br>
+<div id=bl><b> В питерский прокат вышел фильм Павла Лунгина 'Олигарх' </b><br />
+<br />
+На прошлой неделе кинотеатр 'Колизей' праздновал свою первую годовщину: ровно год назад он открылся после длительного ремонта, оборудованный современной аппаратурой, с удобными креслами и приветливым персоналом. На небольшой вечеринке многочисленных гостей кормили и поили под музыку кого-то, отдаленно напоминающего Гарри Мура.   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/221.html" class=yw><b>Это не Березовский</b></a><br>
+<div id=bl>В российский прокат выходит фильм Павла Лунгина "Олигарх", не имеющий ничего общего с действительностью<br />
+ <br />
+Это не был Березовский еще тогда, когда несколько лет назад в свет вышла книга Юлия Дубова "Большая пайка" с героем по имени Платон. Дубов, один из основателей "ЛогоВАЗа", сочинил свой увесистый кирпич о черной романтике русского бизнеса явно не для того, чтобы он лег в основание легенды о   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/225.html" class=yw><b>Второстепенные люди под звездным небом</b></a><br>
+<div id=bl>На Малой сцене ТЮЗа имени Брянцева играют Учителя ритмики Екатерины Садур <br />
+<br />
+Сказать, что современная отечественная пьеса не частый гость на наших подмостках, - значит ничего не сказать. И причина проста (что бы там ни говорили драматурги) - ну не интересуют результаты их самовыражения наших режиссеров. Однако есть режиссер, который последователен в своем пристрастии именно к современной   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/231.html" class=yw><b>Джемс Бонд по-Питерски</b></a><br>
+<div id=bl>ТНТ запускает новый русский боевик <br />
+<br />
+С 22 августа на ТНТ начинается показ многосерийного боевика "Агент национальной безопасности". Ближайшие двенадцать воскресений в половине десятого вечера зрителей ждет очередная серия приключений питерского "Джеймса Бонда" Лехи Николаева. Возвращение украденной скрипки Страдивари, разгром подпольного производства сверхсильных наркотиков - лишь малая часть   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/232.html" class=yw><b>В России будет свой Джеймс Бонд</b></a><br>
+<div id=bl>Само собой, звать этого секретного агента будут тоже по-русски - Алексей, Леша, Лешка или Леха. Кому как больше понравится. А фамилия супергероя - Николаев. Только что в Санкт-Петербурге отснята первая серия нового сериала о приключениях агента службы национальной безопасности. Подробности из Питера... Замысел сериала "Агент  национальной безопасности" возник  на телесети ТНТ, претворяют его в    ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/138.html" class=yw><b>'ВОР'. Театр имени Ленсовета</b></a><br>
+<div id=bl>Интересно: театр кинулся к слову, к потоку слов. Такова лавина русской архаической лексики в 'Федре', немереные монологи из Кастанеды в 'Активной стороне бесконечности', теперь вот запоздалый крестьянский экзистенциализм 'Вора' - пьесы Веслава Мысливского в Театре имени Ленсовета.<br />
+<br />
+Дебаты отца и детей, поймавших вора е мешком картошки и не знающих, что дальше делать, могут даже вызвать   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/139.html" class=yw><b>Персональный ад, персональный рай</b></a><br>
+<div id=bl>Лет через сто-двести русские романы станут мифологией. Уже и сейчас мы с ними обращаемся, как с Гомером: цитируем направо-налево. Лев Толстой думал, что его 'Война и мир' - новая 'Илиада'. Он не преувеличивал. И этот 'здоровый' русский великан, и 'больной', тоже мифолог, Достоевский так глубоко и широко обо всем сказали, что достаточно небольшого толчка, чтобы все вопросы вернулись: есть Бог или   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="146.html" class=yw><b>Тонино Гуэрра  (16.03.1920 г.р.)</b></a><br>
+<div id=bl>Родился в небольшой деревушке Сан-Арканджело неподалеку от Римини и прожил в этих краях всю жизнь. Окончил педагогический факультет университета Урбино. Писать начал в концлагере в Германии.<br />
+<br />
+  <br />
+Придя в кинематограф в 1953 году, Тонино Гуэрра сочинил сценарии к фильмам, вошедшим в золотой фонд классики мирового кино. Он работал с Джузеппе Де Сантис, Марио Болоньини, Дамиано Дамиани, Марио   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/183.html" class=yw><b>Трагедия в песочнице</b></a><br>
+<div id=bl>"Ариадна", Театр Сатиры на Васильевском. <br />
+Режиссёр Светлана Свирко. <br />
+Меня пугают, а мне не страшно. Мне раскрывают тайники женской души, и я вижу вечное внутреннее её противоречие: в мячик поиграть охота, а папа не разрешает. Мне показывают бога вина Вакха, а я вижу детский утренник. Написано: играют Марину Цветаеву, а я уверен, что играют Агнию Барто. Ты катись, катись, клубок, через запад на   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/185.html" class=yw><b>ВЕРТЕПУ ТРЕБУЕТСЯ НЕДОТЫКОМКА</b></a><br>
+<div id=bl>"МЕЛКИЙ БЕС" В САНКТ-ПЕТЕРБУРГСКОМ ТЕАТРЕ САТИРЫ<br />
+<br />
+Когда заграничная коллега узнала, что Роман Смирнов поставил в Петербургском Театре Сатиры свою версию "Мелкого беса" Федора Сологуба, она сразу спросила: "А как они с недотыкомкой поступили?". Надо признать, что в данном случае это самый уместный - ключевой - профессиональный вопрос. Ответ на него сразу раскроет принцип отношений режиссера со   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/186.html" class=yw><b>ВОКРУГ ДА ОКОЛО, ИЛИ 'ВЕРТЕП'</b></a><br>
+<div id=bl>В Театре сатиры на Васильевском острове состоялась премьера спектакля 'Вертепъ' по роману Федора Сологуба 'Мелкий бес' в постановке Романа Смирнова.<br />
+<br />
+Пожалуй, наиболее примечательна здесь личность самого постановщика. Роман Смирнов, модный персонаж питерской богемной тусовки, - обладатель уникального жизненного опыта. За его плечами работа телеоператора и журналиста в 'горячих точках', дружба с  ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/187.html" class=yw><b>УВЫ, ОН СЧАСТИЯ НЕ ИЩЕТ:</b></a><br>
+<div id=bl>В Театре сатиры на Васильевском острове появился в репертуаре новый спектакль - называется он "Вертепъ". Это инсценизация знаменитого романа Федора Сологуба "Мелкий бес", опубликованного ровно сто лет назад. Осуществил инсценировку и постановку режиссер Роман Смирнов. В роли Ардалиона Передонова выступил народный артист России Юрий Ицков, недавно поселившийся на невских берегах, а до того   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/188.html" class=yw><b>100 лет "Мелкому бесу"</b></a><br>
+<div id=bl>Слово, подобно камню, падает вниз, оборачиваясь в поступок;<br />
+становится дорогой, по которой герои спектакля скатываются<br />
+в клубок страшного карнавала: <br />
+Хор с солистом. Оркестр для скрипки с оркестром:<br />
+"Мелкий бес", законченный в 1902 году - проза поэта, а следовательно, проза особенная. Вглядываясь в роман сегодня, в абсурдность и нелепость героев, нельзя не заметить, что поэт Ф.Сологуб, по   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/189.html" class=yw><b>РУССКИЙ ТЕАТР ОСТАНОВИЛСЯ В АВИНЬОНЕ</b></a><br>
+<div id=bl>"Закликухами" Театр Сатиры из Санкт-Петербурга возрождает традицию. <br />
+"Я уверен, что театр - это главное сокровище России". Владимир Словохотов, художественный руководитель Театра Сатиры, оказал нам честь и поделился этим сокровищем. Приглашенный фестивалем "in" в 1996 году, театр представлял "Песню о Волге" - спектакль, который был награжден наиболее почетными в театральном мире призами:   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/190.html" class=yw><b>Ликующие "Закликухи"</b></a><br>
+<div id=bl>В рамках соглашения о сотрудничестве между театром "Lе Sса1а" и театром из Санкт - Петербурга эта пьеса была показана в Страсбурге.<br />
+<br />
+Жан-Пьер Шлаг, директор французского театра, видел этот спектакль на последнем театральном фестивале в Авиньоне и был поражен тем, насколько понятна интернациональной аудитории игра актеров и насколько во многих отношениях эта игра отвечает задачам и стремлениям   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="2" height="1" bgcolor="#CCCCCC"><img 
+  src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="80">
+</td>
+<td></td>
+</tr>
+<tr>
+<td valign="top" width="80" align=center>
+<img src="../i/spacer.gif" width="80" height="1"><br>
+
+</td>
+<td width="100%" valign="top" style="padding-left : 10px" class=top><a 
+  href="http://www.kinobrat.ru/msg/191.html" class=yw><b>Юлия Каманина о "Закликухах"</b></a><br>
+<div id=bl>Только отъявленный мизантроп не видел выступлений Юлии Каманиной в паре с Юрием Гальцевым на сценах "Чаплин-клуба", "Олимпии", "Копти" и "Голливудских ночей". Ее считают од-ной из лучших питерских клоунесс. Теперь она стала еще и драматической актрисой: спектакль Светланы Свирко "Закликухи" на сцене Театра сатиры идет с аншлагом. А в самое ближайшее время его увидят и в Европе: "Закли-кухи"   ...
+
+</div>
+</td></tr>
+</table><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="55.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

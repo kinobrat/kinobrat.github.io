@@ -1,0 +1,640 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="463.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты</b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+
+
+<div align=center><b id=yellow>Видеоклип "Звонок" на песню Элизы и Теймураза Боджгуа</b><br><br></div>
+<div align="justify"><b>В творческой студии Продюсерского центра "Брат" под руководством Алексея Ведерникова закончен монтаж видеоклипа на песеню "Звонок" Элизы и Теймураза Боджгуа. </b><br />
+Предлагаем вашему вниманию интервью с исполнителями.<br />
+<br />
+<i> 'Мы очень многое поставили на этот клип. Потому что на наш взгляд это хороший материал, который мы должны показать людям. Но к тому же, показав его людям, мы надеемся, что найдутся люди, которые смогут вложить в наш хороший проект хорошие деньги', </I> - рассказывают Теймураз и Элиза.<br />
+<br />
+<b> Вот сейчас вы выпустите видеоклип, - как элемент рекламной кампании своего проекта. А на каких площадках вам хочется выступать: на больших стадионах или в клубах?<br />
+</b><br />
+Теймураз: Мы с Элизой уже выступали в Москве в ведущих клубах, потому что хотели 'засветить' уже эту песню. Последний раз наше выступление было на юбилее Вячеслава Малежика в клубе 'Кристалл'. А так в принципе интересно выступать на разных площадках. Вот когда мы с Виктором Салтыковым вместе сделали наш клип 'Милых лиц черты' - это была и первая наша совместная работа с режиссером Алексеем Ведерниковым, - мы объездили с гастролями весь Казахстан, и были во многих городах России. Этот замечательный видеоклип мы крутили довольно долго по всем центральным каналам и не только в России  - и в Грузии, и в Белоруссии, и на Украине: Но у нас начались разногласия с автором музыки этой песни, поэтому пришлось приостановить эфиры. Жалко, что такой красивый клип мы не можем показывать людям. <br />
+Мы очень благодарны Алексею за эту работу, клип получился красивым, запоминающимся. Работать с нашим режиссером было очень интересно. Ведь если чувствуешь, что человек живет своим творчеством, всего себя отдает своей работе, - а мы и сам такие же, - то тянешься к этому человеку. Конечно же, нам хотелось снова поработать с Алексеем. И вот такой случай представился. Мы приехали, мы готовы к новым съемкам, надеемся, что получится замечательно произведение.<br />
+<br />
+<b> Теймураза зрители уже могли видеть на телеэкране. Элиза, а расскажите Вы о себе: </b><br />
+<br />
+Элиза: Я пела всегда: еще когда жила в Грузии, - пела много, выступала. Потом переехала жить в Москву. Сейчас я вновь выхожу на сцену после долгого перерыва: это было связано в семьей, с рождением детей. Уже настало время, когда надо продолжать карьеру. Думаю, что все получится в этом проекте.<br />
+<br />
+<b>А кто выбрал именно эту песню, - легкую, веселую, - для съемок первого видеоклипа вашего проекта? </b><br />
+<br />
+Э.: Это все Теймураз.<br />
+<br />
+Т.: Музыка в этой песне - моя, слова нашего друга - Владимира Абшилава. У нас есть в Москве студия, она называется 'СБ-рекордз', что означает 'Студия Салтыкова и Боджгуа'. Мы постепенно набираем обороты в шоу-бинзесе, и хочется делать красивые дела. У нас записывается Слава Малежик, Валерия вот после перерыва записала песню, приходит работать много молодых исполнителей. Именно на этой студии готовится сольный проект Элизы, но мы решили сделать и несколько совместных песен. Из них мы выбрали именно эту для нашего старта, потому что она красивая, динамичная, мелодичная. Нам хочется, чтобы наш слушатель на эти четыре минуты, пока она звучит, забыл обо всех своих проблемах и радовался вместе с нами. Потом мы хотим и на другие песни снять клипы. Но они уже будут в другой стилистке. А в этом клипе нам хочется, чтобы видеоряд подкрепил ощущение, которое дает музыка, - ощущение полета. <br />
+<br />
+<b> Вы со сценарием были с самого начала безоговорочно согласны или пришлось его несколько раз переделывать в соответствии с Вашими замечаниями. </b><br />
+<br />
+Э.: Я получила сценарий клипа по факсу с замечательным посланием от Леши Ведерникова, и это уже настроило на положительную волну. <br />
+<br />
+Т.: Мы с Элизой были готовы согласиться с этим сценарием. Но у нас есть множество друзей, мнению которым мы тоже очень доверяем. И кто-то из них говорил, что все замечательно, а кто-то - что Алексей такой талантливый и может еще создать разные варианты этого сценария, чтобы было вообще гениально. Я предложил ему сделать еще вариации на тему песни, но на этом не настаивал, потому что знал: то, что он мне предложил с самого начала ему настолько нравится, что именно на этот сценарий он снимет замечательный клип. Так что у нас не было традиционных для встреч режиссера и заказчиков показов посекундной раскадровки, - просто мы Алексею очень доверяем, чтобы это все было нам надо. Так же мы работали и на первом клипе: мы доверили ему все, и получилось супер: для любого поколения, для представителей любого социального уровня. И еще был интересный момент: мы как-то сидели в аэропорту с Нани Брегвадзе и Львом Лещенко. Нани рассказывала больше получаса, какой она видела прекрасный клип: Она говорила про нашу с Алексеем работу. <br />
+И хотя бюджет нашего нового клипа не такой огромный, какой бывает у наших 'звезд' эстрады, многое в этой работе зависит от взаимопонимания, от человеческих отношений. И работа, в которую не вложены сумасшедшие средства, может в таком случае оказаться сделанной намного лучше, чем дорогостоящая. И так, шаг за шагом, мы идем к своей цели.<br />
+<br />
+<b> Теймураз, Вы - композитор. А какую музыку любите слушать Вы и Элиза? </b><br />
+<br />
+Т.: У меня все началось с грузинского фольклора. В институте, как это было со многими, я организовал рок-группу. Мы играли хард-рок. В 1993 году я выступил на конкурсе эстрадной песни 'Ялта-Москва-Транзит'. Конечно, пел я более мелодичную музыку, не такую тяжелую, не рок. Вот с этого времени я и занимаюсь эстрадной музыкой. Я никогда не ставлю себе цели написать музыку в каком-то стиле, -  вот есть красивые слова, ты берешь гитару и как-то рождается музыка. Бывает наоборот - есть музыка, она пришла, она родилась, - тогда звонишь знакомым поэтам, ищешь стихи. Дома все останавливается в этот момент, я только этой мелодией, этой песней и живу, и вся моя семья - тоже. Знаете, теперь очень ценю эти минуты вдохновения, потому что очень много красивых мыслей пропало.<br />
+<br />
+Э.: Моими первыми зрителями и слушателями были мои родственники. И мне всегда нравилась эстрада, легкая музыка. <br />
+<br />
+Т. : Я вообще не понимаю этого деления и противостояния разных музыкальных стилей. Есть много направлений музыки, и я с одинаковым удовольствием послушаю как классическую, так и современную хорошую музыку.<br />
+<br />
+Э.: Главное, чтобы музыка соответствовала настроению, чтобы она 'легла на душу'. В разное время хочется слушать разные песни. Главное, чтобы была хорошая аранжировка<br />
+<br />
+Т.: Вот тот проект, что сейчас показывать передать человеческую душу ведь с голосом все в порядке, мелодии получаются самобытные. Зрителю важно не суперпрофессиональное исполнение зритель непонятен - становились хитами такие песни, которые непонятно за что полюбили. Но когда сочиняешь песню, то не думаешь, понравится это или нет, оно само приходит. И цель творчества, чтобы твоя песня рождала и хорошие эмоции у твоих слушателей.<br />
+<br />
+<b> Радостно слышать, что в наш коммерческий век вы преследуете в своей работе такие цели. А кто те люди, что помогают вам в этом. </b><br />
+<br />
+Э.: Аранжировки для нас сейчас делает замечательный мастер Андрей Шитов. Он замечательный профессионал, наш друг. Именно он сделал наши песни такими легкими, динамичными. Так что очень важно, с кем ты работаешь в одной команде, важно, чтобы тебя окружали единомышленники. В подборе текстов для песен Теймураз со мной всегда советуется. И выбор стихов он производит очень тщательно. Потому что текст в песне - очень важен. <br />
+<br />
+Т.: Найти хороший текст, неизбитые фразы, - это большая удача. Есть немного людей, которые могут написать такой текст. Хорошо, что у нас есть студия, где мы можем экспериментировать, выбирать, проверять, как это все зазвучит. Вот недавно Вячеслав Малежик сделал у нас две песни, - так все удивились, неужели это - Малежик. Он вместе с нами экспериментировал, и получилось совершенно необычное для него творчество: такая музыка, что на месте не усидишь. Нам повезло, что мы, наша замечательная команда, собрались вместе на нашей студии. Это очень важно. И мы верим в успех нашего проекта.<br />
+<br />
+<i> <b> У видеоклипа "Звонок" очень необычный сюжет. И роли в этом клипе исполнили замечательные актеры нашего Актерского Агентства <a href="http://www.kinobrat.ru/actor/5816.html">Вахтанг Беридзе</a> и <a href="http://www.kinobrat.ru/actor/2994.html">Беата Маковская</a> <br />
+<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/663"><img src="http://www.kinobrat.ru/gallery_file2/663" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<br />
+Рассказывает артист  <a href="http://www.kinobrat.ru/actor/5816.html">Вахтанг Беридзе</a> : "Я уже несколько лет живу и работаю в Санкт-Петербурге. У меня были роли в кино, но видеоклип "Звонок" был первой моей питерской съемкой в музыкальном видео. И, думаю, он запомнится мне навсегда, потому что я ценю в людях профессионализм, и здесь мне было очень приятно работать с молодыми, талантливыми и красивыми людьми. Знакомство с режиссером Алексеем Ведерниковым - это хороший опыт, потому что с ним легко общаться, и он умеет доходчиво объяснить задачу, которую перед тобой ставит. Поэтому и исполнять ее можешь точно, - он ведь всю свою задумку объяснил... Это очень хороший опыт для артиста.<br />
+Роль Дракулы, которую я исполнил в этом клипе, мне не близка. И с такой ролью я столкнулся впервые, потому что еще с института сложилось мое амплуа романтического героя. Я и играл все таких романтиков и героев-любовников. Но, кажется, и с этой ролью справился. Главное, что режиссеру понравилось.<br />
+Моя актерская карьера только началась. Я думаю, что я буду расти в профессиональном плане и Голливуд ждет меня."<br />
+<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/630"><img src="http://www.kinobrat.ru/gallery_file2/630" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<br />
+Рассказывает актриса  <a href="http://www.kinobrat.ru/actor/2994.html">Беата Маковская</a> : </b><br />
+<br />
+Это была моя первая работа в музыкальном видеоклипе. Съемки видеоклипа - очень кропотливый процесс в отличие от съемок фильмов и даже рекламных роликов. Но вопреки расхожему мнению, что клипы - это часто халтурная работа, т.к снимается он обычно за один день, я поняла что по количеству затрат он не уступает, а даже превосходит съемку в фильме с большим количеством текста. В съемках этого клипа принимали участие не только артисты. Было работать с молодыми нестервозными моделями. И вообще вся команда, работавшая над 'Звонком' - подобралась на редкость замечательная. <br />
+Я играю на протяжении 30 секунд времени от этого клипа такую алчную хозяйку квартиры, где происходят все превращения. Подробнее рассказывать не буду, - клип очень необычный, я с нетерпением жду его появления не экранах и думаю, что он не останется незамеченным.<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/631"><img src="http://www.kinobrat.ru/gallery_file2/631" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<br />
+<br />
+<b> Международный центр моды и дизайна 'АРС ВИТА' осуществлял кастинг для видеолкипа "Звонок" </b><br />
+<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/657"><img src="http://www.kinobrat.ru/gallery_file2/657" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<br />
+Международный центр моды и дизайна 'АРС ВИТА' основан на базе продюсерского  центра моды 'inFASHION' , который работает в индустрии шоу бизнеса уже более 5 лет.<br />
+Новое название центр приобрел благодаря расширению спектра услуг. Модельное агентство 'АРС ВИТА' является одним из приоритетных направлений работы центра .<br />
+Модели агентства  'АРС ВИТА' имеют значительный опыт участия в рекламных кампаниях на технических выставках.<br />
+Большая часть моделей владеет одним из европейских языков , что немаловажно  для  профессионального  продвижения  на зарубежный  рынок  моды . <br />
+Международный центр моды и дизайна 'АРС ВИТА',на базе которого работает агентство, является организатором ряда крупных российских и международных  проектов, среди которых Санкт-Петербургские этапы международных конкурсов 'Платье года', 'Премия дизайна SMIRNOFF'.<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/659"><img src="http://www.kinobrat.ru/gallery_file2/659" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<b> За последний месяц в агентстве прошло немалое количество кастингов для различных модельеров , рекламных  съемок и PR-акций. Хотелось бы особо отметить,что 27 февраля в агентстве проходил 1-ый этап отбора для съемок в музыкальном клипе Таймураза  Боджгуа, режиссером  которого и является наш давний друг и партнер по бизнесу Алексей Ведерников. <br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/655"><img src="http://www.kinobrat.ru/gallery_file2/655" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+Кастинг проходил в несколько этапов. Отбор был достаточно жесткий , т.к. моделям помимо  подиумного шага  необходимо было продемонстрировать свою пластику, шарм, обаяние и умение танцевать. <br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/650"><img src="http://www.kinobrat.ru/gallery_file2/650" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+27 февраля было приглашено около 70 лучших моделей Санкт-Петербурга. Из них были отобраны всего 4 девушки.<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/652"><img src="http://www.kinobrat.ru/gallery_file2/652" alt="" width="200" height="160"  border=0 vspace=10></a></div> </B><br />
+<br />
+Текст предоставлен Международным центром моды и дизайна 'АРС ВИТА'<br />
+<br />
+<br />
+<br />
+<i>Подготовила Ольга КРАСНОВА </i></div><br><br>
+
+<table border=0 cellpadding=0 cellspacing=0 width="100%">
+<tr><td bgcolor=#cccccc height=1><img height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td height="25" align="center"><a 
+  href="http://www.kinobrat.ru/gallery/463.html" class=green><b>Галерея</b></a></td></tr>
+<tr><td bgcolor=#cccccc height=1><img height=1 
+ src="../i/spacer.gif" width=1></td></tr>
+<tr><td align="center" height="20"><span id=gray>
+всего: 46 файла(ов)</span></td></tr></table>
+<table border=0 cellpadding=10 cellspacing=2 width="100%">
+<tr>
+
+<th bgcolor="#E0ECE0">
+<table  border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#C7D7C6"><a href="http://www.kinobrat.ru/gallery/463.html"><img border=0 
+ src="http://www.kinobrat.ru/gallery_file2/664" width=100 height=80 vspace="5" class=img hspace="5"></a></td></tr>
+</table>
+
+<th bgcolor="#E0ECE0">
+<table  border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#C7D7C6"><a href="http://www.kinobrat.ru/gallery/463.html"><img border=0 
+ src="http://www.kinobrat.ru/gallery_file2/646" width=100 height=80 vspace="5" class=img hspace="5"></a></td></tr>
+</table>
+
+<th bgcolor="#E0ECE0">
+<table  border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#C7D7C6"><a href="http://www.kinobrat.ru/gallery/463.html"><img border=0 
+ src="http://www.kinobrat.ru/gallery_file2/665" width=100 height=80 vspace="5" class=img hspace="5"></a></td></tr>
+</table>
+
+</tr></table><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="463.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b>Подготовка к съемкам клипа "Звонок". Элиза и Теймураз Боджгуа<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/538"><img src="http://www.kinobrat.ru/gallery_file2/538" alt="" width="150" height="200"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/539"><img src="http://www.kinobrat.ru/gallery_file2/539" alt="" width="150" height="200"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/540"><img src="http://www.kinobrat.ru/gallery_file2/540" alt="" width="150" height="200"  border=0 vspace=10></a></div><br />
+<br />
+Фрагменты видеоклипа "Звонок"<br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/632"><img src="http://www.kinobrat.ru/gallery_file2/632" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/633"><img src="http://www.kinobrat.ru/gallery_file2/633" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/634"><img src="http://www.kinobrat.ru/gallery_file2/634" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/635"><img src="http://www.kinobrat.ru/gallery_file2/635" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/636"><img src="http://www.kinobrat.ru/gallery_file2/636" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/637"><img src="http://www.kinobrat.ru/gallery_file2/637" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/638"><img src="http://www.kinobrat.ru/gallery_file2/638" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/639"><img src="http://www.kinobrat.ru/gallery_file2/639" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/640"><img src="http://www.kinobrat.ru/gallery_file2/640" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/641"><img src="http://www.kinobrat.ru/gallery_file2/641" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/642"><img src="http://www.kinobrat.ru/gallery_file2/642" alt="" width="200" height="160"  border=0 vspace=10></a></div><br />
+<div align=center><a href="http://www.kinobrat.ru/gallery_slide/643"><img src="http://www.kinobrat.ru/gallery_file2/643" alt="" width="200" height="160"  border=0 vspace=10></a></div></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

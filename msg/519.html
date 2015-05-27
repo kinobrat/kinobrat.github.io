@@ -1,0 +1,632 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="519.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='177.html' class=top style='color: white;'>&laquo;Артур Ваха&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="177.html" class=green><b id=gr>Артур Ваха</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Артур Ваха: ²Довольно самокритично отношусь к  своей работе⌡</b><br><br></div>
+<div align="justify"><b> Артист . такая профессия, которая дает возможность своему обладателю прожить множество чужих жизней. Сегодня он играет благородного графа, а завтра . пройдоху и мошенника. В кино и  на сцене артистам дается такая возможность. А если конкретизировать все вышесказанное, то все эти слова относятся к артисту, которого знают и любят многие. Зовут его Артур Ваха.<br />
+Спектакли в Театре Комедии, где занят Ваха, собирают аншлаги. Если вы выберете в афише такие спектакли театра, как ²Мой вишневый садик⌡, ²Деревенская жена⌡, ²Зойкина квартира⌡, ²Как важно быть серьезным⌡, то увидите  интересную историю и неподражаемую игру актеров театра, среди которых яркой внешностью и ярким талантом блистает Артур Ваха. Спектакли с его участием идут также и на других подмостках Петербурга. Самой популярной из этих работ является аж 5 ролей в антрепризном спектакле ²Смерть Тарелкина⌡.<br />
+В кино зрители знают его по фильму ²Бакенбарды⌡ Ю. Мамина и ²По имени Барон.⌡ Д. Светозарова. Скоро выйдут на экраны еще несколько фильмов с его участием.<br />
+Самое главное, что Артур .  ужасно обаятельный человек. И это вкупе с его талантами делают из него настоящую звезду. С каждым днем все больше и больше востребованную в театре и массовом искусстве кино. <br />
+<br />
+Артур, есть такая традиция: снимется человек в хорошем фильме у хорошего режиссера, фильм покажут по телевидению, - работа понравится зрителям, и станет актер востребованным, популярным, модным. В Вашем случае это произошло после выхода фильма ²По имени Барон.⌡? </b><br />
+<br />
+Все приглашения у меня были до того, как я снялся в ²Бароне⌡. И со Снежкиным, на фильм ²С новым годом⌡, у нас была раньше договоренность и съемки начали раньше, чем в ²Бароне⌡.<br />
+<br />
+<b>То есть получается, что на вас эта закономерность не распространяется? </b><br />
+<br />
+Не знаю. Единственно, что картина, которая принесла мне большую популярность, чем все остальные не была первой. <br />
+<br />
+<b>Но все-таки сотрудничество с хорошим  кинорежиссером передвигает актера на качественно более высокий профессиональный уровень? </b><br />
+<br />
+Я не могу так категорично утверждать. Но мне очень понравилось работать со Светозаровым. Хотя  я не всему верю и очень самокритично отношусь к своей работе, не умею собой восторгаться, - но тут уж не могу не поверить, потому что все говорят, что  моя работа в ²Бароне⌡ получилась хорошо. Мне самому она понравилась. Конечно, я Дмитрию Светозарову безмерно благодарен за то, что он меня взял в такой замечательный фильм. <br />
+<br />
+<b>Это было однократное приглашение работать у этого режиссера? Ведь, в принципе, артисты перетекают у одного режиссера из фильма в фильм... </b><br />
+<br />
+Пока да, . больше не звал. Не приглашает, значит просто для меня роли не было.<br />
+<br />
+<b>А закон перетекания из фильма в фильм у других режиссеров на Вас распространяется? </b><br />
+<br />
+Пока нет. Но вот я могу сказать, что Сергей Снежкин, у которого я снялся в сериале ²С новым годом⌡, пригласил меня сразу же в свою будущую картину. <br />
+<br />
+<b>Наверное, вас буду называть ²актер Снежкина⌡ - что означает человека, постоянно снимающегося у этого режиссера, любимого им? А можете ли Вы определить словами, что значит ²актер Снежкина⌡, какой он? </b><br />
+<br />
+Актер Снежкина . это, прежде всего, человек, который работает по-честному. Это значит не ради денег, не ради славы, а ради того, чтобы сделать хорошо. Сделать на совесть. Это . ²живой⌡ актер . он и играть будет живых людей. Персонажи  будут настоящие.  Потому что для Снежкина нет никаких актерских авторитетов. Если артист начинает, как сейчас это называют, ²кидать понты⌡, - это часто случается с москвичами, -  то он сразу со съемочной площадки отсылается в известном направлении. Потому  со Снежкиным надо всего-навсего по-честному работать. А для меня лично это вообще . жизненный принцип. Мне часто бывает стыдно за малейшие детали своих работ: я это четко вижу, где я недоиграл, а где . наоборот. И я стараюсь делать так, чтобы было не стыдно.<br />
+<br />
+<b> В кино Вам работать проще  или сложнее, чем в театре? </b><br />
+<br />
+Мне в кино сложнее, потому что я еще не до конца понимаю, что такое кино, что такое  я  в кино. Это искусство для меня достаточно сложное. Я не всегда могу определить в кино, правильно я делаю или нет. <br />
+<br />
+<b>Но на то, чтобы показывать, как правильно сделать, есть режиссеры. </b><br />
+<br />
+И, слава Богу, что они помогают, подсказывают, направляют. <br />
+<br />
+<b> Кино в Вашу жизнь пришло очень поздно. Все отмечают, как первую картину, работу с Юрием Маминым в ²Бакенбардах⌡. Неужели до этого не было даже эпизодов? Или телевизионных спектаклей? </b><br />
+<br />
+Как раз телевизионные спектакли были, - всякие разные сказки. В кино были и эпизоды, и даже, когда я еще студентом был. Да и не только эпизоды: массовки, групповки... Много всего было, но, значит, совершенно незначительное, если меня знают, начиная с ²Бакенбардов⌡. Да и мне не запомнилось ничего из того, что было в моей кинобиографии раньше.<br />
+<br />
+<b>Кинематографический язык режиссера Юрия Мамина стоит особняком среди стилей питерских режиссеров. А что больше всего запомнилось со времен съемок ²Бакенбардов⌡? </b><br />
+<br />
+Он очень серьезно делал этот фильм. И это удивило. Я не могу сказать, что я разделяю его точку зрения, что мне безоговорочно, органично понятен его юмор. Но это субъективно. Юмор . это вообще самая субъективная вещь на свете. Человека вообще без юмора нет, но у каждого человека свой юмор. <br />
+<br />
+<b>В театре Комедии вы прикоснулись к различным граням юмора, поэтому о природе юмора знаете немало. Но все-таки согласитесь, что картины Юрия Мамина не так смешны на фоне той ²веселухи⌡, которая идет на сцене театра Комедии. </b><br />
+<br />
+В театре Комедии тоже не все . веселуха. И я счастлив, что мне в этом театре довелось сыграть много такого, что не является в чистом виде комедией. В нашем театре спектакли разноплановые, несмотря на то, что театр носит имя ²Комедии⌡. А играть одни комедии . это можно умереть с тоски.<br />
+<br />
+<b>А кто Вам достается в кино? Какие персонажи? </b><br />
+ <br />
+Все герои разные. И я этому очень рад.<br />
+ <br />
+<b>Но ваши герои не вписываются в стереотип ²героя нашего времени⌡ - бандита или банкира?.. </b><br />
+<br />
+Нет. Они просто люди. И в театре я тоже играю совершенно разных персонажей. Это так интересно: сегодня ты герой,  а завтра . совершенно негероический человек. Причем, это происходит не только на подмостках Театра Комедии, но и в других театрах: например, в БДТ, в спектакле ²Таланты и поклонники⌡ или в антрепризном спектакле ²Смерть Тарелкина⌡.  И, слава Богу, что на мне не повис стереотип, называющийся в театральном мире ²амплуа⌡. <br />
+<br />
+<b>Я слышала, что на съемочной площадке сериала ²Линии судьбы⌡ Дмитрия Месхиева звук писали прямо во время съемок, и озвучка была уже не нужна. Как же в таких условиях было работать актеру?! </b><br />
+<br />
+Тяжело. Актер должен весь текст выучить и четко его выговаривать.<br />
+<br />
+<b>А чем это было обусловлено? </b><br />
+<br />
+Не знаю. Это технический вопрос. Нас, актеров, в это не посвящают. Но хлопот было много. Вот, например, мы должны снимать один эпизод в Москве, на Патриарших прудах: мы идем с Ириной Розановой, и я ей читаю наизусть Булгакова, ²Мастер и Маргарита⌡. Текста много, листа на два. И вот камера выходит на нас, и я знаю, что здесь будет крупный план . а до конца текста осталось уже немного: предложений шесть. Я, конечно, их лучше, чем остальные выучил. Ведь все-таки когда снимают  панораму, легче актеру работать. Приезжаем на Патриаршие, начинается подготовка к съемке: ставится камера, выбираются наиболее выгодные ракурсы. Ко мне подходит Месхиев и спрашивает: ²Ну как, Артур, с текстом все в порядке?⌡ Я отвечаю: ²Да. Там же маленький кусочек, потом . диалог, а до этого . панорама, как в сценарии написано. Там текст не очень важен.⌡. А он мне: ²Артур, ты забываешь, что у нас чистый звук. И тебе все равно, крупным планом тебя снимают или  панорамой. Ты должен говорить свой текст! Даю тебе 10 минут⌡. И я, как сумасшедший, за 10 минут выучил весь этот огромный кусок. А там же цитата, слова поменять нельзя . Булгакова народ знает и любит. Ну, вроде бы, снялся два дубля, и все получилось. <br />
+<br />
+<b>Частенько в нашем городе принято москвичей ругать: мол, такие заносчивые. Да и Вы рассказывали о ²московских понтах⌡. В Вашем случае на съемках фильма ²Линии судьбы⌡, где принимали участие многие москвичи, как складывались отношения?  </b><br />
+<br />
+Я просто влюбился в артистку Ирину Розанову. Это удивительный человек!  Мы теперь. Когда перезваниваемся, то называем друг друга брат и сестра. Несмотря на то, что у нас по сюжету роман, на самом деле -  такие братско - сестринские отношения. Она замечательный человек, потрясающий! И прекрасная актриса, - но это и так все знают. Никаких московских ²понтов⌡ не было у нее и в помине.... Я видел на этих съемках несколько москвичей, которые вели себя так, как они считают, должны вести себя звезды. Но я не хочу о них говорить. Встречал я и таких людей, которые приходили на площадку, как ²звезды⌡, но, видя, как работают питерские актеры, становились нормальными людьми, понимая, что вся эта ²звездность⌡ здесь никем не оценится. <br />
+<br />
+<b>А было ли такое: распределение ролей в фильме посылалось московским продюсерам, они отказывались от Вашей кандидатуры, потому что Вы . не слишком модный питерский актер? </b><br />
+<br />
+Да, конечно. В Москве меня еще почти никто не знает. Даже был такой случай: сценаристка Марина Мареева, - та же, которая написала сценарий для фильма, в котором я снимался у Сергея Снежкина, ²С новым годом⌡, рассказала, что в другой ее работе она написала образ специально для меня. Но не смогла уговорить московских продюсеров взять меня на эту роль, потому что я неизвестен. Я не обижаюсь. Какие могут быть обиды, - я же уже взрослый мальчик. Если снимается кино по московским тусовочным меркам, когда как раз и собираются все свои и делят между собой деньги, то это получается  не искусство. И мне там делать нечего.<br />
+<br />
+<b>То есть Вы против того, чтобы тусоваться ради получения работы? </b><br />
+<br />
+Я этого никогда делать не буду. Я включаю телевизор, смотрю на эти московские тусовки и понимаю, что это не для меня. Я вижу, насколько люди там нечестные. Они врут глазами, они врут языком. Они врут другим, врут себе. А если человек начинает врать себе, то он заканчивается как творческая личность. Они, наверное. Не понимают, что вот они так тусуются, и уже эта тусовка становится главнее, чем искусство.<br />
+<br />
+<i> Ольга КРАСНОВА<br />
+</i></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="519.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td height="90" valign=bottom><img
+  src="../i/news_pro.gif" width="219" height="90" border="0"></td></tr>
+<!--tr><td height="60" valign=bottom><img
+ src="../i/sub_m.gif" width="220" height="31" border="0"></td></tr-->
+<tr><td align="center">
+
+<br>
+<table width="200" border="0" cellspacing="0"
+ cellpadding="0">
+<tr><td style="PADDING-BOTTOM: 5px; PADDING-LEFT: 9px; PADDING-TOP: 5px; "
+ background="../i/bg_gr.gif"><b><a href="520.html"
+ class=green>Портреты замечательных людей. Наши артисты. Артур Ваха.</a></b></td></tr>
+<tr><td height=1 background="../i/dd.gif"><img height=1
+ src="../i/spacer.gif" width=1></td></tr>
+<tr><td class=top
+ style="PADDING-LEFT: 9px; PADDING-TOP: 5px; PADDING-BOTTOM: 6px;"><b
+ id=gray>15&nbsp;сентября&nbsp;2003</b><br>
+<span class=bl>Спектакли в Театре Комедии, где занят артист Артур Ваха, собирают аншлаги. Постановки с его   ...&nbsp;<a href="520.html"><img
+ src="../i/arr_tr.gif" width="11" height="5" hspace="5" border="0"></a></td></tr>
+</table><img src="../i/sub_rr.gif" width="220" height="27">
+
+<br>
+<table width="200" border="0" cellspacing="0"
+ cellpadding="0">
+<tr><td style="PADDING-BOTTOM: 5px; PADDING-LEFT: 9px; PADDING-TOP: 5px; "
+ background="../i/bg_gr.gif"><b><a href="176.html"
+ class=green>До "Смерти Тарелкина" осталось 4  дня!</a></b></td></tr>
+<tr><td height=1 background="../i/dd.gif"><img height=1
+ src="../i/spacer.gif" width=1></td></tr>
+<tr><td class=top
+ style="PADDING-LEFT: 9px; PADDING-TOP: 5px; PADDING-BOTTOM: 6px;"><b
+ id=gray>11&nbsp;декабря&nbsp;2002</b><br>
+<span class=bl><b> <a href="../actor/5372.html">Артур Ваха</a> (сыгравший пять героев!) о спектакле. </b> Пять персонажей за два часа - это много. А   ...&nbsp;<a href="176.html"><img
+ src="../i/arr_tr.gif" width="11" height="5" hspace="5" border="0"></a></td></tr>
+</table><img src="../i/sub_rr.gif" width="220" height="27">
+
+</td></tr>
+</table><br><br><br>
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

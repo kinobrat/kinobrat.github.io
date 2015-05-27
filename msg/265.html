@@ -1,0 +1,594 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="265.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Меж тьмой и светом старой киноленты</b><br><br></div>
+<div align="justify">У.Шекспир. "Гамлет". Театр "Фарсы".<br />
+Режиссер Виктор Крамер <br />
+<br />
+<br />
+Мрачный Эльсинор спектакля Виктора Крамера наполнен визгом и смехом. Взмывают вверх белые скатерти, Офелия осыпает белыми цветами Гертруду, примеривающую фату у зеркала. Праздничная кутерьма управляет движением круга, и Гамлет связан с этим ярким миром, который, кажется, должен изменить финал трагедии. <br />
+Театр "Фарсы" начал историю о принце датском неожиданным светом, отставив трагические котурны, даже не прикасаясь к ним. В покое остались череп бедного Йорика, проскользнувший песком сквозь пальцы принца, и черное классическое одеяние Гамлета. <br />
+Наплыв шума толпы и оркестра, Гамлет (Игорь Копылов) в поблескивающих золотом очках кидает камушки и посылает свои поцелуи в окно Офелии (Оксана Базилевич). <br />
+Свет идет от этой пары и от другой - короля и королевы. Белые кружева платья Гертруды (Елена Спиридонова), ее точеный профиль, рядом высокий торжественный Клавдий. Церемония свадьбы. Орган, букеты - торжество в кругу приближенных. <br />
+Это только начало истории, но в ее вихревом, и в то же время четко выверенном движении ярко проступают отношения, связывающие героев. <br />
+Гамлет ждет Офелию, чтобы поцеловать ее, пока никто не видит. Гамлет дурашливо дерется на зонтиках с Лаэртом (Александр Строев), они преследуют Полония (Сергей Бызгу), все время натыкаются на человечка в коричневом костюме, отнимают у него, то рюмку, то бутерброд. Гамлет дружески покровительствует Клавдию (Игорь Головин), репетирует с ним речь, посвященную торжественному событию. Довольный кивает, в последний раз оглядывает волнующегося дядю, благословляет и отходит в сторону, уступая место нежно-белой Гертруде. <br />
+Режиссер стремится "очеловечить" своих героев, наделяя их теплом и обаянием, словно для того, чтобы предотвратить постепенное разрушение этого мира. Трагедия упрямо проходит через огромное пространство, в котором они все обитают. Оно захватывает своей замкнутостью, живет по странным законам, которые определяются движением поворотного круга. Круг вращает зрителей, сидящих на нем, переносит их от одного события к другому. Его движение кажется обреченным вечно повторять историю о принце датском. Резко сталкивается свет и темнота, деля все повествование на эпизоды, создавая перепады в настроении. Сначала темнота вторгается короткими, неожиданными фразами в царящее веселье. <br />
+После церемонии застывают возле двери, изображающей вход в храм, молодые в поцелуе, маленький Полоний с Лаэртом - дитем-переростком, Офелия, держась за платьице, Горацио в траурном костюме (Константин Хабенский). Застывают, как на фотографии, ожидая птички и улыбаясь. Гамлет присаживается в центре группы, откуда его вышвыривает какая-то сила. Движется круг. Проплывают мимо "улыбки на память". <br />
+Свет сосредоточен на фигуре Гамлета, вокруг темнеет. Шепот тревожной музыки. Гамлет подан крупным планом: его бледное лицо, его сомнения, которые скрывались за весельем, в общей кутерьме. Круг делает поворот, рядом с Гамлетом возникает Клавдий и поднимает его. Принц, обмякший, растерявший все силы в короткой темноте, висит на плечах Клавдия. Он быстро меняется, как только подходит мать. <br />
+ <br />
+Фото В.Васильева<br />
+Е.Спиридонова (Гертруда),<br />
+И.Головин (Клавдий).<br />
+...Мимо Гамлета с гиканьем несется Лаэрт с Гертрудой на плечах. Развевается ее фата, следом бегут Полоний, Офелия. Следующее движение круга - погоня за Полонием. Все останавливаются у белых столов, расставленных как будто в спешке. Открывается огромное пространство. Прямо - железные ворота, по бокам - кирпичные стены. Высоко - темнота, потолка не видно. До этого мы "проезжали" мимо этого пространства, внимание было сосредоточено на героях, на первом плане, когда они застилали столы, взвивались белые скатерти, когда они шумно толкались и гонялись друг за другом. Теперь, когда все уговаривают Полония выступить, и он, соглашаясь, как малое дитя забирается на стул, видно, в каком темном колодце существует эта компания. Нет, это не масштабы королевства, и образ Дании как государства, живущего пусть и за этими стенами, не возникает. Это именно их мир - вот такой вот странный, с темными углами, с одиноко расставленными столами, зеркалом, дверями. <br />
+Дрожа от удовольствия, теряя пенсне, Полоний громко, с выражением читает сонет Шекспира: "Зову я смерть!". Он нелепо призывает курносую и умрет нелепо. <br />
+Герой Сергея Бызгу, кажется, все время подскакивает, все время хлопочет. Он обаятелен, комичен, радостно любит Офелию, Лаэрта. Полоний делает вокруг себя все теплым. Поэтому, когда он исчезает, кажется, что с этого момента темнота начинает побеждать. Замкнутое пространство давит своей пустотой. <br />
+Сонет превращен в банальные стишки, вроде: "От сердца и почек дарю вам цветочек!" Перепутаны жанры. Выступление Полония превращается в фарс. Небо откликается на просьбы неугомонного. Железные ворота раздвигаются, и появляется большая белая фигура, размахивающая ручищами. Все замирают от страха. Она, шатаясь, приближается, великан медленно валится набок, а из-под него вылезает Лаэрт и передразнивает отца. <br />
+Круг движется. Он становится то продолжением игровой площадки, по которой Лаэрт идет за королем и королевой, отпрашиваясь во Францию, то превращается в силу, которая отделяет Гамлета от остальных, подает его крупным планом. Все время идет чередование крупных и общих планов. <br />
+...Гамлет пишет на небе лентой стихи Офелии. Они любят друг друга. <br />
+Везде жует за столом Могильщик, видимо ожидая своего звездного часа. <br />
+Темная сторона этого мира, таившаяся в углах, подкрадывается ближе. Трагедия накажет за то, что в ее владения проникли комедия и фарсы. <br />
+ <br />
+Фото В.Васильева<br />
+К.Воробьев (Розенкранц),<br />
+И.Копылов (Гамлет),<br />
+Д.Воробьев (Гильденстерн).<br />
+Все продолжают резвиться, рассаживаются на стульях, и Гамлет должен успеть занять между ними место. Вдруг свет меняется, все застывают. Музыка и шепот, странно прогнувшиеся тела. Словно каждый где-то внутри знает о преступлении и сейчас это вырывается из Офелии, Гертруды... Призрака на сцене нет. Над ним уже поиздевались, как могли, эффектно выпустив белую фигуру в клубах дыма. Замкнутость этого мира продиктовала появление фантома изнутри каждого. Голос неба, его материальное воплощение было бы циничной условностью. <br />
+Нарастает музыка, и какая-то сила сталкивает Гамлета с Горацио. Тело у Горацио стало неестественно вытянутым, напряженным, прилепилось к плечу Гамлета. Гамлет отходит, пытается освободиться, но чернеет трауром тело, не отстает, бледное лицо Горацио опрокинуто, он дугой прогибается от плеча Гамлета к полу. Физическая боль Гамлета от гулких, глухих слов "призрака" разливается по нему, руками он пытается оттолкнуть навалившийся на него темный воздух. <br />
+Темнота сожрала все пространство, все охвачено ею. Сзади остаются пять застывших, напряженных фигур в фиолетовом свете, а белые столы взвиваются, кружась, все выше, уходят в темноту и повисают там. Они были вестниками праздника, теперь же стали пугающим знаком разрушения. <br />
+Музыка внезапно обрывается. Тишина и темнота. Пауза. Звонкое цоканье вилки о тарелку. Нас переводят из одного состояния в другое, не давая опомниться. <br />
+"Порвалась дней связующая нить", - скажет Гамлет, стоя рядом с Горацио... <br />
+Крамер сочиняет "разорванный" спектакль. Он стирает время, пространство, перемешивает сон и явь. Пьеса подана жестко, рвано. <br />
+Великая трагедия разорвана, жанры "фарсово" перемешаны. Круг сначала соединяет всех обитателей колодца, но потом, когда нить зла начинает распутываться, - круг разрывается, да и сама ткань жизни расползается на глазах. <br />
+Совершенно ясно, что после фразы Гамлета ("Порвалась...") светлый мир Полония мы видим в последний раз. Большую часть сцены уже занимают сумерки. Наверху еще раскачиваются зловещие столы, которые станут камнями реки - местом гибели Офелии, за ними будут справлять поминки. <br />
+Какие-то неотвратимые перемены. <br />
+...В темноте звучит тревожный голос Полония, он зовет Офелию. Офелия, перепугана предчувствием смерти. <br />
+...Что-то происходит с Гамлетом. Он появляется в сцене с Полонием, разыгрывая перед ним сумасшедшего, с белым лицом, покрытым глиной, в белом рваном костюме. <br />
+...Полоний ищет Гамлета и обходит "замок", который раньше был заполнен движением обитателей. Теперь они появляются в сумерках по одиночке - Офелия, Горацио. <br />
+Второе действие ритмически отличается от интенсивного и "компактного" первого. Здесь тот же монтажный принцип, вот только временные рамки между сценами увеличиваются, а круг вертится в более зловещем темпе. <br />
+...Резкое световое вторжение Гильденстерна (Дмитрий Воробьев) и Розенкранца (Константин Воробьев). Распахиваются двери - и яркие, в ослепительно белых костюмах, появляются новые участники трагедии. <br />
+Рядом с ними грязный белый костюм Гамлета выглядит почти лохмотьями. Его белое лицо, волосы, измазанные глиной, - странны. Правда, Гамлет ведет себя как человек, который "измазался" для дела. Невольно каждый гибельно втянут в движение круга и становится орудием этого движения. <br />
+ <br />
+Фото В.Васильева<br />
+С.Бызгу (Полоний),<br />
+И.Копылов (Гамлет),<br />
+О.Базилевич (Офелия).<br />
+У темного длинного зеркала собираются на просмотр кинофильма все обитатели "колодца". "Фильма" завывает, трещит проектор, зрители нервно оборачиваются в поисках изображения, но это очередная обманка режиссера. Главное - это лица, лица всех и Гамлета. Здесь он живет отдельно от них. Все смеются, и тихо, тихо начинает звучать голос - его внутренний монолог откуда-то сверху, постепенно заглушая плавающие звуки "фильмы". Гамлет молча улыбается, прислушивается, встает и начинает говорить. Медленно обходит смеющихся. Никто не слышит его. Он кричит, стоя за спиной у Клавдия, а тот смеется, раскачиваясь, смеется чуть хищно, спокойно. Становится жутко. <br />
+Опять Гамлет на круге, в свете луча - сомневающийся бледный шут. Нужны улики! Крупный кадр после группового "фото". <br />
+...Розенкранц и Гильденстерн развлекают принца, представляя в разных стилях монологи королевы и отравителя. Эта сцена отмечает границу, за которой последует темная полоса. <br />
+"Жить или не жить"? Пафос снижен. К горлу приставляется шило. Душевная боль Гамлета становится физической, он ранит себя несколько раз, пытаясь понять, может ли он не жить. И истерзанный, бледный, хромающий, он продолжает игру, которую начал <br />
+первым. Он раздает участникам спектакля текст. Мышеловку разыгрывают сами. Актеры не прибыли. <br />
+И это - ход, похожий на решение сцены с Призраком. Опять внешнее вторжение не понадобилось режиссеру. Актерствуют в Эльсиноре давно. Полоний без этого не может, Розенкранц и Гильденстерн развлекают принца, Офелия играет по настоянию Полония, Клавдий - пытаясь забыть злодейство, Гертруда прячет свою вину. Мнимое столкновение разыгрывается между реальными участниками трагедии. Они исполняют пантомиму под хлопотливый комментарий Полония. "Скорбите, матушка, скорбите", - кричит Гамлет Гертруде. И Полоний негодует, что нет заламывания рук и проявления скорби. Сидящий возле помоста-квадрата, он постоянно подскакивает от волнения, ему кажется, что он дирижирует. Скорчившийся Гамлет лежит на "дерне", изображая короля-отца. Он ждет, когда же Клавдий доиграет свою роль и вольет ему яд в ухо. А Клавдий спокоен до равнодушия, все делает неторопливо. Так же медленно садится на диван в виде золотого уха, до этого скрытое алым бархатом... <br />
+Виктор Крамер оказался изобретательнее Гамлета - персонажа пьесы Шекспира. Он заключает Клавдия в объятия дивана-уха, но мышеловка расчитана не только на короля с королевой, она универсальна для всех. Нет выхода из замкнутого колодца. <br />
+В третьем действии круг на долгое время замирает и его движения почти физически не хватает. Не хватает и неожиданного движения вверх, которое было в полетах столов. Все подчиняется той же смене темноты и света, но темнота все поглощает. <br />
+Остановка круга - финал человеческих страстей. Здесь все решается, распутываются все узлы. Крупно-герои у "разрытой" для Офелии могилы. <br />
+...Детские всхлипывания брата усопшей и его вопль, когда он кидается к телу, чтобы остаться с ним. <br />
+...Слезы Гертруды, ее дрожащий голос. <br />
+Как и Гамлет, режиссер не верит "словам, словам, словам" - трагическое выражено у него не в монологах, но в зримых пластических метафорах. <br />
+ <br />
+Фото В.Васильева<br />
+О.Базилевич (Офелия),<br />
+И.Копылов (Гамлет).<br />
+Лаэрт поднимает сверток, перевязанный веревкой. От него не оторвать взгляда, в его руках он кажется телом, завернутым в саван. Гамлет отбирает у Лаэрта сверток... сыплется песок... там нет ничего... В руках Гамлета "тело" стало песком. <br />
+Могильщик всегда был рядом, но он не участвовал в фантасмагории, просто вечно жевал. И теперь погружает в песок могилы тарелку, вместо лопаты, делает замеры зубочистками... <br />
+Наибольшей неожиданностью оказался финал истории. В нем параллельно живут два мира - вербальный и визуальный. Фонограмма дает всем известное окончание пьесы: поединок, смерть Лаэрта, Гертруды, Клавдия, а странный свет создает ощущение, что все происходит под водой: вертится круг, в зеркалах отражаются искривленные зрительские лица. Напоминает начало - подготовку к свадьбе... Только нет звука, а движения расплывчаты и медленнее обычных. <br />
+...Словно в рапиде, бежит Полоний с букетом, который выбивают из его рук. <br />
+... Гильденстерн и Розенкранц несут пленку для кинопроектора, а в фонограмме скрежещут шпаги и вскрикивает Гертруда. <br />
+... Офелия лентой чертит в небе слова, подаренные ей Гамлетом. <br />
+... У стены замирают усталые Лаэрт и Гамлет, теперь видно, как они тяжело дышат. <br />
+Гамлет остается один среди сгрудившихся столов, кирпичных стен, в пустоте. <br />
+Снова загорается свет в окне у Офелии, Гамлет берет камушек и кидает, все погружается в полную темноту, которая кажется необъятной. <br />
+"И вы, немые зрители финала..." <br />
+Все повторяется. Историю о принце будут играть вечно. И дальше не темнота, а свет. <br />
+Анастасия Терешкина<br />
+Июль 1998 г "Петербургский театральный журнал"<br />
+<br />
+http://www.theatre.ru/ptzh/1998/15/022.html</div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="265.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

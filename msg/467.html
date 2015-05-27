@@ -1,0 +1,649 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="467.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Новости &#149; <a href='53.html' class=top style='color: white;'>&laquo;Актерское Агентство&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>сейчас</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="53.html" class=green><b id=gr>Актерское Агентство</b></a></td></tr>
+</table>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table>
+<div align=center>
+<table width="80" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" width="1"><img 
+  src="../i/spacer.gif" width="1" height="1"></td>
+<td class="date" align="center" width="26">12&nbsp;мая&nbsp;2003</td>
+</tr></table></div><p>
+
+
+<div align=center><b id=yellow>Снимается кино... "Игра он-лайн".</b><br><br></div>
+<div align="justify">Различные части города и его окрестностей превратились в последнее время в съемочные площадки для нового проекта с интригующим названием ²Игра Он-лайн⌡. Сведущие люди говорят, что кино с таким названием (правда, без ²он-лайна⌡) уже было, однако снятое не в России и с участием Майкла Дугласа. <br />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <div align=center><a href="../gallery_slide/622.html"><img src="../gallery_file2/622" alt="На съемках фильма "Игра Он-лайн". Сергей Мурзин: битва на "Черном рынке". Фото Александра Корнакова." width="200" height="131"  border=0 vspace=10></a></div> <b> Режиссер - <a href="../actor/4136.html">Александр Строев</a> . В ролях: Семен  Спивак, <a href="../actor/7418.html">Сергей Мурзин</a> , <a href="../actor/8476.html">Андрей Федорцов</a> ,  <a href="../actor/1478.html">Борис Соколов</a> , Сергей Власов, Анжелика Неволина, Евгений Меркурьев и др. </b><br />
+<br />
+Что же придумали наши? Чтобы это узнать, пришлось посетить ²Черный рынок⌡.<br />
+<br />
+Заведение для торговли пищевой продукцией расположилось на западной окраине города, в Гавани. Ленэкспо, обдуваемое очень даже свежими балтийскими ветрами, такого рынка еще нее видело. Что там чинный ²Российский фермер⌡? С охраной, с крестьянами. ²Черный рынок⌡ был черен от масок, скрывающих лицо подозрительным молодым людям, которые громили все, что подвернулось. Бежали в ужасе все продавцы, летели на асфальт стекла битых банок, давились ботинками соленые огурцы, крошилась в пух капуста. Треск, грохот, звон. И среди этого громкий голос мегафона: ²Приготовились. Камера. Начали⌡. Какофония разгрома усилилась. В ней отчетливо прослушивались удары по человеческим телам. Драка, массовая драка!.. <br />
+С участием популярных артистов Сергея Мурзина, Андрея Федорцова, массовки, каскадеров, режиссера и всех тех, кто составляет съемочную группу восьмисерийного фильма ²Игра Он-лайн⌡.<br />
+Перескакивая стекла и обломки деревянных ящиков, нахожу продюсера фильма Евгения ХАРКЕВИЧА и пытаюсь понять мотивы, побудившие присутствующих так жестоко относиться к окружающим предметам и людям:<br />
+²Наша cтудия ²Позитив ТВ⌡ снимает новый фильм. Основная продукция ²Позитива⌡. программа ²Городок⌡. Но мы уже сняли такие сериалы, как ²Подружка осень⌡, ²Морской узел⌡, ²Госпожа победа⌡. Последний будет показан в июне на канале ²Россия⌡. А вот сейчас придумали новую историю ²Игра Он-лайн⌡ и на ваших глазах осуществляем ее.<br />
+<br />
+- А что именно происходило на моих глазах?<br />
+<br />
+Сейчас действие происходит на ²Черном рынке⌡, -это  название у него такое. Каскадер (Сергей Мурзин) приезжает на час раньше на то место, где будут проходить его съемки. А на этом объекте уже снимается другой фильм, и герой Сергея, не разобравшись, избивает ²звезду⌡ кино (не только в жизни, но и по сюжету) Андрея Федорцова и массовку. Ведь, в принципе, почему бы ему и не вмешаться в драку, - ведь он что увидел: скинхеды грабят рынок! Он ведь не знал, что они не настоящие хулиганы, а его коллеги. И одна из интриг серии в том, что до конца серии зрители не должны знать, что весь этот погром на ²Черном рынке⌡ - съемки сериала. Одна из интриг ²Игры⌡, этими интригами просто пестрящей. Хотя тем, кто это прочитает, уже на одну интригу будет смотреть менее интересно. Но ничего: им тоже загадок в нашем фильме хватит.<br />
+<br />
+- Этот ²Черный рынок⌡, который сейчас после вашего погрома надо убирать и убирать, - лишь деталь в огромной работе, которая о чем? И при чем здесь Майкл Дуглас?<br />
+<br />
+Самая главная задача этого фильма дать надежду людям, которые, просыпаясь утром, не могут дать ответа на вопрос ²Зачем жить дальше?⌡ Именно эту надежду дает своим пациентам главный герой фильма Николай Николаевич. Он раньше работал в секретных лабораториях и владеет магией, телепатией, экстрасенсорикой. Николай Николаевич действует по мотивам фильма ²Игра⌡ с Майклом Дугласом: он устраивает людям такие же экстремальные игры. Люди все разные.<br />
+В первой серии, например, это доктор, который потерял в жизни все ориентиры. Он обращается к Николаю Николаевичу, и все в его жизни меняется: она наполняется происшествиями, приключениями: бандиты, взрывающиеся снегоходы, обстрел из гранатомета, столкновение с маньяком. И он наконец-то получает повод впервые за полгода поговорить с женой. Мы надеемся, что их жизнь наладится.<br />
+Вторая серия про банкиршу, которая грабит свои банки. Но не деньги она берет, не ради наживы все делает, а похищает картину, - неизвестный эскиз Моны Лизы.<br />
+Третья серия рассказывает о том, как герой попадает в былинную Русь. Не в древнюю, а именно в былинную, где есть Илья Муромец, Алеша Попович и Соловей-Разбойник.<br />
+<br />
+- Кого Вы пригласили в этот проект.<br />
+<br />
+Режиссер-постановщик фильма Александр Строев, который не только замечательный актер Молодежного театра, но и режиссер двух серий о боксе в спортивном сериале ²Госпожа победа⌡. У Сергея Мурзина роль очень значимая. Его персонаж переходит из серии в серию. Сергей играет каскадера Вову. Вова . это ²руки⌡ Николая Николаевича, он во всем ему помогает, осуществляет все эти игры. Роль Андрея Федорцова пока рассчитана только на одну серию, но, думаю, что мы найдем ему место и в продолжении сюжета. Также всегда интересно работать с талантливыми и ²незасвеченными⌡ людьми, за которым не тянется шлейф прошлых сериалов. Мы гордимся тем, чем привлекли к работе в нашем фильме Сергея Власова и Анжелику Неволину . актеров Малого драматического театра. Это . герои первой серии нашей истории. Сергей играет человека, для лечения которого Николай Николаевич придумывает игру, а Анжелика . это предмет его обожания. В этой игре они вместе. Интересная роль Маньяка и у Евгения Меркурьева. Банкиршу Астру сыграла Олеся Поташинская, которую зрители знают по фильму ²8,5 долларов⌡, ее референта Андрей Шарков из БДТ, председателя правления . Борис Соколов из Театра им. Комиссаржевской.<br />
+А самого Николая Николаевича играет Семен Яковлевич Спивак, художественный руководитель Молодежного театра на Фонтанке.<br />
+Еще очень важно, что постановщиком трюков является Владимир Севостьянихин. Он, кроме того, что самый лучший каскадер . постановщик трюков, еще и замечательный актер. Такой молодой Роберт де Ниро. Уже работал в этом качестве в фильмах ²Морской узел⌡, ²Госпожа победа⌡.<br />
+<br />
+- В продолжении Вашего, Евгений, рассказа меня не покидает мысль: а нет у вас ли схожести с ²Танцором⌡ Дмитрия Светозарова?<br />
+<br />
+²Игра . совершенно не похожа на ²Танцора⌡. Если говорить о вторичности, то мы вторичны только по отношению к ²Игре⌡ с Дугласом. И мы этого не скрываем. Наш герой даже рассказывает, что посмотрел этот фильм и захотел сам создавать такие игры. И создает он все эти обстоятельства игры для людей не в компьютерной реальности, а здесь в этом мире, ²живьем⌡. Наш фильм менее мистический, чем ²Танцор⌡. Свои магические способности главный герой использует в служебных целях, чтоб, например, в банк попасть. Но и банк . тоже лишь место для организации игры. Именно потому, что этот человек обладает такой нечеловеческой, неземной технологией ему и деньги, в принципе, не нужны на организацию очень дорогостоящих мероприятий. Он все может сделать другими средствами.<br />
+<br />
+- А кто сценарист этой о ²магии в современной России⌡?<br />
+<br />
+Одного сценариста назвать нельзя, потому что это группа авторов. Евгений Омельченко, наш редактор, Александр Строев, наш режиссер, Евгений Харкевич, это . я, в первой серии принимал участие Игорь Шприц. Эта команда в таком составе собралась в первый раз. И нельзя не отдать должное людям, которые нас консультируют. Ведь наш Николай Николаевич вмешивается в психику человека, пытается лечить ее, помогать людям, - нам надо соблюдать этические вопросы при рассказе подробностей. Так что без профессионала психоаналитика, который корректирует нашу историю, не обойтись.<br />
+<br />
+- В магической истории, в серьезной истории ²Игра Он-лайн⌡ есть место шутке, смешным моментам?<br />
+<br />
+Конечно. Однажды утром режиссером было придумано, что в одном эпизоде, когда герой раздевается на нем семейные трусы со слониками. Костюмеры сразу бросились искать: к этому они были совсем не были готовы.  Зашли в один магазин, в другой, в третий. Наконец приехали  в какой-то крупный универмаг, водитель пошел по первому этажу, костюмер по второму. Обойдя весь второй этаж, костюмер спустилась на первый, зашла в отдел и спрашивает ²Трусы со слониками у вас есть?⌡ А ей продавец в ответ: ²Девушка, из вашего дурдома у нас уже были⌡. В итоге мы нашли их.<br />
+Была у нас идея хоть раз в жизни сделать положительный образ ГАИшника, - по нашему сюжету ГАИшник должен был спасать нашего героя. Недавно мы снимали на строящейся кольцевой, и проезжал мимо какой-то ГАИшный начальник. Посмотрел на нас и говорит: ²А что это на моей территории происходит? Ну-ка вон отсюда!⌡ После этого сюжет мы и заменили. У нас возле дороги стоит такой типичный ГАИшник, ест шаверму. Рядом стоит его машина под знаком ²Остановка запрещена⌡. И вдруг в нее врезается черная ²Волга⌡. Он уже обрадовался, как вдруг из машины вылезает его большой начальник и размазывает ему шаверму по физиономии. Вот такой наш им ответ.<br />
+<br />
+<b> Между мордобоем и переодеваниям ловлю каскадеров. Вот что бы делали мы без них: людей, которых мало кто знает в лицо, - только по силуэту, делающему невероятные пируэты: горящему, взрывающемуся, летающему. <br />
+<br />
+Рассказывает Владимир СЕВОСТЬЯНИХИН: </b><br />
+<br />
+- В нашей профессии проявляются все дурные наклонности, которые были воспитаны в детстве. <br />
+<br />
+- Шутите?..<br />
+<br />
+- Это я абсолютно серьезно.<br />
+<br />
+- Обидно быть в кино героем, которого никто не знает? И кто становится каскадером: артисты или спортсмены?<br />
+<br />
+- Славы как таковой и не хочется. <br />
+A каскадерами становятся спортсмены. Лично я занимался дзюдо, закончил институт Лесгафта и попал случайно в кино. Это было очень давно, году в 80-м, - ²Остров сокровищ⌡ еще тогда снимали, ²Макар-следопыт⌡... Так и остался в кино.<br />
+<br />
+- Сейчас больше стал спрос на вашу профессию в связи с количеством съемок бандитских историй?<br />
+<br />
+- Всегда был спрос на нашу работу. Ведь в каждом фильме должен быть какой-то ²экшн⌡... Был, конечно, период ²застоя⌡ в нашем кино. Тогда не было работы ни у кого: ни у актеров, ни у режиссеров, ни у костюмеров. И, конечно, же мы, каскадеры, тоже были не нужны. Это было начало 90-х. И до 2000 года была такая грустная ситуация. Ведь снимали только один фильм . в конце 90-х, - это ²Улицы разбитых фонарей⌡. Там я тоже работал с первых серий. А сейчас, конечно же, бум сериалов. И во всех есть много действия, много движения. Много работы.<br />
+<br />
+- Есть в профессии каскадера какая-то специализация: кто-то выполняет только драки, кто-то . только падения?...<br />
+<br />
+- Нет никакой специализации. Я, каскадер, должен уметь все. И танки, и падения, и драки и скалолазание . все это профессия каскадера. А набираешься опыта на съемочной площадке. Это . университет каскадера. Потому что в одной картине нужно машину разбить или с обрыва броситься, а в другой нужны драки, в третьей нужно падать и лазать. Все зависит от обстановки, о натуры. <br />
+<br />
+- Какое предложение, - поставить что, какой трюк, - Вас в Вашей деятельности удивило больше всего?<br />
+<br />
+- Да ничего особенно не удивляло. На начальном этапе было сложно, я не все еще умел, удивлялся тому, как это вообще можно сделать. И потом делал. В сценарии написано, что надо залезть на скалу и побегать по ней вертикально, - ты читаешь, думаешь, как это сделать. А потом приходишь на съемочную площадку, вешаешь веревки и бегаешь по ним, - вертикально по скале.<br />
+<br />
+- Основное качество каскадера . это смелость или авантюризм?<br />
+<br />
+- Основное качество каскадера . это расчетливость. И бюрократическое отношение к риску. На самом деле, каскадеры . очень трусливые люди, они прежде чем сделать, сто раз проверят. Потому что им надо много раз упасть, много раз подраться. И не покалечиться. Мы все рассчитываем, как сделать так, что мы смогли выполнить трюк неоднократно, и чтобы все получилось красиво.<br />
+<br />
+<b> Пока Владимир развенчивал миф о подвигах каскадеров, довольный учиненным по его указке и снятым на пленку разгромом ²Черного рынка⌡, подошел Александр СТРОЕВ. Режиссер ²Игры Он-лайн⌡ походил на зимнего рыбака, которых были видно неподалеку от берега, на Заливе. Особенно колоритны были валенки этого руководителя работ интеллектуального плана. А ведь попробуйте целый день провести на ледяном ветру! Вот он, тяжелый труд интеллигентного человека.<br />
+<br />
+²Мы снимали уже и в лесах и на льдине⌡, - рассказал Александр, - ²Так что здесь просто тепличные условия. Мы уже привыкли. На съемках этой серии всякое было.⌡ <b><br />
+<br />
+- Но ведь к тому, чтобы условия были таким, и Вы приложили руку, и Вы виноваты: ведь Вы один из авторов сценария ²Игры⌡.<br />
+<br />
+- Несмотря на мою актерскую практику, я сам никогда не снимался зимой. Или снимался, но не на натуре, а где-то в помещении. Вобщем, как-то все гуманно было. И тут я впервые с этим столкнулся и понял, что это очень сложно. Во-первых, очень короткий световой день, - это очень большая проблема. В лесу мы снимали еще глубокой зимой. И даже короткий переход по снегу всего лишь метров на 20 занимал массу времени. Поначалу меня это очень раздражало: мы ничего не успевали. До этих съемок в нашей компании не было такого опыта, а сейчас мы уже все знаем и корректируем свои планы в соответствии с погодными условиями. Кстати, когда я снимал свой первый фильм летом, у меня было совершенно другое ощущение времени. Мы за день снимали в пять раз больше.<br />
+<br />
+- Вы сейчас с утра до ночи заняты на съемочной площадке, а как же Ваш Молодежный театр? Успеваете? Или Вы подвинули театр в угоду режиссерству?<br />
+<br />
+- Нет. Я стараюсь ничего никогда не ²подвигать⌡. И театры все остались в моем творческом графике. Мне везде пошли навстречу и составили такое расписание работ, чтобы можно было все совместить. И никакой замены театра режиссурой нет. Здесь нет противоречия, все связано. И как раз наоборот здорово менять виды деятельности.<br />
+<br />
+- В сюжете этого фильма есть немало мистического, запредельного, - такого виртуального. Помогло ли Вам участие в передаче о виртуальной реальности компьютерных игр, где Вы рассказываете о них, играя роль сошедшего с экрана персонажа игры, в создании этого сюжета?<br />
+<br />
+- Конечно, это материал повлиял. Но ведь в телепрограмме я играю в ²ненастоящие⌡ игры, которые за чертой монитора компьютера, а в нашем фильме все происходит здесь, в нашем мире, с людьми, а не нарисованными воинами и монстрами. В нашем фильме рассказано о неких играх судьбы, правда, сфабрикованных человеческими руками. Конечно, не всё людьми определяется: что-то они делают сами, а что-то от людей не зависит. Вот у нас, например, с первого дня съемок, - только мы затронули эту тему, начались сложности. Притом, совершенно на пустом месте. Ни с того, ни с сего у нас сломался автобус, - доехал до студии и сломался, - выехать мы не могли. Его чинили 2 часа, и только тогда мы смогли поехать на съемку. И так вот, - непонятно, кто это делает, но явно нечеловеческими руками, - что-то все время мешает.<br />
+<br />
+- Это как с ²Мастером и Маргаритой⌡.<br />
+<br />
+- Не хочется сравнивать с той историей. И того, что вокруг нее, нам не дай Бог.<br />
+<br />
+- Часто актеры-режиссеры, снимая кино, делают это в немалой степени и для себя, - снимают себя в своем фильме в главной роли. А Вы?<br />
+<br />
+- Скажу честно, я этой участи не избежал. И как раз в моем первом фильме ²Госпожа победа⌡, в сериях о боксе, которые снимал, я сыграл одну из главных ролей. <br />
+<br />
+- А с чего вдруг потянуло Вас, замечательного исполнителя, на эту стезю: ставить самому?<br />
+<br />
+- Это надо сказать спасибо Евгению и Марине Харкевич, которые дали мне эту возможность. Была когда-то, году в 95-м, такая программа ²Навигатор⌡, которую выпускала студия ²Позитив⌡, и режиссер, который над ней работал, перешел в другой проект. Женя и Марина мне сказали: ²Попробуй⌡. Я начал работать. Мне было очень интересно. А потом, два года назад, Женя предложил мне снять рекламу. Сказал: ²Вот у нас есть заказ, хочешь, - сними⌡. Я сказал: ²Конечно, хочу⌡. И они мне доверили, хотя это было большой риск. И год я снимал рекламы, набираясь на этом телевизионного опыта. На телевидении я работал до этого уже лет 9, знал, как все там происходит, но одно дело . знать со стороны, а другое дело . самому. И вот так, потренировавшись на рекламах, я плавно перетек в кино и снял две серии спортивного сериала. <br />
+<br />
+- Вот Вы сохраняете интригу этого побоища, на месте которого мы сейчас находимся, довольно долго, не объясняете, что это . кино в кино. Но ведь, как всегда бывает, в конце серии история закончится, все раскроется, или Вы хотите структуру своего фильма сделать иной?<br />
+<br />
+- Не обязательно, что мы каждым финалом серии подводим итог истории. Сюжет может продолжаться и дальше: одна история на две серии. Задача раздробить сюжет на законченные детали-серии у меня нет.<br />
+<br />
+- Вы еще достаточно молоды по сравнению с теми актерами, кем Вам придется руководить на площадке. Как Вы будете строить отношения с ними?<br />
+<br />
+- Я работаю в этом проекте, в основном, с теми, кого хорошо знаю по совместной актерской деятельности. Более того, Сережа Власов и Лика Неволина, Петр Семак и я . это все одна школа, мы учились у Аркадия Иосифовича Кацмана. И ни с кем из актеров у меня не возникает моментов недопонимания, - наверное, потому что я и сам актер. Они меня очень внимательно слушают, предлагают свои варианты, - я их внимательно слушаю. Так что никаких проблем в работе не возникает. <br />
+<br />
+- Значит Вы уже готовый ²актерский режиссер⌡!<br />
+<br />
+- А вот этого я не знаю. На самом деле, нередко возникает момент, когда я хочу, чтобы сделали именно так, как говорю я. Но я, конечно же, не настаиваю.<br />
+<br />
+<b> Короткий перерыв, который произошел из-за того, что одна сцена была отснята, а для другой еще не были готовый ²декорации⌡ (ну это значит, что еще не успели убрать последствия актерского труда, испортившего овощи и консервы), да еще потому, что я с пером и карандашиком пыталась получить ответ на философский вопрос ²что такое игра?⌡... Правда, вот соригинальничала и артистов не расспросила. На это другие коллеги найдутся.<br />
+Думаю, что хотя бы вобщем ²что такое ²Игра Он-Лайн⌡ мне вам поведать удалось. А подробности . смотрите на своих голубых экранах. </b><br />
+<br />
+<i> Ольга КРАСНОВА </i></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="467.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b><div align=center><a href="../gallery_slide/614.html"><img src="../gallery_file2/614" alt="На съемках фильма "Игра Он-лайн". Андрей Федорцов. Фото Александра Корнакова." width="200" height="133"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/615.html"><img src="../gallery_file2/615" alt="На съемках фильма "Игра Он-лайн". Семен Спивак. Фото Александра Корнакова." width="200" height="142"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/616.html"><img src="../gallery_file2/616" alt="На съемках фильма "Игра Он-лайн". Сергей Мурзин и Олеся Поташинская. Фото Александра Корнакова." width="200" height="133"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/617.html"><img src="../gallery_file2/617" alt="На съемках фильма "Игра Он-лайн". Режиссер фильма Александр Строев и Андрей Федорцов. Фото Александра Корнакова." width="131" height="200"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/618.html"><img src="../gallery_file2/618" alt="На съемках фильма "Игра Он-лайн". Сергей Мурзин. Фото Александра Корнакова." width="132" height="200"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/619.html"><img src="../gallery_file2/619" alt="На съемках фильма "Игра Он-лайн". Семен Спивак и Сергей Мурзин. Фото Александра Корнакова." width="200" height="131"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/620.html"><img src="../gallery_file2/620" alt="На съемках фильма "Игра Он-лайн". Семен Спивак и Сергей Мурзин. Фото Александра Корнакова." width="200" height="135"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/621.html"><img src="../gallery_file2/621" alt="На съемках фильма "Игра Он-лайн". Олеся Поташинская и Сергей Мурзин. Фото Александра Корнакова." width="200" height="136"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/623.html"><img src="../gallery_file2/623" alt="На съемках фильма "Игра Он-лайн". Сергей Мурзин. Фото Александра Корнакова." width="200" height="132"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/624.html"><img src="../gallery_file2/624" alt="На съемках фильма "Игра Он-лайн". Андрей Федорцов. Фото Александра Корнакова." width="200" height="129"  border=0 vspace=10></a></div><br />
+<div align=center><a href="../gallery_slide/625.html"><img src="../gallery_file2/625" alt="На съемках фильма "Игра Он-лайн". Семен Спивак и Сергей Мурзин. Фото Александра Корнакова." width="200" height="134"  border=0 vspace=10></a></div></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>

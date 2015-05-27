@@ -1,0 +1,571 @@
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Продюсерский центр "Брат"</title>
+<meta name="MSSmartTagsPreventParsing" content="true">
+<link rel="stylesheet" href="../xtpl/ie.css" type="text/css">
+<script language="JavaScript">
+function verifyCompatibleBrowser(){ 
+    this.ver=navigator.appVersion 
+    this.dom=document.getElementById?1:0 
+    this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0; 
+    this.ie4=(document.all && !this.dom)?1:0; 
+    this.ns5=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+ 
+    this.ns4=(document.layers && !this.dom)?1:0; 
+    this.bw=(this.ie5 || this.ie4 || this.ns4 || this.ns5) 
+    return this 
+} 
+bw=new verifyCompatibleBrowser() 
+ 
+ 
+var speed=100 
+ 
+var loop, timer 
+ 
+function ConstructObject(obj,nest){ 
+    nest=(!nest) ? '':'document.'+nest+'.' 
+    this.el=bw.dom?document.getElementById(obj):bw.ie4?document.all[obj]:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.css=bw.dom?document.getElementById(obj).style:bw.ie4?document.all[obj].style:bw.ns4?eval(nest+'document.'+obj):0; 
+    this.scrollHeight=bw.ns4?this.css.document.height:this.el.offsetHeight 
+    this.clipHeight=bw.ns4?this.css.clip.height:this.el.offsetHeight 
+    this.up=MoveAreaUp;this.down=MoveAreaDown; 
+    this.MoveArea=MoveArea; this.x; this.y; 
+    this.obj = obj + "Object" 
+    eval(this.obj + "=this") 
+    return this 
+} 
+function MoveArea(x,y){ 
+    this.x=x;this.y=y 
+    this.css.left=this.x 
+    this.css.top=this.y 
+} 
+ 
+function MoveAreaDown(move){ 
+	if(this.y>-this.scrollHeight+objContainer.clipHeight){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".down("+move+")",speed) 
+	} 
+} 
+function MoveAreaUp(move){ 
+	if(this.y<0){ 
+    this.MoveArea(0,this.y-move) 
+    if(loop) setTimeout(this.obj+".up("+move+")",speed) 
+	} 
+} 
+ 
+function PerformScroll(speed){ 
+	if(initialised){ 
+		loop=true; 
+		if(speed>0) objScroller.down(speed) 
+		else objScroller.up(speed) 
+	} 
+} 
+ 
+function CeaseScroll(){ 
+    loop=false 
+    if(timer) clearTimeout(timer) 
+} 
+var initialised; 
+function InitialiseScrollableArea(){ 
+    objContainer=new ConstructObject('divContainer') 
+    objScroller=new ConstructObject('divContent','divContainer') 
+    objScroller.MoveArea(0,0) 
+    objContainer.css.visibility='visible' 
+    initialised=true; 
+} 
+
+</script>
+<script language="JavaScript" type="text/JavaScript"><!--
+  function switch_display ( id )
+  {
+    if(!document.getElementById(id)) return;
+    a=document.getElementById(id).style.display;
+    if(a=="none") b="block"; else b="none";
+    document.getElementById(id).style.display=b;
+  }
+
+  function switch_display_set ( id, s )
+  {
+    if(!document.getElementById(id)) return;
+    document.getElementById(id).style.display=s;
+  }
+
+  var popUpWin=0;
+  function popUpIt ( url )
+  {
+    if(popUpWin) { if(!popUpWin.closed) popUpWin.close(); }
+    popUpWin=open(url,'popUpWin',
+      'toolbar=no,location=no,directories=no,status=no,menubar=no,'+
+      'scrollbar=no,resizable=no,copyhistory=yes,'+
+      'width=300,height=200,left=200,top=100,screenX=200,screenY=100');
+    setTimeout(updatebuck,500);
+//document.bucket_right.location.href="/bucket_right/";
+    return false;
+  }
+  
+  function updatebuck ( )
+  {
+    document.bucket_right.location.href="/bucket_right/";
+  }
+
+  var popUpWin2=0;
+  function popUpIt2 ( url )
+  {
+    if(popUpWin2) { if(!popUpWin2.closed) popUpWin2.close(); }
+    var w=window.screen.availWidth-40;
+    var h=window.screen.availHeight-180;
+    popUpWin2=open(url,'faqts',
+      'screenX=10,screenY=0,left=10,top=0,width='+w+',height='+h+
+      ',resizable=1,status=1,menubar=1,toolbar=1,location=1,scrollbars=1');
+    return false;
+  }
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFFF" 
+  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" 
+  text="#000000" link="#022F30" vlink="#818181" alink="#003333" 
+  onLoad="InitialiseScrollableArea()">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#B6BFAC">
+<tr><td width="220" valign="bottom"><a href="../index.html"><img src="../i/left_top.gif"
+ width="220" height="127" border=0></a></td>
+<td valign="bottom" height="127">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td align="center">
+<table width="70" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#000000" 
+width="1"><img src="../i/spacer.gif" width="1" height="1"></td><td 
+class="date_top" align="center" width="26">&nbsp;</td></tr>
+</table>
+</td>
+<td>&nbsp;</td>
+<td align="right" class=sm colspan="2"><a href="353.html#" onClick="window.external.AddFavorite('http://www.kinobrat.ru/', document.title)" class=green><b>добавить в избранное</b></a></td>
+</tr>
+
+<tr><td background="../i/lenta-m.gif" height="15" colspan="6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+<tr>
+
+<td width="5" bgcolor="#000000" height="78"><img src="../i/spacer.gif" width="5" height="81"></td>
+<td bgcolor="#000000" height="81" width=81
+  align="center"><img 
+ src="../img_msg/4_6.jpg" width=197 height=81
+ border="0"></td>
+<td width="5" bgcolor="#000000" height="78"><img
+ src="../i/spacer.gif" width="5" height="81"></td>
+<td  valign="top" bgcolor="#FFFFFF" height="81">
+<div id="divContainer"><div id="divContent"> 
+<span class="top"><a href="4.html" class=bl><b>Пресс-релиз спектакля "Смерть Тарелкина"</b><br><DIV ALIGN="center"><b> Продюсерский центр "БРАТ" представляет:<br />
+<br />
+Комедию-шутку "Смерть Тарелкина"<br />
+по одноименной пьесе А.В.Сухово-Кобылина<br />
+</b><br />
+</DIV><br />
+<b>В ролях:</b><br />
+<br />
+Сановник в генеральском чине Максим Кузмич Варравин<b>- Константин Хабенский</b><br />
+Коллежский советник Кандид Касторович Тарелкин<b>- Андрей Краско</b><br />
+Частный пристав Антиох Елпидифович Ох<b>- Андрей   ...</a></span>
+</div></div>
+</td>
+<td valign="top" bgcolor="#FFFFFF" 
+  height="81" width="16" background="../i/bg_top.gif">
+<div id="divUpControl"><a href="javascript:;" onMouseOver="PerformScroll(-7)" onMouseOut="CeaseScroll()"><img src="../i/ar_up.gif" border="0" width="16" height="16"></a></div>
+<div id="divDownControl"><a href="javascript:;" onMouseOver="PerformScroll(7)" onMouseOut="CeaseScroll()"><img src="../i/ar_dw.gif" border="0" width="16" height="16"></a></div>
+</td>
+
+<td width="5" bgcolor="#000000"><img src="../i/spacer.gif" width="5" height="81"></td></tr>
+<tr><td background="../i/lenta.gif" height="15" colspan=6"><img src="../i/spacer.gif" width="340" height="15"></td></tr>
+</table>
+</td>
+<td width="220" valign="bottom">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/right_top.gif" height="92" align="center">
+<table border="0" cellspacing="1" cellpadding="0">
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/reg_new.html" class="wh">регистрация</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/mail_news.html" class="wh">рассылка&nbsp;новостей</a></td></tr>
+<tr><td class="sm" id="wh"><img src="../i/b.gif" width="4" height="5"
+hspace="5"><a href="../static/map.html" class="wh">карта сайта</a></td></tr>
+</table></td></tr>
+<form method=get action="/search/" name=sr>
+<tr><td height="35" bgcolor="#B6BFAC" align="center" valign="top">
+<input name=q
+ style="height: 18px; width: 120px; border: solid 1px; border-color: #79826F #FFFFFF #FFFFFF #79826F;"
+ value="поиск по сайту" class=sm
+ onFocus="if(document.sr.q.value=='поиск по сайту') document.sr.q.value='';"
+ ><input
+ type="image" border="0"
+ src="../i/search.gif" width="20" height="25">
+</td>
+</tr></form></table>
+</td></tr>
+<tr>
+<td><a href="../index.html"><img src="../i/logo.gif" width="220" height="27"
+ border=0></a></td>
+<td background="../i/m_bg.gif" colspan=1>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td>
+<td width="100%" id=wh>&nbsp;&nbsp;&nbsp;&nbsp;<span
+  class="top"><b>Проекты &#149; <a href='55.html' class=top style='color: white;'>&laquo;статьи&raquo;</a></b></span></td>
+<td width="3"><img src="../i/l_sh.gif" width="3" height="27"></td></tr>
+</table>
+</td>
+<td background="../i/m_bg.gif" align="right"><a 
+href="../index.html"><img src="../i/top_home.gif" width="24" height="19"
+border="0"></a><a href="mailto:mail@kinobrat.ru"><img 
+src="../i/top_mail.gif" width="24" height="19" border="0"></a></td>
+</tr></table>                                            
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="220" valign="top" bgcolor="#eff7ef">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td background="../i/mm_bg.gif">
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="197">
+<table width="197" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2"><img src="../i/top_mm.gif" width="197" height="62"></td>
+</tr>
+<tr>
+<td width="26" height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+<td class="m" nowrap height="6"><img src="../i/spacer.gif" width="1" height="6"></td>
+</tr>
+<tr><td width="26"><img src="../i/ic_1.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/1.html" class=m>архив новостей</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_2.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/2.html" class=m>предложения</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2" nowrap><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_3.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/4.html" class=m>проекты</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_4.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="../section/3.html" class=m>о нас</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_6.gif" width="37" height="36" hspace="6" ></td>
+<td class="m"><a
+href="149.html" class=m>пресса</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="../i/ic_7.gif" width="37" height="36" hspace="6" ></td>
+<!--
+<td class="m"><a
+href="/phpBB2/" class=m>форум</a></td></tr>
+<tr><td bgcolor="#d7d7d7" height="1" colspan="2"><img src="/i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td width="26"><img src="/i/ic_5.gif" width="37" height="36" hspace="6" ></td>
+-->
+<td class="m"><a
+href="../actor_view/index.html" class=m>актерская&nbsp;база&nbsp;данных</a></td></tr>
+</table>
+</td><td valign="top"><img src="../i/sign_mm.gif" width="23" height="217"></td>
+</tr></table></td></tr>
+
+<tr><td width="220" valign="top" height="97"><a 
+  href="../section/5.html"><img src="../i/auth_col.gif" 
+ width="220" height="97" border=0></a></td>
+<tr><td><table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#e0ece0" align="center"
+ style="padding-top:15px; padding-bottom:15px" width="220" valign="top">
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="34.html"><img border=0 align=left
+ src="../img_msg/34_1.jpg" width=80 height=60 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="34.html" class=green><b>Борис Казаков</b></a><br>
+<i class="sm" id=gray>Художник-аниматор</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="273.html"><img border=0 align=left
+ src="../img_msg/273_1.jpg" width=80 height=55 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="273.html" class=green><b>Андрей Прикотенко</b></a><br>
+<i class="sm" id=gray>режиссер</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+<table width="204" border="0" 
+cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="3" bgcolor="#bed8be" height="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+<tr>
+<td bgcolor="#bed8be" width="1"><img 
+ src="../i/spacer.gif" width="1" height="1"></td>
+<td bgcolor="#F6FAF6">
+<a href="385.html"><img border=0 align=left
+ src="../img_msg/385_1.jpg" width=80 height=80 
+ hspace="5" vspace="5"></a>
+<br>
+<a href="385.html" class=green><b>Дмитрий Светозаров</b></a><br>
+<i class="sm" id=gray>кинорежиссер, сценарист</i><br>
+<table width="100%"border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/dd.gif" height=1><img border=0 height=1 
+ src="../i/spacer.gif" width=1></td></tr></table>
+<a href="" class=bl></a>
+<br clear=all>
+</td>
+<td bgcolor="#ffffff" width="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr bgcolor="#ffffff"><td colspan="3" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+</table><br>
+
+
+</table>
+<table width="220" border="0" cellspacing="0" cellpadding="0">
+<tr><td background="../i/auth_col_b.gif"
+ height="30" align="right" valign="top">&nbsp;</td></tr></table>
+</table><br><br>
+
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td valign="top" class=top style="padding: 15px;" bgcolor="#F6FAF6">
+<img src="../i/spacer.gif" width="308" height="1"><br>
+<div align=center class=content style="margin: 0px;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td align=right class=r nowrap>закрыто</td>
+<td background="../i/r_line.gif" width="100%"><img 
+  src="../i/r_coner.gif" width="43" height="16" align="middle"></td>
+</tr></table><br-->
+
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr><td id=gray align="center" colspan="2" height="30"><a 
+  href="55.html" class=green><b id=gr>статьи</b></a></td></tr>
+</table>
+
+
+
+<div align=center><b id=yellow>Интервью Антона Адасинского Cергею Бугаеву // Активист. -  2001.</b><br><br></div>
+<div align="justify">В последний день гастролей 'Дерева' те, кому не досталось билетов, выломали дверь театра и прорвались в зал. В Эдинбурге на их представления в прошлом году попасть было невозможно, спектакли провожали аплодисментами стоя. Там 'Дерево' стало знаменито со своим 'Однажды' - и впервые главный приз авторитетного фестиваля достался клоунам.<br />
+В Европе этот жанр называют physical theatre - театр тела. Но речь в спектакле идет не о телесной жизни, а все больше о душе. Сюжет прост, образы понятны даже ребенку - мерцающий маячок (не из 'Великого Гетсби'?), герой, оседлавший комету... Что же остается от сказки потом, после того как ее рассказали? На сцене - сломанные стрелы Амура, куст, выросший на могиле, петля, роза. Или - швабра, покосившаяся рама, плюшевый мишка... Однажды мечты не становятся реальностью. Но в пьесе есть все: от рок-мюзиклов до буто, от спокойного кино до карикатурных мультфильмов. Эти быстрые как молния перемены стиля и тона - одно из самых удивительных качеств  спектакля.  На сцене как будто  немое чаплинское кино и  картина Дали "одновременно    -    это   трагедия    глазами    клоуна.    Фантастическая,    зрелищная, вызывающая слезы на глазах, простая история несчастной любви старого уборщика к легкомысленной официантке, которая предпочла ему прилизанного хлыща. Клоунада, танцы, мотоцикл, гремящие Deep Purple... Кажется, что перед вами огромная группа, много народа, безумные деньги, потраченные на постановку - хотя в спектакле (заняты всего четыре человека, а весь театральный скарб 'Дерева' умещается в одном автобусе с прицепом. Как удалось совместить отточенное шоу с тонким юмором и пафосом чувств? Где корни театра 'Дерево'? Откуда они берут новые идеи и куда двигаются дальше? Об этом Сергей Бугаев говорил с Антоном Адaсинским.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;Дарья Шухтина<br />
+<br />
+Акт.: Кажется, что те, кто танцует буто, берут на себя какую-то грязную энергию общества.<br />
+<br />
+А.: Я думаю, ты прав.<br />
+<br />
+Акт.: По-моему, они чем-то напоминают юродивых.<br />
+<br />
+А: Да, юродивых напоминают - это ведь культура, которой нет на Западе. Во многих языках слово 'юродивый' даже не имеет перевода. И, наверное, те, которые первыми стали делать буто, были именно юродствующие. А форму, которую они выбрали, надо было как-то назвать - вот и назвали буто: иероглифы 'бу' - шаг и 'то' - танец. А на самом деле они выстукивали ритм, давя мух на асфальте, подвешивали скелеты, насаживали куриц на член, выходя на сцену под музыку 'Битлз' 'Oh, Darling'. Голое прекрасное тело, курица на члене, и звучит музыка 'Битлз'. Я бы хотел там быть. Вот это, конечно, было именно юродство. Ведь непонятно, что такое смех, откуда он возникает - спазм мышц? Ха-ха-ха. Га-га-га. В русском есть еще куча почти синонимов: улыбка, усмешка, глаголы 'посмеиваться', 'хохотать', 'лыбить-ся'... То есть миллион оттенков смехового жанра, но он ясен нам до сих пор. Я думаю, это последовательная ниточка, которая связывает человека с Универсумом. Когда эта ниточка порвется - каюк всем нам, и культуре заодно. Пока эта ниточка смеха живет - есть искусство, есть жизнь, есть работа. Так что нужно беречь клоунаду! Смехотворный загадочный мир...<br />
+<br />
+Акт.: Ты показывал в Петербурге то же самое, что ты показываешь в Западной Европе, или это специальная программа?<br />
+<br />
+А.: Мы не делаем спектакль, чтобы взять, показать, выкинуть. Он долго растет. Нашему 'Однажды' уже три года. Теперь он дошел до размера кулака - сделанная работа. 'Всадник' - вообще старая работа. Мы уезжали с ним и привезли его, чтобы отчитаться. Причем те же декорации, те же тряпочки - даже кассету с фонограммой где-то нашли. Не знаю, заметил ли кто-нибудь, но звук совершенно иной, без всякой там цифровой обработки.<br />
+<br />
+Акт.: Как ты вообще относишься к развитию техники, к компьютерной и цифровой революции?<br />
+<br />
+А.: Если говорить о музыке, то качество ее зависит от записи. Есть такие два способа имитации: вода и песок. Так вот, аналоговая запись - вода, а цифровая -песок. По объему одно и то же, насыпаются так же, струя похожая, но воду ты никогда не сосчитаешь.<br />
+<br />
+Акт.: Меня потрясло в спектакле 'Однажды' то, что музыка передается совершенно по-разному, каждая мелодия соответствует своему времени и возможностям звукозаписи тех лет.<br />
+<br />
+А.: Там все непросто. Хоть там и есть навороченные семплеры, но, когда нужно, Андрей включает записи древней 'Порто-студии' - это совсем другая энергия. Deep Purple звучит в старых записях. В колонки стекаются мелодии на той же частоте, что и в 70-х. Народ в зале начинает фанатеть.<br />
+<br />
+Акт.: Так. Ну, а что за проект с Гергиевым?<br />
+<br />
+А: Планируется в январе премьера 'Щелкунчика'. Шемякин сделал новые декорации. Гергиев дал добро на то, чтобы Шемякин переписал полностью либретто -это будет не Петипа, а настоящий Гофман. А меня пригласил на роль Дроссельмеера.<br />
+<br />
+Акт.: А как вы собираетесь репетировать? Тем более, что времени осталось так мало.<br />
+<br />
+А: Там у них не просто: репетируют отдельно с балетом, отдельно с оркестром. Ротманский приедет из Копенгагена. Из тех, кто в России живет, будет, по-моему, только Гергиев. Я видел репетицию. Здорово!<br />
+<br />
+Акт.: Новые спектакли готовите?<br />
+<br />
+А.: Новый спектакль    'Суицид' сейчас в процессе. Сначала   он   был задуман     как посвящение рок-н-ролль-ным   музыкантам,    которые покончили     с собой,  которые  не выскочили в какие-то    годы:    просто спились, либо стор-чались, либо исчезли.    Они    сделали классное        дело. Такие,     например, как   Soft   Machine, Nick Drake... Те, кто<br />
+был задавлен крупными людьми вроде Rolling Stones. Он покончил с собой в 23 года, представляете себе?! А сколько лет было Дженет Джоплин - 27! А Бобу Марли - 36! Хендриксу - 27. Нам кажется - монстры, а ведь молодые ребята. У них словно время сжалось, они записали миллион пластинок. И когда они стали говорить о смерти, было ощущение, что она дала им какой-то срок. Они шли к ней, поэтому работали так продуктивно, так круто пахали, и поэтому пришли вовремя. И вот о них был спектакль, об этой музыке, об этих людях. И вдруг работа повернулась в сторону религии. Там не осталось ничего ни от рок-н-ролла, ни от этих людей, ни от имен. То есть эта тема дала мне какой-то толчок и ушла в другую сторону. Акт.: Какая религия близка вам?<br />
+<br />
+А.: Люди богов делят до сих пор. Мы так все шутим, а на самом деле во всем мире сейчас идет 36 войн. То есть в третье тысячелетие мы въехали с полным набором этой туфты в карманах. Конечно, то, что сейчас происходит в России, цепляет, но, к сожалению, помочь все равно ничем не можешь. Поэтому мы ставим спектакли.<br />
+<br />
+Акт.: Ты интересуешься политикой?<br />
+<br />
+А.: Интересуюсь, конечно. Но странная история: когда берешь российскую газету в руки, через пять минут хочется запихать ее в урну. Сколько можно тем же деревянным языком те же проблемы из года в год мусолить? Только названия более броские стали. Маразм и кретинизм на Балканах уже не укладывается в голове. Мы в Сараево спали прямо где-то во дворе. Просто красота. После выступлений - только радостные воспоминания. Приехали через два года - нет ни театра, ни площади - одни камни лежат. Невежество чудовищное, но зато есть автоматы и агрессия.<br />
+<br />
+Акт.: Живешь в Германии - там тоже свои проблемы. Взять хотя бы разборки турков с немцами.<br />
+<br />
+А.: Да, там такие сейчас дела происходят. Жуткий подъем нацизма. Есть города, в которых просто творится тихий ужас. Там существуют специальные нацистские па-бы, клубы - это в порядке вещей. В Берлине было нападение на синагогу. Об этом не говорят, тема, в общем, закрыта. Но, по-моему, ситуация один в один напоминает 33 год.<br />
+<br />
+Акт.: А почему ты выбрал именно Германию?<br />
+<br />
+А.: В Германии нам сейчас правильно живется. Немцы очень обязательные и конкретные люди. Война доказала их организованность: все четко и точно. Армейская система для театра вполне подходит: конкретные ответы, конкретные деньги, конкретные дела, аренда, место, турне. Не нужно бегать, всего самим добиваться, сомневаться, думать о будущем.<br />
+<br />
+Акт.: Есть ли в Германии какие-то театры, с которыми у вас налажена связь, дружба, сотрудничество?<br />
+<br />
+А.:  С театрами  как-то плохо.   Но,   конечно,   есть люди, с которыми хотелось бы поработать. Счастлив был бы поработать   с   английским театром DVA. Но больше всего я бы хотел сотрудничать   с   российскими театрами. Вчера студенты театрального вышибли дверь, чтобы  прорваться   на  наш  спектакль - им преподаватели сказали, что если они нас не увидят, то им нечего делать в институте. Но нас никто не догадался пригласить дать мастер-класс, хотя мне было бы очень интересно. Это то, чем я бы мог помочь. Меня часто спрашивают, что делать начинающим. Я могу сказать только одно - не сдаваться, верить в себя и работать - по 12 часов в день репетировать. Будет что показать - появится и помещение, и люди, и выступления. Я через это прошел.<br />
+<br />
+<i> <b> Антон Адaсинский о буто-танце </b> <br />
+<br />
+Буто родился в 59 году в Японии, благодаря двум товарищам - Татцуми Хиджиката и Кацу Оно. Одному из них сейчас 90 лет. Он до сих пор танцует. Второй, Татцуми Хиджиката, умер в 86-м году. На последней лекции он сказал: 'Ребята! Я вот сейчас вышел на трибуну, у меня насморк. Если бы у нас у всех был насморк, мы бы сейчас все шмыгали носами. Это бы нас объединило'. То, что он делал тогда, наверное, неповторимо. Потом из этого вышел миллион групп: Шанкай Джуко, Дай-Ракуда Кан, Мин Танака. Многие уехали на Запад, и теперь все знают, что буто -это голое тело, белая краска, скрюченные ножки и долгое лежание в позе эмбриона - так люди понимают буто-танец. На самом деле, ничего подобного. Формы его неведомы. Это может быть и самосжигание на улице, и свисание с крыши здания вниз головой на веревке. Когда первый раз вышел Мин Танака - он пришел из волейбольной школы. И его спросили: 'А что ты можешь? - Я могу танцевать буто. - Ну да?! Давай!' Мин Танака голым прыгнул на сетку, сгруппировался и повис на пальцах рук и ног, как комок, и висел 10 минут: у него свело все судорогой - он уже был 'мяч'. Все ждали, что он либо грохнется вниз и сломает позвонки, либо не выдержат мышцы. Но его скрючило - разгибали потом полдня. Он пришел и сделал себя мячом - вот и все. Он ничего не придумывал. А Кацу Оно вышел на сцену с футбольным мячом, в женском платье - играл в футбол. Просто катал мячик, и я впал в гипноз с этим мячиком. Когда я открыл глаза, он стоял около пианино, гигантского, королевского, звучала 'Лунная' соната. Я опять куда-то впал. Это уже форма человеческой силы. Он может делать все, что угодно. Потом он вышел на сцену в сомбреро, в костюме мексиканца, взятом из соседнего театра, включил фонограмму какую-то шипящую и под звук поезда стал делать какую-то нелепую пантомиму. А у меня опять куда-то крыша съехала: то ли потому, что ему 93 года, то ли потому, что от него идет какая-то необъяснимая энергия. Это необъяснимо. Того, что было в 59 году, уже нет. И эта школа, конечно, огромная, потому что надо выйти на сцену голым, а в классическом буто это действительно голое тело. Кацу Оно вышел совершенно голый и сосал у свиньи молоко. И свинья стояла тихо на сцене. И он пил это свиное молоко. А люди кидались стульями на сцену. Он ловил их, а потом выставил в ряд и спросил: 'А что вы кидаете в меня стулья? Всем непонятно, что я делаю? Я сейчас вам объясню'. Стоял голый на сцене и обсуждал, нужно ли сосать свинью. В те годы был взрыв - это был 68 год. Это были акции. Он 'хоронил себя' в могиле. Весь этот опыт научил нас тому, что такие хэппенинги должны работать. Ты делаешь то, что у тебя болит. Не просто вытащить свинью на сцену и зарезать. Нужно знать, зачем это делать. </i></div><br><br>
+
+
+
+                                                                                                                                        
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+</i></b></font>
+<div style="padding: 5px 15px; text-align: right;">
+<a href="353.html#top" class=green style="font-size:11px; ">вернуться наверх<img
+ src="../i/top_link.gif" width="9" height="8" border="0" hspace="2"
+ align="bottom"></a>
+</div>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220" valign="top" bgcolor="#E0ECE0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+<div style="padding: 10px;">
+<b></b>
+</div>
+
+</td>
+</tr>
+</table><table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td colspan="5"align="center" bgcolor="#CCCCCC" height="1"><img
+ src="../i/spacer.gif" width="1" height="1"></td></tr>
+<tr>
+<td width="220" align="center" height="75" bgcolor="#EFF7EF" class="sm"><img
+src="../i/spacer.gif" width="220" height="1"><br>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr><td align=right class=top>e-mail<td>:<td class=top><a href="mailto:mail@kinobrat.ru">mail@kinobrat.ru</a>
+</table>
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td align="center" id=gray class=top valign=middle><img
+ src="../i/spacer.gif" width="338" height="1"><p>
+<script language="javascript">
+hotlog_js="1.0";hotlog_d=document; hotlog_n=navigator;hotlog_rn=Math.random();
+hotlog_n_n=(hotlog_n.appName.substring(0,3)=="Mic")?0:1;
+hotlog_r=""+hotlog_rn+"&s=20841&im=31&r="+escape(hotlog_d.referrer)+"&pg="+
+escape(window.location.href);
+hotlog_d.cookie="hotlog=1"; hotlog_r+="&c="+(hotlog_d.cookie?"Y":"N");
+hotlog_d.cookie="hotlog=1; expires=Thu, 01-Jan-70 00:00:01 GMT"</script>
+<script language="javascript1.1">
+hotlog_js="1.1";hotlog_r+="&j="+(navigator.javaEnabled()?"Y":"N")</script>
+<script language="javascript1.2">
+hotlog_js="1.2";hotlog_s=screen;
+hotlog_r+="&wh="+hotlog_s.width+'x'+hotlog_s.height+"&px="+((hotlog_n_n==0)?
+hotlog_s.colorDepth:hotlog_s.pixelDepth)</script>
+<script language="javascript1.3">hotlog_js="1.3"</script>
+<script language="javascript">hotlog_r+="&js="+hotlog_js;
+hotlog_d.write("<a href=http://click.hotlog.ru/?20841 target=_top><img "+
+"src=\"http://hit2.hotlog.ru/cgi-bin/hotlog/count?"+
+hotlog_r+"&\" border=0 width=1 height=1 alt=HotLog></a>")</script>
+<noscript><a href="http://click.hotlog.ru/?20841" target=_top><img
+src="http://hit2.hotlog.ru/cgi-bin/hotlog/count?s=20841&im=31" border=0
+width="1" height="1" alt="HotLog"></a></noscript>
+Copyrights (c) 2003-2010. Все права защищены. <br>
+Копирование информации возможно только с согласия авторов.<br>
+<br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+</td>
+<td bgcolor="#CCCCCC" width="1"><img src="../i/spacer.gif" width="1" height="1"></td>
+<td width="220"><a href="../index.html"><img src="../i/bot_logo.jpg"
+ width="220" height="75" border=0></a></td>
+</tr>
+<tr>
+<td colspan="5" align="center" bgcolor="#CCCCCC" height="1"><img
+  src="../i/spacer.gif" width="1" height="1"></td>
+</tr>
+</table>
+</body>
+</html>
